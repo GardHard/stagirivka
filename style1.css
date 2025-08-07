@@ -1,0 +1,4115 @@
+/* ========================================
+   ✅ ОБЩИЕ СТИЛИ (БЕЗ ШИРИНЫ КОНТЕЙНЕРА)
+   ======================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow-x: hidden; /* Важно: убираем горизонтальный скролл */
+  background-color: #ffffff;
+}
+
+/* ЦЕНТРАЛЬНЫЙ КОНТЕЙНЕР — БАЗОВЫЕ СТИЛИ */
+.design-container {
+  position: relative;
+  min-height: 100vh;
+  background-color: transparent;
+  z-index: 1;
+  /* Ширина будет задана в медиа-запросах */
+}
+
+/* ========================================
+   🔹 МЕДИА-ЗАПРОСЫ: АДАПТИВНОСТЬ
+   ======================================== */
+
+/* ========================================
+   ✅ МЕДИА-ЗАПРОС: ПК-ВЕРСИЯ (1280px и выше)
+   ======================================== */
+@media (min-width: 1280px) {
+  .design-container {
+    overflow: visible !important;
+    position: relative !important;
+    width: 1920px;
+    margin: 0 auto;
+  }
+
+  /* ========================================
+     1. ШАПКА С ФИКСИРОВАННЫМ ФОНОМ 
+     ======================================== */
+  .header-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .fixed-image {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+
+  .custom-text-main {
+    position: absolute;
+    top: 350px;
+    left: 355px;
+    width: 496px;
+    height: 106px;
+    font-size: 45px;
+    color: #2B2B2B;
+    font-weight: bold;
+    line-height: 1.1;
+    z-index: 1001;
+  }
+    /* === НОВЫЙ ПОДЗАГОЛОВОК === */
+  .custom-text-subtitle {
+    position: absolute !important;
+    top: 450px !important;
+    left: 355px !important;
+    width: 332px !important;
+    height: 64px !important;
+    font-size: 23px !important;
+    color: #2B2B2B !important;
+    line-height: 32px !important;
+    font-weight: normal !important;
+    text-align: left !important;
+    z-index: 1002 !important;
+    pointer-events: none !important;
+    white-space: pre-line !important;
+  }
+
+  /* ========================================
+     МЕНЮ В ШАПКЕ — ФИКСИРОВАНО ОТНОСИТЕЛЬНО ЭКРАНА
+     ======================================== */
+  .menu-bar {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20000;
+    pointer-events: none;
+    display: flex;
+    width: fit-content;
+  }
+
+  .menu-item-wrapper {
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    pointer-events: auto;
+  }
+
+  .menu-home     { left: -575px; }
+  .menu-nutrition { left: -225px; }
+  .menu-why-us   { left: 75px; }
+  .menu-order    { left: 250px; }
+
+  .menu-item {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    color: #000000;
+    white-space: nowrap;
+  }
+
+  .menu-item.large {
+    font-size: 17px;
+  }
+
+  .menu-item.green {
+    color: #27AE60;
+  }
+
+  /* Кнопка "Оформить заказ" в шапке */
+  .order-button-link {
+    position: absolute;
+    top: 598px;
+    left: 390px;
+    width: 245px;
+    height: 67px;
+    z-index: 1004;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .top-rect-1,
+  .top-rect-2,
+  .top-ellipse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .top-rect-2 {
+    top: 5px;
+    left: 6px;
+    width: 233px;
+    height: 57px;
+    border-radius: 65px;
+  }
+
+  .order-button-text {
+    position: absolute;
+    top: 22px;
+    left: 48px;
+    width: 108px;
+    height: 20px;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 20px;
+    text-align: center;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .top-ellipse {
+    top: 10px;
+    left: 189px;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  .top-vector {
+    position: absolute;
+    top: 26px;
+    left: 201px;
+    z-index: 5;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+  }
+
+  .order-button-link:hover {
+    transform: scale(1.02);
+  }
+
+  .order-button-link:hover .top-ellipse,
+  .order-button-link:hover .top-vector {
+    transform: translateX(6px);
+  }
+
+  /* Элементы вокруг мамы */
+  .overlay-icon-2,
+  .overlay-icon-extra,
+  .overlay-icon-extra-2,
+  .overlay-icon-extra-3,
+  .overlay-icon-extra-4,
+  .overlay-icon {
+    position: absolute;
+    z-index: 1001;
+  }
+
+  .overlay-icon-2        { top: 297px; left: 1103px; }
+  .overlay-icon-extra    { top: 256px; left: 1063px; }
+  .overlay-icon-extra-2  { top: -73px; left: 764px; }
+  .overlay-icon-extra-3  { top: -131px; left: 575px; }
+  .overlay-icon-extra-4  { top: -559px; left: 323px; }
+
+  .overlay-icon {
+    position: absolute;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+  }
+
+  .overlay-icon.visible {
+    opacity: 1;
+  }
+ 
+  /*ФОТОГРАФИИ ДЛЯ АНИМАЦИИ*/
+  #icon-pregnant { top: 168px; left: 624px; width: auto; height: auto; }
+  #icon-nursing  { top: 155px; left: 1102px; width: 449px; height: 724px; }
+  #icon-safe     { top: 120px; left: 1110px; width: 470px; height: 758px; }
+
+  /* Теги */
+  .tag-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1006 !important; /* Должен быть выше, чем у #icon-pregnant, #icon-nursing и т.д. */
+}
+
+  .tag {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    transition: all 0.4s ease;
+    z-index: 1007 !important;
+  }
+  
+  
+
+  .tag-circle,
+  .tag-circle-inner {
+    position: absolute;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    z-index: 1;
+  }
+
+  .tag-text {
+    position: absolute;
+    font-size: 18px;
+    color: #BFBFBF;
+    font-weight: bold;
+    white-space: nowrap;
+    right: 100%;
+    margin-right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    pointer-events: none;
+    text-align: right;
+    overflow: hidden;
+  }
+
+  .tag.active .tag-circle {
+    width: 50.55px;
+    height: 50.55px;
+    opacity: 1;
+    left: calc(50% - 25.275px);
+    top: calc(50% - 25.275px);
+  }
+
+  .tag.active .tag-circle-inner {
+    width: 32.97px;
+    height: 32.97px;
+    opacity: 1;
+    left: calc(50% - 16.485px);
+    top: calc(50% - 16.485px);
+  }
+
+  .tag.active .tag-text {
+    color: #2B2B2B;
+    opacity: 1;
+  }
+
+  .tag:not(.active) .tag-circle {
+    width: 28.57px;
+    height: 28.57px;
+    opacity: 0.3;
+    left: calc(50% - 14.285px);
+    top: calc(50% - 14.285px);
+  }
+
+  .tag:not(.active) .tag-circle-inner {
+    width: 17.58px;
+    height: 17.58px;
+    opacity: 0.3;
+    left: calc(50% - 8.79px);
+    top: calc(50% - 8.79px);
+  }
+
+  .tag:not(.active) .tag-text {
+    opacity: 0.6;
+  }
+
+  #tag-pregnant { top: 320px; left: 1150px; }
+  #tag-nursing   { top: 493px; left: 1065px; }
+  #tag-safe      { top: 651px; left: 1105.5px; }
+
+  /* Листья */
+  .mint-blur,
+  .mint-img {
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+    filter: blur(8px);
+  }
+
+  .mint-img { filter: blur(3px); }
+  .mint-1 { top: 452px; left: 1743px; transform: rotate(103.07deg);}
+  .mint-2 { top: 375px; left: 206px; transform: rotate(16.38deg); }
+  .mint-3 { top: 174px; left: 789px; transform: rotate(166.73deg); }
+  .mint-4 { top: -50px; left: 1650px; transform: rotate(5deg); }
+  .mint-5 { top: 887px; left: 1657px; transform: rotate(10deg); }
+  .mint-6 { top: 789px; left: 667px; width: 100.15px; height: 127.55px; transform: rotate(12.11deg); }
+  .mint-img-6 { top: 1295px; left: 667px; width: 87px; height: 70px; z-index: 1005; pointer-events: none; }
+  .mint-img-7 { top: 1387px; left: 235px; width: 150px; height: 118px; z-index: 1005; pointer-events: none; }
+
+  /* Блок "Почему нужно питаться?" */
+  .why-title {
+    position: absolute;
+    top: 1143px;
+    left: 815px;
+    width: 840px;
+    height: 48px;
+    font-size: 41px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 48px;
+    z-index: 1004;
+    pointer-events: none;
+  }
+
+  .vector-img {
+    position: absolute;
+    z-index: 1004;
+    pointer-events: none;
+  }
+
+  .vector-bg-1 { width: 25px; height: 18px; top: 1253px; left: 810px; opacity: 0.06; }
+  .vector-check-1 { width: 11px; height: 8px; top: 1258px; left: 819px; }
+  .vector-bg-2 { width: 25px; height: 18px; top: 1300px; left: 810px; opacity: 0.06; }
+  .vector-check-2 { width: 11px; height: 8px; top: 1305px; left: 819px; }
+  .vector-bg-3 { width: 25px; height: 18px; top: 1347px; left: 810px; opacity: 0.06; }
+  .vector-check-3 { width: 11px; height: 8px; top: 1352px; left: 819px; }
+  .vector-bg-4 { width: 25px; height: 18px; top: 1253px; left: 1215px; opacity: 0.06; }
+  .vector-check-4 { width: 11px; height: 8px; top: 1258px; left: 1224px; }
+  .vector-bg-5 { width: 25px; height: 18px; top: 1300px; left: 1215px; opacity: 0.06; }
+  .vector-check-5 { width: 11px; height: 8px; top: 1305px; left: 1224px; }
+
+  .check-text {
+    position: absolute;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 28px;
+    z-index: 1004;
+    pointer-events: none;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .check-item-1 { top: 1248px; left: 845px; }
+  .check-item-2 { top: 1295px; left: 845px; }
+  .check-item-3 { top: 1342px; left: 845px; }
+  .check-item-4 { top: 1248px; left: 1246px; width: 331px; }
+  .check-item-5 { top: 1295px; left: 1246px; width: 281px; height: 56px; white-space: normal; display: block; text-align: left; }
+
+  .ellipse-top-left { top: 1226px; left: 1665px; width: 454px; height: 454px; border-radius: 50%; background-color: #F6F9FF; opacity: 0.04; z-index: 1006; pointer-events: none; }
+  .ellipse-top-right { top: 1201px; left: 1641px; width: 504px; height: 504px; border: 3px solid #F6F9FF; border-radius: 50%; background-color: transparent; opacity: 0.04; z-index: 1006; pointer-events: none; }
+  .bw-overlay { width: 974px !important; height: 378px !important; object-fit: cover !important; position: absolute; top: 1075px; left: 950px; mix-blend-mode: multiply; z-index: 1004; pointer-events: none; object-fit: cover; }
+  .ellipse-bottom-left { top: 860px; left: -176px; width: 454px; height: 454px; border: 121px solid transparent; border-radius: 50%; background-color: #F6F9FF; opacity: 0.04; z-index: 1003; pointer-events: none; }
+  .ellipse-bottom-right { top: 835px; left: -201px; width: 504px; height: 504px; border: 3px solid #F6F9FF; border-radius: 50%; background-color: transparent; opacity: 0.04; z-index: 1003; pointer-events: none; }
+
+  /* Карусель */
+  .image-container { position: relative; width: 100%; height: 378px; z-index: 1002; }
+  #second-image { position: absolute; top: 1075px; left: 0; width: 1920px; height: 378px; z-index: 1003; object-fit: cover; pointer-events: none; }
+  #third-image { position: absolute; top: 871px; left: 199px; width: 626px; height: 582px; z-index: 1004; object-fit: cover; pointer-events: none; }
+
+  .highlighted-title {
+    position: absolute;
+    top: 1608px;
+    left: 723px;
+    width: 479px;
+    height: 96px;
+    font-size: 28px;
+    color: #27AE60;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 1004;
+    pointer-events: none;
+  }
+
+  .carousel-container {
+    position: absolute;
+    top: 1700px;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1005;
+    pointer-events: auto !important; /* ✅ Ключевое: разрешаем клики */
+  }
+
+  .card-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .product-card {
+    position: absolute;
+    width: 663px;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    pointer-events: none;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+  }
+
+  .product-card[data-position="left"] {
+    transform: translateX(-780px) scale(1);
+    opacity: 0.20;
+    z-index: 1;
+  }
+
+  .product-card[data-position="center"] {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 3;
+  }
+
+  .product-card[data-position="right"] {
+    transform: translateX(780px) scale(1);
+    opacity: 0.20;
+    z-index: 1;
+  }
+
+  .meat-image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 663px;
+    height: 261px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .meat-title {
+    position: absolute;
+    top: 290px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 24px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    white-space: nowrap;
+    z-index: 1006;
+    text-align: center;
+  }
+
+  .meat-description {
+    position: absolute;
+    top: 326px;
+    left: 0;
+    width: 100%;
+    height: 74px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000000;
+    text-align: center;
+    z-index: 1006;
+    pointer-events: none;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #27AE60;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1006;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .prev-btn { top: 175px; left: 510px; }
+  .next-btn { top: 175px; right: 510px; }
+
+  .placeholder {
+    height: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  /* Блок "Почему выбирают нас?" */
+  .custom-title-split {
+    position: absolute;
+    top: 2506px;
+    left: 1009px;
+    width: 511px;
+    height: 96px;
+    color: #27AE60;
+    font-size: 28px;
+    line-height: 48px;
+    font-weight: bold;
+    text-align: left;
+    z-index: 10002;
+    pointer-events: none;
+  }
+
+  .feature-circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
+    z-index: 10003;
+    pointer-events: none;
+  }
+
+  .c1 { top: 2687px; left: 1009px; }
+  .c2 { top: 2789px; left: 1009px; }
+  .c3 { top: 2903px; left: 1009px; }
+  .c4 { top: 3028px; left: 1009px; }
+
+  .feature-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 10004;
+    pointer-events: none;
+  }
+
+  .health-icon { top: 3044px; left: 1024px; }
+  .custom-icon  { top: 2918px; left: 1024px; }
+  .signal-icon  { top: 2805px; left: 1024px; }
+  .leaf-icon    { top: 2702px; left: 1024px; }
+
+  .text-title {
+    position: absolute;
+    color: #000000;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    z-index: 10005;
+    pointer-events: none;
+    white-space: normal;
+    overflow: hidden;
+  }
+
+  .text-desc {
+    position: absolute;
+    color: #000000;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: normal;
+    z-index: 10005;
+    pointer-events: none;
+    white-space: normal;
+    overflow: hidden;
+  }
+
+  .eco-title     { top: 2689px; left: 1090px; width: 147px; height: 24px; }
+  .eco-desc      { top: 2724px; left: 1090px; width: 408px; height: 21px; }
+  .balance-title { top: 2784px; left: 1090px; width: 202px; height: 24px; }
+  .balance-desc  { top: 2819px; left: 1090px; width: 376px; height: 42px; line-height: 21px; }
+  .personal-title { top: 2898px; left: 1090px; width: 180px; height: 24px; }
+  .personal-desc  { top: 2933px; left: 1090px; width: 435px; height: 42px; line-height: 21px; }
+  .benefit-title  { top: 3031px; left: 1090px; width: 72px; height: 24px; }
+  .benefit-desc   { top: 3066px; left: 1090px; width: 473px; height: 38px; line-height: 19px; }
+
+  /* Instagram */
+  .instagram-title {
+    position: absolute;
+    top: 3483px;
+    left: 824px;
+    width: 277px;
+    height: 48px;
+    color: #27AE60;
+    font-size: 41px;
+    line-height: 48px;
+    font-weight: bold;
+    z-index: 10006;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .instagram-desc {
+    position: absolute;
+    top: 3543px;
+    left: 744px;
+    width: 433px;
+    height: 19px;
+    color: #000000;
+    font-size: 16px;
+    line-height: 19px;
+    z-index: 10006;
+    pointer-events: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .instagram-link {
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    line-height: 19px;
+  }
+
+  .instagram-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+  }
+
+  .mask-img {
+    position: absolute;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  .mask-1 { width: 672px; height: 595px; top: 3591px; left: 20px; z-index: 10007; }
+  .mask-2 { width: 641px; height: 576px; top: 3603px; left: 552px; z-index: 10007; }
+  .mask-3 { width: 688px; height: 639px; top: 4000px; left: 150px; z-index: 10007; }
+  .mask-4 { width: 602px; height: 438px; top: 3591px; left: 1250px; z-index: 10007; }
+  .mask-5 { width: 582px; height: 400px; top: 4050px; left: 1277px; z-index: 10007; }
+  .mask-6 { width: 624px; height: 537px; top: 3820px; left: 350px; z-index: 10008; }
+  .mask-7 { width: 753px; height: 672px; top: 3800px; left: 825px; z-index: 10008; }
+  .mask-8 { width: 578px; height: 537px; top: 3675px; left: 1100px; z-index: 10009; }
+  .mask-9 { width: 600px; height: 549px; top: 4050px; left: 750px; z-index: 10009; }
+
+  .background-wide-image {
+    position: absolute;
+    top: 3656px;
+    left: -1046px;
+    width: 3095px;
+    height: 1442px;
+    z-index: 1;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  .bw-image {
+    position: absolute;
+    width: 974px;
+    height: 978px;
+    z-index: 1012;
+    pointer-events: none;
+    object-fit: cover;
+  }
+
+  .bw-flipped { top: 4000px; left: 900px; }
+  .bw-angled  { top: 3639px; left: 0; }
+
+  /* Форма */
+  .final-title {
+    position: absolute;
+    top: 4734px;
+    left: 593px;
+    width: 780px;
+    height: 72px;
+    color: #27AE60;
+    font-size: 40px;
+    line-height: 80px;
+    font-weight: bold;
+    z-index: 10011;
+    pointer-events: none;
+  }
+
+  .final-desc {
+    position: absolute;
+    top: 4804px;
+    left: 689px;
+    width: 620px;
+    height: 25px;
+    color: #000000;
+    font-size: 16px;
+    line-height: 19px;
+    z-index: 10011;
+    pointer-events: none;
+  }
+
+  .bottom-order-link {
+    position: absolute;
+    top: 4888px;
+    left: 1301px;
+    width: 245px;
+    height: 67px;
+    z-index: 10012;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-base { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+  .btn-main { position: absolute; top: 5px; left: 6px; width: 233px; height: 57px; border-radius: 65px; z-index: 2; pointer-events: none; }
+  .btn-text { position: absolute; top: 22px; left: 48px; width: 108px; height: 20px; font-size: 14px; color: #FFFFFF; line-height: 20px; text-align: center; z-index: 3; pointer-events: none; }
+  .btn-circle { position: absolute; top: 10px; left: 189px; width: 43px; height: 43px; border-radius: 50%; z-index: 4; pointer-events: none; transition: transform 0.3s ease; }
+  .btn-arrow { position: absolute; top: 26px; left: 201px; z-index: 5; pointer-events: none; transition: transform 0.3s ease; }
+
+  .bottom-order-link:hover { transform: scale(1.02); }
+  .bottom-order-link:hover .btn-circle, .bottom-order-link:hover .btn-arrow { transform: translateX(6px); }
+
+  .input-field,
+  .phone-input-field {
+    position: absolute;
+    top: 4888px;
+    height: 57px;
+    width: 403px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 65px;
+    background-color: #E8F7EE;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+    z-index: 10011;
+    box-sizing: border-box;
+    line-height: 57px;
+  }
+
+  .input-field::placeholder,
+  .phone-input-field::placeholder {
+    color: #B2DAC2;
+    line-height: 57px;
+  }
+
+  .input-field:focus,
+  .phone-input-field:focus {
+    box-shadow: 0 0 10px rgba(39, 174, 96, 0.15);
+  }
+
+  .input-field {
+    position: absolute;
+    top: 4888px;
+    left: 445px;
+  }
+
+  .phone-input-field { left: 868px; }
+
+  /* Футер */
+  .footer-bg {
+    position: absolute;
+    top: 5117px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1920px;
+    height: 260px;
+    z-index: 10000;
+    pointer-events: none;
+    object-fit: cover;
+  }
+
+  .footer-link {
+    position: absolute;
+    color: #FFFFFF;
+    text-decoration: none;
+    z-index: 10001;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .footer-link:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+  }
+
+  .footer-title     { top: 5167px; left: 652px; width: 200px; height: 25px; font-size: 20px; line-height: 25px; font-weight: bold; }
+  .nutrition-link   { top: 5232px; left: 652px; width: 240px; height: 20px; font-size: 16px; line-height: 20px; }
+  .why-us-link      { top: 5232px; left: 969px; width: 95px;  height: 20px; font-size: 16px; line-height: 20px; }
+  .order-link       { top: 5232px; left: 1160px; width: 110px; height: 20px; font-size: 16px; line-height: 20px; }
+  .privacy-link     { top: 5292px; left: 653px; width: 178px; height: 14px; font-size: 12px; line-height: 14px; opacity: 0.8; }
+  .terms-link       { top: 5292px; left: 869px; width: 180px; height: 14px; font-size: 12px; line-height: 14px; opacity: 0.8; }
+
+  /* Дополнительные элементы */
+  .custom-rect-27 {
+    position: absolute;
+    top: 1422px;
+    left: 350px;
+    width: 347px;
+    height: 72px;
+    background-color: #ffffff;
+    border-radius: 65px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .custom-dashed-rect {
+    position: absolute;
+    top: 1427px;
+    left: 353.5px;
+    width: 337px;
+    height: 62px;
+    border-radius: 65px;
+    border: 1px dashed #000000;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 10000;
+  }
+
+  .custom-text-name {
+    position: absolute;
+    top: 1436px;
+    left: 388px;
+    width: 290px;
+    height: 22px;
+    color: #000000;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: bold;
+    text-align: left;
+    z-index: 10001;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .custom-text-role {
+    position: absolute;
+    top: 1462px;
+    left: 405px;
+    width: 290px;
+    height: 20px;
+    line-height: 22px;
+    font-weight: normal;
+    text-align: left;
+    z-index: 10001;
+    pointer-events: none;
+    color: #6C997F;
+  }
+
+  .floating-image {
+    position: absolute;
+    top: 2126px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1923px;
+    height: 1231px;
+    z-index: 9998;
+    pointer-events: none;
+    object-fit: cover;
+  }
+
+  .floating-img-big {
+    position: absolute;
+    top: 2365px;
+    left: 25px;
+    width: 1349px;
+    height: 1158px;
+    z-index: 9997;
+    pointer-events: none;
+    object-fit: cover;
+  }
+
+  .floating-tree {
+    position: absolute;
+    top: 2594px;
+    left: -320px;
+    width: 1158px;
+    height: 1158px;
+    z-index: 9998;
+    pointer-events: none;
+    object-fit: contain;
+  }
+   .mobile-nav-btn {
+        display: none !important;
+    }
+    .phone-only {
+    display: none !important;
+}
+/* === СКРЫВАЕМ НА ПК И ПЛАНШЕТЕ === */
+.bottom-order-link-mobile {
+  display: none !important;
+}
+
+}
+
+/* ========================================
+   ✅ МЕДИА-ЗАПРОС: ПЛАНШЕТНАЯ ВЕРСИЯ (768px – 1279px)
+   ======================================== */
+/* 
+   Адаптация сайта под планшеты:
+   - Ширина экрана от 768px до 1279px включительно.
+   - Все стили ПК-версии (1280px и выше) остаются в отдельном медиа-запросе.
+   - Цель: сделать макет читаемым, красивым и удобным на планшетах.
+*/
+@media (min-width: 768px) and (max-width: 1279px) {
+  /* === 1. КОНТЕЙНЕР === */
+  .design-container {
+    width: 771px !important;
+    margin: 0 auto !important;
+    height: auto;
+    min-height: 6500px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    
+  }
+    /* === 9. ЗАПРЕТ ГОРИЗОНТАЛЬНОГО СКРОЛЛА У ВСЕХ КОНТЕЙНЕРОВ === */
+    .design-container,
+    .page,
+    body,
+    html {
+        overflow-x: hidden !important;
+    }
+    /* === 8. ЛЮБЫЕ ЭЛЕМЕНТЫ С ОТРИЦАТЕЛЬНЫМ left — ПОДРЕЗАЕМ === */
+    [style*="left: -"],
+    [class*="left"][style*="left:"] {
+        left: 0 !important;
+        transform: none !important;
+    }
+   /* ========================================
+     2. ФОНОВОЕ ИЗОБРАЖЕНИЕ (image20.png)
+     ======================================== */
+
+  .fixed-image {
+    position: fixed !important;
+    top: 0 !important;
+    left: -652px !important;
+    width: 1948px !important;
+    height: 731px !important;
+    z-index: 999 !important;
+    object-fit: cover !important;
+    pointer-events: none !important;
+    /* opacity удалён, как и требовалось */
+  }
+
+ /* ========================================
+     3. МЕНЮ — РАВНОМЕРНОЕ РАСПРЕДЕЛЕНИЕ ПО ВСЕЙ ШИРИНЕ
+     ======================================== */
+
+.menu-bar {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  pointer-events: none !important;
+  z-index: 20000 !important;
+}
+
+.menu-item-wrapper {
+  position: absolute !important;
+  pointer-events: auto !important;
+  white-space: nowrap !important;
+}
+
+.menu-home {
+  top: 44px !important;
+  left: 111px !important;
+}
+
+.menu-nutrition {
+  top: 46px !important;
+  left: 294px !important;
+}
+
+.menu-why-us {
+  top: 46px !important;
+  left: 546px !important;
+}
+
+.menu-order {
+  top: 83px !important;
+  left: 546px !important;
+}
+
+/* Общие стили для всех ссылок */
+.menu-item {
+  text-decoration: none !important;
+  font-weight: bold !important;
+  color: #000000 !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  padding: 0 4px !important;
+  display: inline-block !important;
+}
+
+/* "Здоровая мама" — крупнее */
+.menu-home .menu-item {
+  font-size: 17px !important;
+}
+
+/* "Важность правильного питания" — зелёный */
+.menu-nutrition .menu-item {
+  color: #27AE60 !important;
+}
+  
+  /* ========================================
+     ЗАГОЛОВОК "Доставка здорового питания для мам"
+     ======================================== */
+
+.custom-text-main {
+  position: absolute !important;
+  top: 195px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 80% !important;
+  max-width: 700px !important;
+  font-size: 36px !important;
+  line-height: 1.2 !important;
+  color: #2B2B2B !important;
+  font-weight: bold !important;
+  text-align: center !important; /* Центрируем текст */
+  z-index: 1001 !important;
+  white-space: normal !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+    /* ========================================
+    ПОДЗАГОЛОВОК: "Правильный и вкусный рацион..."
+     ======================================== */
+
+/* === 2. "Правильный и вкусный рацион..." === */
+.custom-text-subtitle {
+  position: absolute !important;
+  top: 270px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 332px !important;
+  height: 64px !important;
+  font-size: 20px !important;
+  color: #2B2B2B !important;
+  line-height: 32px !important;
+  font-weight: normal !important;
+  text-align: center !important; /* Центрируем текст */
+  z-index: 1002 !important;
+  pointer-events: none !important;
+  white-space: pre-line !important;
+}
+  /* ========================================
+✅ АДАПТАЦИЯ КНОПОК: ПОЛНОЕ СООТВЕТСТВИЕ ПК-ВЕРСИИ
+======================================== */
+
+/* === ВЕРХНЯЯ КНОПКА — использует стили ПК-ВЕРХНЕЙ КНОПКИ === */
+.order-button-link {
+    position: absolute !important;
+    top: 420px !important;     /* Адаптировано под планшет */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 245px !important;
+    height: 67px !important;
+    z-index: 1004 !important;
+    text-decoration: none !important;
+    transition: transform 0.3s ease !important;
+    pointer-events: auto !important;
+}
+
+/* Фон (зелёный прямоугольник) */
+.top-rect-1 {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Белый прямоугольник */
+.top-rect-2 {
+    position: absolute !important;
+    top: 5px !important;
+    left: 6px !important;
+    width: 233px !important;
+    height: 57px !important;
+    border-radius: 65px !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+/* Текст на кнопке */
+.order-button-text {
+    position: absolute !important;
+    top: 22px !important;
+    left: 37px !important;
+    width: 148px !important;
+    height: 20px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    color: #ffffff !important;
+    line-height: 20px !important;
+    text-align: center !important;
+    z-index: 4 !important;
+    pointer-events: none !important;
+}
+
+/* Круг */
+.top-ellipse {
+    position: absolute !important;
+    top: 10px !important;
+    left: 189px !important;
+    width: 43px !important;
+    height: 43px !important;
+    z-index: 4 !important;
+    pointer-events: none !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* Стрелка */
+.top-vector {
+    position: absolute !important;
+    top: 26px !important;
+    left: 201px !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* Эффект при наведении */
+.order-button-link:hover {
+    transform: scale(1.02) !important;
+}
+
+.order-button-link:hover .top-ellipse,
+.order-button-link:hover .top-vector {
+    transform: translateX(6px) !important;
+}
+/* ========================================
+   ✅ АДАПТАЦИЯ ЛИСТЬЕВ (mint-blur / mint-img) — ПЛАНШЕТНАЯ ВЕРСИЯ
+   ======================================== */
+.mint-blur,
+.mint-img {
+  position: absolute !important;
+  z-index: 999 !important;
+  pointer-events: none !important;
+}
+.mint-img {
+  filter: blur(3px) !important;
+}
+
+/* === ПОЗИЦИОНИРОВАНИЕ КОНКРЕТНЫХ ЛИСТЬЕВ === */
+
+/*✅правй центральный ГОТОВ*/
+.mint-1 {
+  width: 100px !important;
+  height: 100px !important;
+  top: 260px !important;
+  left: 600px !important;
+  transform: rotate(12.11deg) !important;
+}
+
+/*✅левый нижний ГОТОВ*/
+.mint-6 {
+  width: 90.53px !important;
+  height: 71.07px !important;
+  top: 390px !important;
+  left: 46px !important;
+  transform: rotate(-5deg) !important;
+   filter: blur(4px) !important;
+}
+
+/* ✅парвый нижний ГОТОВ*/
+.mint-2  {
+  width: 150px !important;
+  height: 200x !important;
+  top: 567px !important;
+  left: 690px !important;
+  transform: rotate(-85deg) !important;
+}
+
+
+/* ✅угловой правый верний ГОТОВ*/
+.mint-4 {
+  width: 150px !important;
+  height: 130px!important;
+  top: -15px !important;
+  left: 655px !important;
+  transform: rotate(5deg) !important;
+  filter: blur(4px) !important;
+
+}
+/*✅верхний правй над диетологом*/
+.mint-img-6 {
+  top: 2070px !important;
+  left: 520px !important;
+  width: 87px !important;
+  height: 70px !important;
+  z-index: 1005 !important;
+  pointer-events: none !important;
+}
+/*✅ левый низ над диетологом ГОТОВ*/
+.mint-img-7 {
+  width: 128.13px !important;
+  height: 100.6px !important;
+  top: 2120px !important;
+  left: 120px !important;
+  z-index: 1004 !important;
+  pointer-events: none !important;
+}
+
+/* === СКРЫТИЕ НЕНАУЖНЫХ ЛИСТЬЕВ ✅=== */
+.mint-1-original,
+.mint-3,
+.mint-5 {
+  display: none !important;
+}
+
+ /* ========================================
+   ✅ АДАПТИВНОЕ ИЗОБРАЖЕНИЕ: Rectangle 12.png — ПОДСТРОЙКА ШИРИНЫ
+   ======================================== */
+#second-image {
+  position: absolute !important;
+  top: 1195px !important;
+  left: -3px !important;
+  height: 853px !important;
+  width: auto !important;      /* Ширина подстраивается */
+  max-width: 100% !important;  /* Не выходит за пределы экрана */
+  z-index: 1003 !important;
+  object-fit: cover !important;
+  pointer-events: none !important;
+}
+
+/* ========================================
+   ✅ АДАПТАЦИЯ: БЛОК "ПОЧЕМУ НУЖНО ПИТАТЬСЯ?" — ПЛАНШЕТ
+   ======================================== */
+
+/* === 1. ИЗОБРАЖЕНИЕ image21.png (#third-image) — ЦЕНТРИРОВАНИЕ ПО ГОРИЗОНТАЛИ === */
+#third-image {
+  position: absolute !important;
+  top: 1621px !important; /* Можно менять вручную */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 626px !important;
+  height: 582px !important;
+  z-index: 1003 !important;
+  object-fit: cover !important;
+  pointer-events: none !important;
+}
+
+/* === 2. ✅ВОССТАНОВЛЕНИЕ И АДАПТАЦИЯ БЕЛОЙ ПАНЕЛИ И ТЕКСТА === */
+.custom-rect-27 {
+  position: absolute !important;
+  top: 2150px !important;
+  left: 210px !important;
+  width: 347px !important;
+  height: 72px !important;
+  background-color: #ffffff !important;
+  border-radius: 65px !important;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2) !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  z-index: 9999 !important;
+}
+
+.custom-dashed-rect {
+  position: absolute !important;
+  top: 2154px !important;
+  left: 215px !important;
+  width: 337px !important;
+  height: 62px !important;
+  border-radius: 65px !important;
+  border: 1px dashed #000000 !important;
+  opacity: 0.2 !important;
+  pointer-events: none !important;
+  z-index: 10000 !important;
+}
+
+.custom-text-name {
+  position: absolute !important;
+  top: 2160px !important;
+  left: 250px !important;
+  width: 290px !important;
+  height: 22px !important;
+  color: #000000 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  z-index: 10001 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.custom-text-role {
+  position: absolute !important;
+  top: 2185px !important;
+  left: 270px !important;
+  width: 290px !important;
+  height: 20px !important;
+  line-height: 22px !important;
+  font-weight: normal !important;
+  text-align: left !important;
+  z-index: 10001 !important;
+  pointer-events: none !important;
+  color: #6C997F !important;
+}
+
+/* ========================================
+   ✅ АДАПТАЦИЯ: БЛОК "ПОЧЕМУ НУЖНО ПИТАТЬСЯ?" — ПЛАНШЕТ
+   ======================================== */
+
+/* === 1.✅ ЗАГОЛОВОК: "Почему Вам нужно правильно питаться?" === */
+.why-title {
+  position: absolute !important;
+  top: 1245px !important;
+  left: 177px !important;
+  width: 442px !important;
+  height: 96px !important;
+  font-size: 32px !important; /* уменьшено под планшет */
+  color: #FFFFFF !important;
+  font-weight: bold !important;
+  line-height: 48px !important;
+  text-align: left !important;
+  z-index: 1004 !important;
+  pointer-events: none !important;
+  white-space: pre-line !important;
+}
+
+/* === 2.✅ ТЕКСТЫ СПИСКА === */
+.check-item-1 {
+  position: absolute !important;
+  top: 1381px !important;
+  left: 230px !important;
+  width: 300px !important;
+  font-size: 18px !important;
+  color: #FFFFFF !important;
+  font-weight: normal !important;
+  line-height: 24px !important;
+  z-index: 1005 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+.check-item-2 {
+  position: absolute !important;
+  top: 1428px !important;
+  left: 228px !important;
+  width: 300px !important;
+  font-size: 18px !important;
+  color: #FFFFFF !important;
+  font-weight: normal !important;
+  line-height: 24px !important;
+  z-index: 1005 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+.check-item-3 {
+  position: absolute !important;
+  top: 1475px !important;
+  left: 230px !important;
+  width: 300px !important;
+  font-size: 18px !important;
+  color: #FFFFFF !important;
+  font-weight: normal !important;
+  line-height: 24px !important;
+  z-index: 1005 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+.check-item-4 {
+  position: absolute !important;
+  top: 1525px !important;
+  left: 228px !important;
+  width: 300px !important;
+  font-size: 18px !important;
+  color: #FFFFFF !important;
+  font-weight: normal !important;
+  line-height: 24px !important;
+  z-index: 1005 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+.check-item-5 {
+  position: absolute !important;
+  top: 1572px !important;
+  left: 228px !important;
+  width: 350px !important;
+  font-size: 18px !important;
+  color: #FFFFFF !important;
+  font-weight: normal !important;
+  line-height: 24px !important;
+  z-index: 1005 !important;
+  pointer-events: none !important;
+  white-space: pre-line !important;
+}
+
+/*✅ === 3. ГАЛОЧКИ И ФОНЫ (векторы) — позиционирование как в ПК-версии === */
+.vector-bg-1 {
+  position: absolute !important;
+  top: 1378px !important;
+  left: 190px !important;
+  width: 32px !important;
+  height: 32px !important;
+  z-index: 1003 !important;
+  pointer-events: none !important;
+}
+
+.vector-check-1 {
+  position: absolute !important;
+  top: 1384px !important;
+  left: 196px !important;
+  width: 20px !important;
+  height: 20px !important;
+  z-index: 1004 !important;
+  pointer-events: none !important;
+}
+
+.vector-bg-2 {
+  position: absolute !important;
+  top: 1425px !important;
+  left: 188px !important;
+  width: 32px !important;
+  height: 32px !important;
+  z-index: 1003 !important;
+  pointer-events: none !important;
+}
+
+.vector-check-2 {
+  position: absolute !important;
+  top: 1431px !important;
+  left: 194px !important;
+  width: 20px !important;
+  height: 20px !important;
+  z-index: 1004 !important;
+  pointer-events: none !important;
+}
+
+.vector-bg-3 {
+  position: absolute !important;
+  top: 1472px !important;
+  left: 190px !important;
+  width: 32px !important;
+  height: 32px !important;
+  z-index: 1003 !important;
+  pointer-events: none !important;
+}
+
+.vector-check-3 {
+  position: absolute !important;
+  top: 1478px !important;
+  left: 196px !important;
+  width: 20px !important;
+  height: 20px !important;
+  z-index: 1004 !important;
+  pointer-events: none !important;
+}
+
+.vector-bg-4 {
+  position: absolute !important;
+  top: 1522px !important;
+  left: 188px !important;
+  width: 32px !important;
+  height: 32px !important;
+  z-index: 1003 !important;
+  pointer-events: none !important;
+}
+
+.vector-check-4 {
+  position: absolute !important;
+  top: 1528px !important;
+  left: 194px !important;
+  width: 20px !important;
+  height: 20px !important;
+  z-index: 1004 !important;
+  pointer-events: none !important;
+}
+
+.vector-bg-5 {
+  position: absolute !important;
+  top: 1569px !important;
+  left: 188px !important;
+  width: 32px !important;
+  height: 32px !important;
+  z-index: 1003 !important;
+  pointer-events: none !important;
+}
+
+.vector-check-5 {
+  position: absolute !important;
+  top: 1575px !important;
+  left: 194px !important;
+  width: 20px !important;
+  height: 20px !important;
+  z-index: 1004 !important;
+  pointer-events: none !important;
+}
+/* ========================================
+✅ АДАПТАЦИЯ: ЗАГОЛОВОК "Обязательные продукты для здорового питания:" — ПЛАНШЕТ
+======================================== */
+.highlighted-title {
+    position: absolute !important;
+    top: 2269px !important;
+    left: 120px !important;
+    width: 479px !important;
+    height: 96px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 35px !important;
+    color: #27AE60!important;
+    font-weight: bold !important;
+    line-height: 0.7 !important;
+    text-align: left !important;
+    z-index: 1005 !important;
+    pointer-events: none !important;
+    white-space: pre-line !important;
+    text-align: center !important;
+}
+/* === КОНТЕЙНЕР КАРУСЕЛИ — центр на left: 40px === */
+.carousel-container {
+    position: absolute !important;
+    top: 2413px !important;
+    left: 40px !important; /* ✅ Новая координата центра */
+    width: 663px !important; /* Ширина одной карточки */
+    height: 400px !important;
+    overflow: visible !important;
+    z-index: 1005 !important;
+    pointer-events: auto !important;
+}
+
+/* === КОНТЕЙНЕР КАРТОЧЕК === */
+.card-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 15px !important; /* ✅ Отступ 15px между карточками */
+    pointer-events: none !important;
+}
+    /* === ОБЩИЕ СТИЛИ КАРТОЧЕК === */
+    .product-card {
+        position: absolute !important;
+        width: 663px !important;
+        height: 400px !important;
+        background-color: #ffffff !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease !important;
+    }
+
+/* === ЗАСВЕТ (overlay) — только у крайних === */
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.product-card[data-position="left"]::before,
+.product-card[data-position="right"]::before {
+    opacity: 1 !important;
+}
+
+.product-card[data-position="center"]::before {
+    opacity: 0 !important;
+}
+
+/* === ПОЗИЦИИ КАРТОЧЕК (фиксированные смещения) === */
+.product-card[data-position="left"] {
+    left: -670px !important; /* 220px левее центра */
+    transform: none !important;
+    opacity: 0.4 !important;
+    z-index: 1 !important;
+}
+
+.product-card[data-position="center"] {
+    left: 10px !important;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: 3 !important;
+}
+
+.product-card[data-position="right"] {
+    left: 690px !important; /* 220px правее центра */
+    transform: none !important;
+    opacity: 0.4 !important;
+    z-index: 1 !important;
+}
+
+/* ========================================
+✅ АДАПТАЦИЯ ТЕКСТА В КАРТОЧКАХ КАРУСЕЛИ — ПЛАНШЕТ
+======================================== */
+
+/* === ИЗОБРАЖЕНИЯ В КАРТОЧКАХ — ПРИЖАТЫ К ВЕРХУ === */
+.meat-image {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 220px !important; /* Высота изображения */
+  object-fit: cover !important;
+  z-index: 1 !important;
+}
+
+ /* === ЗАГОЛОВКИ: "Мясо", "Овощи", "Продукты из молока" — ЦЕНТР КАРТОЧКИ === */
+    .meat-title {
+        position: absolute !important;
+        top: 238px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+        max-width: 90% !important;
+        font-size: 24px !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        z-index: 2 !important;
+    }
+
+    /* === ОПИСАНИЕ ПРОДУКТА === */
+    .meat-description {
+        position: absolute !important;
+        top: 270px !important;
+        left: 32px !important;
+        width: 580px !important;
+        font-size: 16px !important;
+        color: #6C997F  !important;
+        line-height: 15px !important;
+        text-align: center !important;
+        z-index: 2 !important;
+        white-space: pre-line !important;
+    }
+
+
+/* === КНОПКИ ПРОКРУТКИ === */
+.carousel-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 50px !important;
+    height: 50px !important;
+    background-color: #27AE60 !important; /* ✅ Зелёный фон */
+    border: none !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 24px !important;
+    color: #FFFFFF !important; /* ✅ Белая стрелочка */
+    cursor: pointer !important;
+    z-index: 10012 !important;
+    pointer-events: auto !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* ✅ Кнопки сдвинуты ближе к центру на 30px */
+.prev-btn {
+    left: -35px !important; /* ✅ */
+}
+
+.next-btn {
+    left: 660px !important; /* ✅ */
+}
+
+/* Эффект при наведении */
+.carousel-btn:hover {
+    background-color: #219653 !important;
+    transform: scale(1.8) !important;
+}
+
+/* ========================================
+   ✅ АДАПТАЦИЯ: ФОНЫ И ТЕКСТ — ПЛАНШЕТ
+   ======================================== */
+
+/* === 1. ФОТОГРАФИЯ image.png — СВОБОДНО ПЕРЕМЕЩАЕМАЯ === */
+.floating-image.bg-overlay {
+  position: absolute !important;
+  top: 3000px !important; /* Установлено новое значение */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 1923px !important;
+  height: 833px !important;
+  z-index: 999 !important;
+  object-fit: cover !important;
+  pointer-events: none !important;
+}
+
+
+
+/* === 3. ФОТОГРАФИЯ "выв 1.png" — СВОБОДНО ПЕРЕМЕЩАЕМАЯ === */
+.floating-img-big {
+  position: absolute !important;
+  top: 2918px !important; /* Текущее значение — можно легко менять */
+  left: -181px !important;
+  width: 1179px !important;
+  height: 1012px !important;
+  z-index: 1000 !important;
+  object-fit: cover !important;
+  pointer-events: none !important;
+}
+
+
+/* ========================================
+✅ АДАПТАЦИЯ: ЗАГОЛОВОК "Почему мамы выбирают нашу доставку?" — ПЛАНШЕТ
+======================================== */
+.custom-title-split {
+    position: absolute !important;
+    top: 3770px !important;
+    left: 120px !important;
+    width: 600px !important;
+    height: 96px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 41px !important;
+    color: #27AE60 !important;
+    font-weight: bold !important;
+    line-height: 0.7 !important;
+    text-align: left !important;
+    z-index: 1005 !important;
+    pointer-events: none !important;
+    white-space: pre-line !important;
+}
+/* === Текст: "Экологичность:" === */
+.text-title.eco-title {
+  position: absolute !important;
+  top: 3945px !important;
+  left: 188px !important;
+  width: 150px !important;
+  height: 25px !important;
+  font-size: 18px !important;
+  color: #2B2B2B !important;
+  font-weight: bold !important;
+  line-height: 25px !important;
+  text-align: left !important;
+  z-index: 1000 !important;
+  pointer-events: none !important;
+}
+
+/* === Описание: "продукты выращиваются без применения химии" === */
+.text-desc.eco-desc {
+  position: absolute !important;
+  top: 3980px !important;
+  left: 188px !important;
+  width: 400px !important;
+  height: 25px !important;
+  font-size: 16px !important;
+  color: #2B2B2B !important;
+  line-height: 10px !important;
+  text-align: left !important;
+  z-index: 1000 !important;
+  pointer-events: none !important;
+}
+
+/* === СБАЛАНСИРОВАННОСТЬ: заголовок === */
+.balance-title {
+    position: absolute !important;
+    top: 4048px !important;
+    left: 188px !important;
+    width: auto !important;
+    font-size: 18px !important;
+    color: #2B2B2B !important;
+    font-weight: bold !important;
+    line-height: 25px !important;
+    text-align: left !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+}
+
+/* === СБАЛАНСИРОВАННОСТЬ: описание === */
+.balance-desc {
+    position: absolute !important;
+    top: 4073px !important;
+    left: 188px !important;
+    width: 3400px !important;
+    font-size: 16px !important;
+    color: #2B2B2B !important;
+    line-height: 10px !important;
+    text-align: left !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+    white-space: pre-line !important;
+}
+
+/* === ИНДИВИДУАЛЬНОСТЬ: заголовок === */
+.personal-title {
+    position: absolute !important;
+    top: 4160px !important;
+    left: 188px !important;
+    width: auto !important;
+    font-size: 18px !important;
+    color: #2B2B2B !important;
+    font-weight: bold !important;
+    line-height: 10px !important;
+    text-align: left !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+}
+
+/* === ИНДИВИДУАЛЬНОСТЬ: описание === */
+.personal-desc {
+    position: absolute !important;
+    top: 4180px !important;
+    left: 188px !important;
+    width: 400px !important;
+    font-size: 16px !important;
+    color: #2B2B2B !important;
+    line-height: 10px !important;
+    text-align: left !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+    white-space: pre-line !important;
+}
+
+/* === ПОЛЬЗА: заголовок === */
+.benefit-title {
+    position: absolute !important;
+    top: 4260px !important;
+    left: 188px !important;
+    width: auto !important;
+    font-size: 18px !important;
+    color: #2B2B2B !important;
+    font-weight: bold !important;
+    line-height: 10px !important;
+    text-align: left !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+}
+
+/* === ПОЛЬЗА: описание === */
+.benefit-desc {
+    position: absolute !important;
+    top: 4280px !important;
+    left: 188px !important;
+    width: 500px !important;
+    font-size: 16px !important;
+    color: #2B2B2B !important;
+    line-height: 10px !important;
+    text-align: left !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+    white-space: pre-line !important;
+}
+
+/* ========================================
+✅ АДАПТАЦИЯ: ИКОНКИ ПОВЕРХ КРУГОВ — ПЛАНШЕТ
+======================================== */
+
+/* === БЕЛЫЕ КРУГИ === */
+.feature-circle {
+    position: absolute !important;
+    width: 60px !important;
+    height: 60px !important;
+    background-color: #FFFFFF !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+    z-index: 1000 !important; /* Круги ниже */
+    pointer-events: none !important;
+}
+
+.c1 { top: 3942px !important; left: 107px !important; }
+.c2 { top: 4044px !important; left: 107px !important; }
+.c3 { top: 4148px !important; left: 107px !important; } /*4158 */
+.c4 { top: 4253px !important; left: 107px !important; } /*4283*/
+
+/* ========================================
+✅ АДАПТАЦИЯ: ИКОНКИ ВЫШЕ КРУГОВ — ПЛАНШЕТ
+======================================== */
+
+/* === ИКОНКИ — ПОВЕРХ КРУГОВ === */
+.feature-icon {
+    position: absolute !important;
+    z-index: 1002 !important; /* Важно: выше, чем у .feature-circle */
+    pointer-events: none !important;
+    object-fit: contain !important;
+    width: 30px !important;
+    height: 30px !important;
+    /* Общие размеры — чтобы не дублировать */
+}
+
+.leaf-icon {top: 3957px !important;left: 122px !important;}
+.signal-icon {top: 4059px !important;left: 122px !important;}
+.custom-icon {top: 4164px !important;left: 122px !important;}
+.health-icon {top: 4268px !important;left: 122px !important;}
+
+/* === 2. ФОТОГРАФИЯ tree 1.png — СКРЫТИЕ === */
+.floating-tree {
+  display: none !important; /* Полностью скрыта, не занимает место */
+}
+  /* ========================================
+     8. ГАЛЕРЕЯ INSTAGRAM
+     ======================================== */
+/* === "Наш Instagram" === */
+.instagram-title {
+    position: absolute !important;
+    top: 4585px !important;
+    left: 247px !important;
+    width: auto !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 41px !important;
+    color: #27AE60 !important;
+    font-weight: bold !important;
+    line-height: 1.3 !important;
+    text-align: left !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+    white-space: nowrap !important;
+}
+
+/* === "Подписывайтесь, чтобы быть в курсе последних новостей" === */
+.instagram-desc {
+    position: absolute !important;
+    top: 4620px !important;
+    left: 167px !important;
+    width: 900px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    color: #2B2B2B !important;
+    line-height: 25px !important;
+    text-align: left !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+    white-space: pre-line !important;
+}
+
+/* === Ссылка "Подписывайтесь" с подчёркиванием === */
+.instagram-link {
+    color: #2B2B2B !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+    font-weight: bold !important;
+    pointer-events: auto !important;
+}
+  .mask-img {
+    position: absolute !important;
+    object-fit: cover !important;
+    pointer-events: none !important;
+  }
+       /*ГАЛЛЕРЕЯ*/
+  .mask-1 { width: 400px !important; height: 350px !important; top: 4748px !important; left: -158px !important; z-index: 10007 !important;}       /*✅*/
+  .mask-2 { width: 350px !important; height: 325px !important; top: 4769px !important; left: 125px !important; z-index: 10007 !important;}        /*✅*/
+  .mask-3 { width: 400px !important; height: 300px !important; top: 5024px !important; left: -125px !important; z-index: 10007 !important;}       /*✅*/
+  .mask-4 { width: 400px !important; height: 300px !important; top: 4780px !important; left: 575px !important; z-index: 10007 !important;}        /*✅*/
+  .mask-5 { width: 400px !important; height: 350px !important; top: 5027.78px !important; left: 550px !important; z-index: 10007 !important;}     /*✅*/
+  .mask-6 { width: 300px !important; height: 350px !important; top: 4900px !important; left: 30px !important; z-index: 10008 !important;}         /*✅*/
+  .mask-7 { width: 525px !important; height: 450px !important; top: 4880px !important; left: 250px !important; z-index: 10008 !important;}        /*✅*/
+  .mask-8 { width: 270px !important; height: 270px !important; top: 4860px !important; left: 530px !important; z-index: 10009 !important;}        /*✅*/
+  .mask-9 { width: 300px !important; height: 300px !important; top: 5073.9px !important; left: 250px!important; z-index: 10009 !important;}
+
+/* ========================================
+✅ АДАПТАЦИЯ: ФОРМА ЗАКАЗА — ЗАГОЛОВОК И ОПИСАНИЕ (планшет)
+======================================== */
+
+/* === Заголовок: "Хотите получить персональное меню?" === */ /*✅*/
+.final-title {
+    position: absolute !important;
+    top: 5439px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    max-width: 500px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 32px !important;
+    color: #27AE60 !important;
+    font-weight: bold !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    z-index: 1003 !important;
+    pointer-events: none !important;
+    white-space: pre-line !important;
+}
+
+/* === Описание: "Оставьте заявку и наш оператор..." === */ /*✅*/
+.final-desc {
+    position: absolute !important;
+    top: 5515px !important;
+    left: 113px !important;
+    width: 550px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    color: #2B2B2B !important;
+    line-height: 24px !important;
+    z-index: 1003 !important;
+    text-align: center !important;
+    pointer-events: none !important;
+    white-space: pre-line !important;
+}
+  /* ========================================
+✅ АДАПТАЦИЯ: ПОЛЯ ВВОДА И КНОПКА — ПЛАНШЕТ
+======================================== */
+
+/* === ПОЛЕ ВВОДА: "Ваше имя" === */
+.input-field {
+    position: absolute !important;
+    top: 5648px !important;
+    left: 190px !important;
+    width: 400px !important;
+    height: 50px !important;
+    background-color: #E8F7EE !important;
+    border: 2px solid #E8F7EE !important;
+    border-radius: 25px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    color: #B2DAC2 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+    z-index: 1002 !important;
+    transition: all 0.3s ease !important;
+    pointer-events: auto !important;
+}
+
+.input-field::placeholder {
+    color: #B2DAC2 !important;
+    font-style: italic !important;
+}
+
+.input-field:focus {
+    border-color: #B2DAC2 !important;
+    box-shadow: 0 0 10px rgba(33, 150, 83, 0.2) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* === ПОЛЕ ВВОДА: "Ваш телефон" === */
+.phone-input-field {
+    position: absolute !important;
+    top: 5727px !important;
+    left: 190px !important;
+    width: 400px !important;
+    height: 50px !important;
+    background-color: #E8F7EE !important;
+    border: 2px solid #E8F7EE !important;
+    border-radius: 25px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    color: #B2DAC2 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+    z-index: 1002 !important;
+    transition: all 0.3s ease !important;
+    pointer-events: auto !important;
+}
+
+.phone-input-field::placeholder {
+    color: #B2DAC2 !important;
+    font-style: italic !important;
+}
+
+.phone-input-field:focus {
+    border-color: #B2DAC2 !important;
+    box-shadow: 0 0 10px rgba(33, 150, 83, 0.2) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* ========================================
+✅ АДАПТАЦИЯ: НИЖНЯЯ КНОПКА "Оформить заказ" — ПЛАНШЕТ
+======================================== */
+/* === ОБЁРТКА ССЫЛКИ === */
+.bottom-order-link {
+    position: absolute !important;
+    top: 5806px !important;
+    left: 261px !important;
+    width: 245px !important;
+    height: 67px !important;
+    z-index: 1004 !important;
+    text-decoration: none !important;
+    transition: transform 0.3s ease !important;
+    pointer-events: auto !important;
+}
+
+/* === ФОН (зелёный прямоугольник) === */
+.bottom-order-link .top-rect-1 {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+}
+
+/* === БЕЛЫЙ ПРЯМОУГОЛЬНИК (внутри) === */
+.bottom-order-link .top-rect-2 {
+    position: absolute !important;
+    top: 5px !important;
+    left: 6px !important;
+    width: 233px !important;
+    height: 57px !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+/* === ТЕКСТ НА КНОПКЕ === */
+.bottom-order-link .order-button-text {
+    position: absolute !important;
+    top: 22px !important;
+    left: 37px !important;
+    width: 148px !important;
+    height: 20px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
+    color: #FFFFFF!important;
+    font-weight: bold !important;
+    line-height: 20px !important;
+    text-align: center !important;
+    z-index: 4 !important;
+    pointer-events: none !important;
+    white-space: nowrap !important;
+}
+
+/* === ЗЕЛЁНЫЙ КРУГ — ВНУТРИ ГРАНИЦ === */
+.bottom-order-link .top-ellipse {
+    position: absolute !important;
+    top: 12px !important;
+    left: 190px !important; /* Важно: не больше 200px, чтобы не выйти за 233px белого прямоугольника */
+    width: 43px !important;
+    height: 43px !important;
+    z-index: 4 !important;
+    pointer-events: none !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* === СТРЕЛОЧКА — КАК ИЗОБРАЖЕНИЕ Vector.png === */
+.bottom-order-link .top-vector {
+    position: absolute !important;
+    top: 27px !important;
+    left: 204px !important;
+    width: 19px !important; /* Размер под Vector.png */
+    height: 12px !important;
+    background-image: url('images/Vector.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+    transition: transform 0.3s ease !important;
+}
+/* === ЭФФЕКТ ПРИ НАВЕДЕНИИ === */
+.bottom-order-link:hover {
+    transform: scale(1.02) !important;
+}
+
+.bottom-order-link:hover .top-ellipse,
+.bottom-order-link:hover .top-vector {
+    transform: translateX(6px) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ========================================
+    ✅ АДАПТАЦИЯ: ФУТЕР — ПЛАНШЕТНАЯ ВЕРСИЯ
+    ======================================== */
+  /* === ФОНОВОЕ ИЗОБРАЖЕНИЕ Rectangle 14.png === */ /*✅*/
+  .footer-bg {
+    position: absolute !important;
+    top: 6200px !important;
+    left: 0 !important;
+    width: 1920px !important;
+    height: 350px !important;
+    z-index: 999 !important;
+    object-fit: cover !important;
+    pointer-events: none !important;
+  }
+
+  /* === ОБЩИЕ СТИЛИ ДЛЯ ССЫЛОК ФУТЕРА === */ /*✅*/
+  .footer-link {
+    position: absolute !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    z-index: 1000 !important;
+    pointer-events: auto !important;
+  }
+
+  /* === КОНКРЕТНЫЕ ССЫЛКИ === */ /*✅*/
+  .footer-title {
+    top: 6237px !important;
+    left: 111px !important;
+    font-weight: bold !important;
+    font-size: 17px !important;
+    color: #FFFFFF;
+  }
+/*✅*/
+  .nutrition-link {  
+    top: 6302px !important;
+    left: 111px !important;
+    color: #FFFFFF;
+  }
+/*✅*/
+  .why-us-link {
+    top: 6302px !important;
+    left: 404px !important;
+    color: #FFFFFF;
+  }
+/*✅*/
+  .order-link {
+    top: 6302px !important;
+    left: 571px !important;
+    color: #FFFFFF;
+  }
+/*✅*/
+  .privacy-link {
+    top: 6362px !important;
+    left: 111px !important;
+    color: #FFFFFF;
+  }
+/*✅*/
+  .terms-link {
+    top: 6362px !important;
+    left: 327px !important;
+    color: #FFFFFF;
+  }
+
+/* ========================================
+✅ ИСПРАВЛЕНИЕ: ФОНОВОЕ ИЗОБРАЖЕНИЕ bw-flipped — ПЛАНШЕТ
+======================================== */
+
+/* === СКРЫВАЕМ ВСЕ ЛИШНИЕ Ч/Б ИЗОБРАЖЕНИЯ === */
+.bw-overlay,
+.bw-angled,
+.bw-image {
+    display: none !important;
+}
+
+/* === АКТИВИРУЕМ И НАСТРАИВАЕМ .bw-flipped (исправляем опечатку) === */
+.bw-flipped {
+    display: block !important;
+    position: absolute !important;
+    top: 5159px !important;    
+    left: -32px !important;
+    width: 974px !important;
+    height: 978px !important;
+    z-index: 999 !important;    /* Самый нижний слой */
+    object-fit: cover !important;
+    pointer-events: none !important;
+}
+  /* ========================================
+    ✅ ПЕРЕНОС ТЕГОВ И АНИМИРОВАННЫХ ИЗОБРАЖЕНИЙ (планшетная версия)
+    ======================================== */
+  /* 
+    Переносим весь блок тегов и изображений ниже кнопки "Оформить заказ"
+    Сохраняем относительные позиции между элементами.
+  */
+
+  /* === КОНТЕЙНЕР ТЕГОВ — перемещаем в новое место === */
+  .tag-container {
+    position: absolute !important;
+    top: 480px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    pointer-events: none !important;
+    z-index: 1004 !important;
+    width: 600px !important;
+    height: 700px !important;
+  }
+
+    /* === СТАТИЧНЫЕ КРУГИ (фон) — остаются на месте, но ниже изображений === */
+    .overlay-icon-2,
+    .overlay-icon-extra {
+      position: absolute !important;
+      z-index: 1002 !important;
+      pointer-events: none !important;
+
+    }
+    .overlay-icon-2 {
+      top: 595px !important;
+      left: 272px !important;
+      width: 422px;
+      height: 420px;
+    }
+  .overlay-icon-extra {
+      top: 554px !important;
+      left: 232px !important;
+      width: 502px;
+      height: 502px;
+    }
+  /* ========================================
+    ✅ СКРЫТИЕ НЕНАУЖНЫХ ИЗОБРАЖЕНИЙ 
+    ======================================== */
+
+  /* ВОЗМОЖНО НАДО УДАЛИТЬ */
+    .overlay-icon-extra-2{
+      visibility: hidden
+    }
+  .overlay-icon-extra-3,
+  .overlay-icon-extra-4 {
+    display: none;
+    position: absolute !important;
+    left: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Общие стили для всех изображений */
+  #icon-pregnant,
+  #icon-nursing,
+  #icon-safe {
+    position: absolute !important;
+    pointer-events: none !important;
+    opacity: 0; /* По умолчанию — скрыты */
+    transition: opacity 0.5s ease-in-out !important;
+    z-index: 1003 !important;
+  }
+
+  /* === ИЗОБРАЖЕНИЕ 1.png (Для беременных) === */
+  #icon-pregnant {
+    top: 535px !important;
+    left: -72px !important;
+    width: 1029px !important;
+    height: 601px !important;
+  }
+
+  /* === ИЗОБРАЖЕНИЕ 2.png (Для кормящих) === */
+  #icon-nursing {
+    top: 497px !important;
+    left: 288px !important;
+    width: 390px !important;
+    height: 629px !important;
+  }
+
+  /* === ИЗОБРАЖЕНИЕ 3.png (Безопасные лакомства) === */
+  #icon-safe {
+    top: 439px !important;
+    left: 283px !important;
+    width: 447px !important;
+    height: 719px !important;
+  }
+
+  /* === ТЕГИ (круги + текст) — абсолютные позиции относительно .tag-container === */
+  .tag {
+    position: absolute !important;
+    display: flex !important;
+    align-items: center !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    transition: all 0.4s ease !important;
+    z-index: 1005 !important; /* Самый высокий — теги сверху */
+  }
+
+  /* === КРУЖКИ === */
+  .tag-circle,
+  .tag-circle-inner {
+    position: absolute !important;
+    border-radius: 50% !important;
+    transition: all 0.4s ease !important;
+    z-index: 1006 !important; /* Ещё выше */
+  }
+
+  .tag-text {
+    position: absolute !important;
+    font-size: 18px !important;
+    color: #BFBFBF !important;
+    font-weight: bold !important;
+    white-space: nowrap !important;
+    right: 100% !important;
+    margin-right: 35px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 1006 !important;
+    pointer-events: none !important;
+    text-align: right !important;
+    overflow: hidden !important;
+  }
+
+  /* === ПОЗИЦИИ ТЕГОВ === */
+  #tag-pregnant {
+    top: 150px !important;
+    left: 215px !important;
+  }
+
+  #tag-nursing {
+    top: 325px !important;
+    left: 145px !important;
+  }
+
+  #tag-safe {
+    top: 500px !important;
+    left: 215px !important;
+  }
+
+  /* === АКТИВНЫЙ ТЕГ === */
+  .tag.active .tag-circle {
+    width: 50.55px !important;
+    height: 50.55px !important;
+    opacity: 1 !important;
+    left: calc(50% - 25.275px) !important;
+    top: calc(50% - 25.275px) !important;
+  }
+
+  .tag.active .tag-circle-inner {
+    width: 32.97px !important;
+    height: 32.97px !important;
+    opacity: 1 !important;
+    left: calc(50% - 16.485px) !important;
+    top: calc(50% - 16.485px) !important;
+  }
+
+  .tag.active .tag-text {
+    color: #2B2B2B !important;
+    opacity: 1 !important;
+  }
+
+  /* === НЕАКТИВНЫЙ ТЕГ === */
+  .tag:not(.active) .tag-circle {
+    width: 28.57px !important;
+    height: 28.57px !important;
+    opacity: 0.3 !important;
+    left: calc(50% - 14.285px) !important;
+    top: calc(50% - 14.285px) !important;
+  }
+
+    .tag:not(.active) .tag-circle-inner {
+    width: 17.58px !important;
+    height: 17.58px !important;
+    opacity: 0.3 !important;
+    left: calc(50% - 8.79px) !important;
+    top: calc(50% - 8.79px) !important;
+  }
+
+    .tag:not(.active) .tag-text {
+    opacity: 0.6 !important;
+  }
+ .mobile-nav-btn {
+        display: none !important;
+    }
+    .phone-only {
+    display: none !important;
+}
+/* === СКРЫВАЕМ НА ПК И ПЛАНШЕТЕ === */
+.bottom-order-link-mobile {
+  display: none !important;
+}
+
+}
+
+/* ========================================
+✅ МОБИЛЬНАЯ ВЕРСИЯ: ТЕЛЕФОНЫ (0px – 767px)
+======================================== */
+@media (max-width: 767px) {
+    /* === 2. КОНТЕЙНЕР С ОБРЕЗКОЙ ПЕРЕПОЛНЕНИЯ === */
+    body,
+    html,
+    .design-container {
+        overflow-x: hidden !important;
+        position: relative !important;
+    }
+    /* === 3. ОБРЕЗАЕМ ВСЁ, ЧТО ВЫШЕ И НИЖЕ ФУТЕРА === */
+    .design-container {
+        /* Высота до нижнего края футера */
+        height: calc(4376px + 329px) !important; /* top + height = 4705px */
+        overflow: hidden !important;
+        margin: 0 auto !important;
+        max-width: 323px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+    /* === 4. ГАРАНТИРУЕМ, ЧТО НИЧЕГО НЕ ВЫХОДИТ ЗА НИЖНЮЮ ГРАНИЦУ === */
+    * {
+        box-sizing: border-box !important;
+    }
+
+    /* === 5. ДОПОЛНИТЕЛЬНО: СКРЫВАЕМ ЭЛЕМЕНТЫ, КОТОРЫЕ МОГУТ БЫТЬ НИЖЕ === */
+    *[style*="top: 4706px"],
+    *[style*="top: 4800px"],
+    *[style*="top: 5000px"],
+    .floating-tree,
+    .tag-container,
+    #icon-pregnant,
+    #icon-nursing,
+    #icon-safe {
+        display: none !important;
+    }
+
+      /* === СКРЫВАЕМ ВСЕ ВЕРХНИЕ ССЫЛКИ, КРОМЕ "Здоровая мама" === */
+    .menu-nutrition,
+    .menu-why-us,
+    .menu-order {
+        display: none !important;
+    } 
+    /* === ОСТАВЛЯЕМ ТОЛЬКО "Здоровая мама" === */
+    .menu-home {
+        position: absolute !important;
+        top: 38px !important;
+        left: 14px !important;
+        z-index: 1000 !important;
+    }
+     /* === "ОБЩАЯ НАСТРОЙКА ССЫЛОК В ШАПКЕ" === */
+    .menu-home .menu-item {
+        font-size: 16px !important;
+        font-weight: bold !important;
+        color: #2B2B2B !important;
+        text-decoration: none !important;
+    }
+    /* ========================================
+   ✅ АДАПТАЦИЯ ЛИСТЬЕВ (mint-blur / mint-img) — ПЛАНШЕТНАЯ ВЕРСИЯ
+   ======================================== */
+.mint-blur,
+.mint-img {
+  position: absolute !important;
+  z-index: 999 !important;
+  pointer-events: none !important;
+}
+.mint-img {
+  filter: blur(3px) !important;
+}
+
+/* === ПОЗИЦИОНИРОВАНИЕ КОНКРЕТНЫХ ЛИСТЬЕВ === */
+
+/*правй центральный */
+.mint-1 {
+  width: 60px !important;
+  height: 60px !important;
+  top: 355px !important;
+  left: 270px !important;
+  transform: rotate(12.11deg) !important;
+}
+
+/*✅левый нижний */
+.mint-6 {
+  width: 90.53px !important;
+  height: 71.07px !important;
+  top: 366px !important;
+  left: -33px !important;
+  transform: rotate(-5deg) !important;
+   filter: blur(4px) !important;
+}
+
+
+/* ✅угловой правый верний */
+.mint-4 {
+  width: 60px !important;
+  height: 58px!important;
+  top: 140px !important;
+  left: 275px !important;
+  transform: rotate(5deg) !important;
+  filter: blur(4px) !important;
+
+}
+/*верхний правй над диетологом*/
+.mint-img-6 {
+  top: 1625px  !important;
+  left: 235px !important;
+  width: 87px !important;
+  height: 70px !important;
+  z-index: 1005 !important;
+  pointer-events: none !important;
+}
+/* левый низ над диетологом */
+.mint-img-7 {
+  width: 100px !important;
+  height: 80px !important;
+  top: 1680px !important;
+  left: -20px !important;
+  z-index: 1004 !important;
+  pointer-events: none !important;
+}
+
+/* === СКРЫТИЕ НЕНАУЖНЫХ ЛИСТЬЕВ ✅=== */
+.mint-1-original,
+.mint-3,
+.mint-2,
+.mint-5 {
+  display: none !important;
+}
+      /* ========================================
+      ✅ МОБИЛЬНАЯ ВЕРСИЯ: ФРАЗА "Доставка здорового питания для мам"
+        ======================================== */
+   
+    /* === 6. ФРАЗА: "Доставка здорового питания для мам" === */
+.custom-text-main {
+  position: absolute !important;
+  top: 116px !important;
+  left: 30px !important;
+  width: 260px !important;
+  height: 300px !important;
+  font-size: 25px !important;
+  font-weight: bold !important;
+  color: #2B2B2B !important;
+  line-height: 0.5 !important;
+  text-align: center !important;
+  z-index: 1001 !important;
+  pointer-events: none !important;
+  white-space: pre-line !important;
+  overflow: hidden !important;
+}
+.custom-text-subtitle {
+  position: absolute !important;
+  top: 180px !important;
+  left: 45px !important;
+  width: 231px !important;
+  height: 44px !important;
+  font-size: 16px !important;
+  color: #2B2B2B !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+  z-index: 1001 !important;
+  text-align: center !important;
+  pointer-events: none !important;
+  white-space: pre-line !important;
+}
+.green-rectangle {
+  position: absolute !important;
+  width: 38px !important;
+  height: 6px !important;
+  background-color: #27AE60 !important;
+  border-radius: 32px !important; /* Закругление как у овала */
+  z-index: 1000 !important;
+  pointer-events: none !important;
+}
+ .bottom-order-link-mobile {
+    display: flex !important;
+    position: absolute !important;
+    top: 280px !important; /* ⬅️ ЗДЕСЬ МОЖНО ИЗМЕНИТЬ ВЕРТИКАЛЬНОЕ ПОЛОЖЕНИЕ */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 245px !important;
+    height: 67px !important;
+    z-index: 1006 !important;
+    text-decoration: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: auto !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  /* Фон (зелёный прямоугольник) */
+  .bottom-order-link-mobile .top-rect-1 {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+
+  /* Белый прямоугольник (внутри) */
+  .bottom-order-link-mobile .top-rect-2 {
+    position: absolute !important;
+    top: 5px !important;
+    left: 6px !important;
+    width: 233px !important;
+    height: 57px !important;
+    border-radius: 65px !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+  }
+
+  /* Текст на кнопке */
+  .bottom-order-link-mobile .order-button-text {
+    position: absolute !important;
+    top: 22px !important;
+    left: 37px !important;
+    width: 148px !important;
+    height: 20px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+  }
+
+ /* ✅ ИСПРАВЛЕННЫЙ КРУГ — ЗЕЛЁНЫЙ (Ellipse 6.png) */
+  .bottom-order-link-mobile .top-ellipse {
+    position: absolute !important;
+    top: 13px !important; /* Центрируем по вертикали внутри белого прямоугольника */
+    right: 12px !important; /* Позиция от правого края */
+    width: 43px !important; /* ✅ Правильный размер — как в оригинальной кнопке */
+    height: 43px !important; /* Круг должен быть 43x43px */
+    z-index: 4 !important;
+    pointer-events: none !important;
+    transition: transform 0.3s ease !important;
+  }
+
+.bottom-order-link-mobile .top-vector {
+  position: absolute !important;
+  top: 28px !important;
+  right: 24px !important;
+  width: 19px !important;
+  height: 12px !important;
+  background-image: url('images/Vector.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  transition: transform 0.3s ease !important;
+}
+
+  /* АНИМАЦИЯ ПРИ НАЖАТИИ — круг и стрелка двигаются вправо */
+  .bottom-order-link-mobile:active .top-ellipse,
+  .bottom-order-link-mobile:active .top-vector {
+    transform: translateX(6px) !important;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+ 
+
+   
+
+/* ========================================
+✅ ТЕЛЕФОН: АНИМАЦИЯ КАРУСЕЛИ — ПЛАВНОЕ ИСЧЕЗНОВЕНИЕ/ПОЯВЛЕНИЕ
+======================================== */
+    /* === ПОКАЗЫВАЕМ ТОЛЬКО НА ТЕЛЕФОНЕ === */
+    .phone-only {
+        display: block !important;
+    }
+
+    /* === ОСНОВНОЙ КОНТЕЙНЕР === */
+    .mobile-carousel-container {
+        position: absolute !important;
+        top: 400px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 323px !important;
+        height: 600px !important;
+        overflow: hidden !important;
+        z-index: 10006 !important;
+        pointer-events: auto !important;
+    }
+
+    /* === ТЕКСТ В ВЕРХНЕЙ ЧАСТИ === */
+    .mobile-carousel-title {
+        position: absolute !important;
+        top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 280px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 18px !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        z-index: 10007 !important;
+        pointer-events: none !important;
+        white-space: nowrap !important;
+    }
+
+    /* === КОНТЕЙНЕР ИЗОБРАЖЕНИЙ === */
+    .mobile-carousel-images {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* === ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ ИЗОБРАЖЕНИЙ === */
+    .carousel-img {
+        position: absolute !important;
+        object-fit: cover !important;
+        z-index: 10005 !important; /* Ниже Rectangle 12 */
+        opacity: 1 !important;
+    }
+
+    /* === ИНДИВИДУАЛЬНЫЕ НАСТРОЙКИ ДЛЯ КАЖДОГО ИЗОБРАЖЕНИЯ === */
+
+    /* Изображение: Для беременных (1.png) */
+    .carousel-img.pregnant {
+        top: 50px !important;
+        left: -335px !important;
+        width: 851px !important;
+        height: 470px !important;
+    }
+
+    /* Изображение: Для кормящих (2.png) */
+    .carousel-img.nursing {
+        top: 60px !important;
+        left: 30px !important;
+        width: 260px !important;
+        height: 419px !important;
+    }
+
+    /* Изображение: Безопасные лакомства (3.png) */
+    .carousel-img.safe {
+        top: 40px !important;
+        left: 45px !important;
+        width: 259px !important;
+        height: 415px !important;
+    }
+
+    /* === КНОПКИ ПЕРЕКЛЮЧЕНИЯ === */
+    .carousel-btn {
+        position: absolute !important;
+        top: 300px !important;
+        transform: translateY(-50%) !important;
+        width: 40px !important;
+        height: 40px !important;
+        background-color: #27AE60 !important;
+        color: #FFFFFF !important;
+        border: 2px solid #FFFFFF !important;
+        border-radius: 50% !important;
+        font-size: 20px !important;
+        font-weight: bold !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        z-index: 10008 !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+        pointer-events: auto !important;
+    }
+
+    .prev-btn-mobile {
+        left: 0px !important;
+    }
+
+    .next-btn-mobile {
+        right: 0px !important;
+    }
+
+    /* === ЭФФЕКТ ПРИ НАЖАТИИ === */
+    .carousel-btn:hover,
+    .carousel-btn:active {
+        background-color: #FFFFFF !important;
+        color: #27AE60 !important;
+        transform: translateY(-50%) scale(1.1) !important;
+    }
+        /* === КОНТЕЙНЕР КАРТОЧЕК === */
+    .card-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: visible !important;
+    }
+
+
+
+    /* === АНИМАЦИЯ ПРИ ПЕРЕКЛЮЧЕНИИ === */
+    /* При смене позиции — плавное изменение прозрачности и масштаба */
+    .product-card {
+        opacity: 0.4 !important;
+    }
+
+    .product-card[data-position="center"] {
+        opacity: 1 !important;
+        transform: scale(1.02) !important;
+    }
+/* Первый — top: 35px, left: 268px */
+.rect-1 {
+    top: 35px !important;
+    left: 268px !important;
+}
+
+/* Второй — top: 46px, left: 268px */
+.rect-2 {
+    top: 46px !important;
+    left: 268px !important;
+}
+
+/* Третий — top: 57px, left: 268px */
+.rect-3 {
+    top: 57px !important;
+    left: 268px !important;
+}
+/* ========================================
+✅ БУРГЕР-МЕНЮ ИЗ ТРЁХ ПРЯМОУГОЛЬНИКОВ
+======================================== */
+.menu-toggle-btn {
+  position: absolute !important;
+  top: 35px !important;
+  left: 268px !important;
+  width: 38px !important;
+  height: 30px !important; /* 3 строки по 6px + отступы */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 2000 !important;
+  pointer-events: auto !important;
+}
+
+.menu-line {
+  width: 38px !important;
+  height: 6px !important;
+  background-color: #27AE60 !important;
+  border-radius: 32px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* =========================================== 
+1. БОКОВАЯ ПАНЕЛЬ — НАЧИНАЕТСЯ ЗА ПРАВЫМ КРАЕМ (left: 334px) 
+============================================== */
+    .sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 334px !important; /* Начинается за правым краем (323px + 11px) */
+        width: 184px !important; /* 334px - 150px = 184px ширина */
+        height: 100vh !important;
+        background-color: #27AE60 !important;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1) !important;
+        z-index: 3000 !important;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        pointer-events: none !important; /* Пока неактивна */
+        overflow: hidden !important;
+    }
+   /* === 2. СОСТОЯНИЕ ОТКРЫТОЙ ПАНЕЛИ === */
+    .sidebar.open,
+    .sidebar.active {
+        left: 150px !important; /* Двигается влево до 150px */
+        pointer-events: auto !important; /* Становится кликабельной */
+    }
+
+    /* === 3. КОНТЕНТ ВНУТРИ ПАНЕЛИ === */
+    .sidebar-content {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 40px 20px !important;
+        box-sizing: border-box !important;
+        color: #FFFFFF !important;
+        font-family: 'Montserrat', sans-serif !important;
+        overflow-y: auto !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+/* ========================================
+✅ ЗАТЕМНЯЮЩИЙ СЛОЙ (подсветка/засветка фона)
+======================================== */
+      /* === 4. ЗАТЕМНЯЮЩИЙ СЛОЙ === */
+    .sidebar-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        z-index: 2999 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transition: opacity 0.3s ease !important;
+    }
+        .sidebar-overlay.active,
+    .sidebar-overlay.open {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+    *::before,
+    *::after {
+        max-width: 323px !important;
+        overflow-x: hidden !important;
+    }
+
+.tag-container {
+  display: none !important;
+}
+
+    #second-image {
+        position: absolute !important;
+        top: 937px !important;
+        left: 0 !important;
+        width: 323px !important;
+        height: 753px !important;
+        max-width: none !important;
+        object-fit: cover !important;
+        z-index: 1003 !important;
+        pointer-events: none !important;
+    }
+     .why-title {
+        position: absolute !important;
+        top: 994px !important;
+        left: 36px !important;
+        width: 250px !important;
+        height: auto !important; /* чтобы вместить две строки */
+        color: #FFFFFF !important;
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        z-index: 1004 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important; /* позволяет переносу работать */
+        overflow: visible !important;
+    } 
+      .check-text {
+        position: absolute !important;
+        color: #FFFFFF !important;
+        font-size: 16 px !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+        z-index: 1004 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+        background-color: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    /*Здоровый ребенок*/
+    .check-item-1 {
+        top: 1085px !important;
+        left: 58px !important;
+        width: 176px !important;
+        height: 28px !important;
+    }
+/*Повышение имунитета */
+    .check-item-2 {
+        top: 1125px !important;
+        left: 58px !important;
+        width: 230px !important;
+        height: 28px !important;
+    }
+/* Поддержание фигуры*/
+    .check-item-3 {
+        top: 1165px !important;
+        left: 58px !important;
+        width: 207px !important;
+        height: 28px !important;
+    }
+/* Отсутствие вредных кампонентов*/
+    .check-item-4 {
+        top: 1205px !important;
+        left: 58px !important;
+        width: 208px !important;
+        height: 56px !important;
+    }
+/*Снижение нагрузки на органы пищеворения */
+   .check-item-5 {
+        top: 1265px !important;
+        left: 58px !important;
+        width: 185px !important; /* Увеличено с 170 до 185px — минимально */
+        height: 56px !important;
+   
+    }
+
+    /* === ГАЛОЧКИ === */
+     .vector-img {
+        position: absolute !important;
+        pointer-events: none !important;
+        z-index: 1003 !important;
+    }
+
+    /* == "Здоровый ребенок" === */
+    .vector-check-1 {
+        top: 1091px !important;
+        left: 34px !important;
+        width: 11px !important;
+        height: 8px !important;
+    }
+
+    /* === "Повышение иммунитета" === */
+    .vector-check-2 {
+        top: 1131px !important;
+        left: 34px !important;
+        width: 11px !important;
+        height: 8px !important;
+    }
+
+    /* == "Поддержание фигуры" === */
+    .vector-check-3 {
+        top: 1171px !important;
+        left: 34px !important;
+        width: 11px !important;
+        height: 8px !important;
+    }
+
+    /* == "Отсутствие вредных компонентов" === */
+    .vector-check-4 {
+        top: 1211px !important;
+        left: 34px !important;
+        width: 11px !important;
+        height: 8px !important;
+    }
+      /* == "Снижение нагрузки на органы пищеварения" === */
+ .vector-check-5 {
+        top: 1271px !important;
+        left: 34px !important;
+        width: 11px !important;
+        height: 8px !important;
+    }
+
+    
+    .vector-bg-1,
+    .vector-bg-2,
+    .vector-bg-3,
+    .vector-bg-4,
+    .vector-bg-5 {
+    display: none;
+    }
+   
+ /* === 1. ФОТОГРАФИЯ image21.png (#third-image) === */
+    #third-image {
+        position: absolute !important;
+        top: 1392px !important;
+        left: -7px !important;
+        width: 334px !important;
+        height: 311px !important;
+        z-index: 1003 !important;
+        object-fit: cover !important;
+        pointer-events: none !important;
+    }
+
+    /* === 2. Rectangle 27 — белый прямоугольник === */
+    .custom-rect-27 {
+        position: absolute !important;
+        top: 1702px !important;
+        left: 24px !important;
+        width: 275px !important;
+        height: 72px !important;
+        background-color: #ffffff !important;
+        border-radius: 65px !important;
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2) !important;
+        z-index: 1004 !important;
+        pointer-events: none !important;
+    }
+
+    /* === 3. Пунктирный прямоугольник (Rectangle 28) === */
+    .custom-dashed-rect {
+        position: absolute !important;
+        top: 1708px !important;
+        left: 30px !important;
+        width: 263px !important;
+        height: 60px !important;
+        border: 2px dashed #e7e4e4 !important;
+        border-radius: 60px !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+        background-color: transparent !important;
+    }
+
+    /* === 4. Имя диетолога — "Иванова Надежда Александровна" === */
+    .custom-text-name {
+        position: absolute !important;
+        top: 1718px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 250px !important;
+        font-size: 14px !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        z-index: 1006 !important;
+        pointer-events: none !important;
+        white-space: nowrap !important;
+    }
+
+    /* === 5. Роль — "Сертифицированный диетолог" === */
+    .custom-text-role {
+        position: absolute !important;
+        top: 1740px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 250px !important;
+        font-size: 14px !important;
+        color: #6C997F !important;
+        font-weight: normal !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        z-index: 1006 !important;
+        pointer-events: none !important;
+        white-space: nowrap !important;
+    }
+        /*Обезательные продукты*/
+        .highlighted-title {
+        position: absolute !important;
+        top: 1833px !important;
+        left: 31px !important;
+        width: 257px !important;
+        height: 100px !important;
+        font-size: 20px !important; /* можно уточнить, но подобрано под высоту 52px */
+        line-height: 0.7 !important;
+        color: #27AE60 !important;
+        font-weight: bold !important;
+        font-family: 'Montserrat', sans-serif !important;
+        text-align: center !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+        overflow: hidden !important;
+    }
+
+      /* === 1. КОНТЕЙНЕР КАРУСЕЛИ === */
+    .carousel-container {
+        position: absolute !important;
+        top: 1927px !important; /* Требуемая позиция */
+        left: 47px !important;
+        width: 225px !important;
+        height: 453px !important;
+        overflow: visible !important;
+        z-index: 1005 !important;
+        pointer-events: auto !important;
+    }
+
+    /* === 2. ОБЁРТКА КАРТОЧЕК === */
+    .card-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 15px !important; /* Как в ПК-версии */
+        pointer-events: none !important;
+    }
+
+    /* === 3. ОБЩИЕ СТИЛИ ДЛЯ КАРТОЧЕК === */
+    .product-card {
+        position: absolute !important;
+        width: 225px !important;
+        height: 453px !important;
+        background-color: #ffffff !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        overflow: hidden !important;
+        z-index: 1 !important;
+        pointer-events: auto !important;
+        transition: all 0.3s ease !important;
+        opacity: 0.4 !important;
+    }
+
+    /* === 4. ПОЗИЦИИ КАРТОЧЕК (как в ПК) === */
+    .product-card[data-position="left"] {
+        left: -300px !important;
+        transform: none !important;
+        opacity: 0.4 !important;
+        z-index: 1 !important;
+    }
+
+    .product-card[data-position="center"] {
+        left: 0 !important;
+        transform: none !important;
+        opacity: 1 !important;
+        z-index: 3 !important;
+    }
+
+    .product-card[data-position="right"] {
+        left: 300px !important;
+        transform: none !important;
+        opacity: 0.4 !important;
+        z-index: 1 !important;
+    }
+
+    /* === 5. КНОПКИ ПЕРЕКЛЮЧЕНИЯ === */
+    .carousel-btn {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 40px !important;
+        height: 40px !important;
+        background-color: #ffffff !important;
+        color: #219653 !important;
+        border: none !important;
+        border-radius: 50% !important;
+        font-size: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        z-index: 10012 !important;
+        pointer-events: auto !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .prev-btn {
+        left: -50px !important; /* Слева от карусели */
+    }
+
+    .next-btn {
+        left: 240px !important; /* Справа от карусели (225 + 15) */
+    }
+
+    /* Эффект при наведении/касании */
+    .carousel-btn:hover,
+    .carousel-btn:active {
+        background-color: #ffffff !important;
+        transform: translateY(-50%) scale(1.1) !important;
+    }     
+      .meat-title {
+        position: absolute !important;
+        top: 265px !important; /* После фото (высота ~220px) */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: auto !important;
+        max-width: 90% !important;
+        font-size: 16px !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        z-index: 2 !important;
+        pointer-events: none !important;
+    }
+
+    /* === 2. ОПИСАНИЕ: "Крольчатина, телятина..." и др. === */
+    .meat-description {
+        position: absolute !important;
+        top: 270px !important; /* После заголовка */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 90% !important;
+        font-size: 14px !important;
+        color: #6C997F!important;
+        font-weight: normal !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        z-index: 2 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+        overflow: hidden !important;
+    }
+
+    /* === 3. АДАПТАЦИЯ ДЛЯ ВСЕХ КАРТОЧЕК === */
+    /* Убедимся, что все карточки используют одинаковые стили */
+    .product-card .meat-title,
+    .product-card .meat-description {
+        text-align: center !important;
+    }
+     /* === 1. УБИРАЕМ ПЕРЕНОСЫ ОТ <br> === */
+    .meat-description br,
+    .vegetable-description br,
+    .milk-description br {
+        display: none !important;
+    }
+        /* === 2. ВКЛЮЧАЕМ АВТОМАТИЧЕСКИЙ ПЕРЕНОС ТЕКСТА === */
+    .meat-description,
+    .vegetable-description,
+    .milk-description {
+        /* Включаем перенос по словам */
+        word-wrap: break-word !important;
+        word-break: normal !important;
+        white-space: pre-line !important; /* Сохраняем естественные переносы, но не <br> */
+        overflow: hidden !important;
+        text-overflow: clip !important; /* Показываем текст, не обрезаем с многоточием */
+        line-height: 1.4 !important;
+    }
+
+    /* === 3. ГАРАНТИРУЕМ, ЧТО ТЕКСТ ВМЕСТИТСЯ В КАРТОЧКУ === */
+    .meat-description,
+    .vegetable-description,
+    .milk-description {
+        width: 90% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        top: 270px !important; /* После фото */
+        font-size: 14px !important;
+        text-align: center !important;
+        z-index: 2 !important;
+        pointer-events: none !important;
+        position: absolute !important;
+    }
+    /* === ПРИМЕНЯЕМ КО ВСЕМ ИЗОБРАЖЕНИЯМ В КАРТОЧКАХ === */
+    .product-card img,
+    .meat-image,
+    .fish-image,
+    .milk-image,
+    .cereal-image,
+    .fruit-image,
+    .vegetable-image {
+        /* Сдвигаем влево на 50px */
+        left: 0 !important;
+        /* top остаётся 0 — прижато к верху */
+        top: 0 !important;
+        /* Ширина и высота — как задано */
+        width: 225px !important;
+        height: 261px !important;
+        /* Обязательно: object-fit: cover, чтобы не было искажений */
+        object-fit: cover !important;
+        object-position: center top !important;
+        /* Позиционирование */
+        position: absolute !important;
+        z-index: 1 !important;
+        /* Убедимся, что карточка позволяет выходить за пределы */
+    }
+
+    /* === ФОНОВОЕ ИЗОБРАЖЕНИЕ image.png === */
+    .floating-image.bg-overlay {
+        position: absolute !important;
+        top: 2468px !important;
+        left: -224px !important;
+        width: 1113px !important;
+        height: 482px !important;
+        background-image: url('images/image.png') !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        z-index: 998 !important; /* Должен быть ниже других элементов (например, #second-image — z-index: 1003) */
+        pointer-events: none !important;
+        display: block !important; /* На всякий случай, если был hidden */
+    }
+
+    /* Гарантируем, что это изображение — самый нижний слой */
+    .floating-image.bg-overlay {
+        z-index: 1 !important; /* Минимальный z-index среди всех видимых слоёв */
+    } 
+        .custom-title-split {
+        position: absolute !important;
+        top: 2888px !important;
+        left: 14px !important;
+        width: 274px !important;
+        height: 52px !important;
+        font-size:20px !important;
+        color: #27AE60  !important;
+        font-weight: bold !important;
+        line-height: 0.7 !important;
+        text-align: left !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+    }
+
+    /* === 2. ЭКОЛОГИЧНОСТЬ: ЗАГОЛОВОК === */
+    .eco-title {
+        position: absolute !important;
+        top: 2979px !important;
+        left: 75px !important;
+        width: 122px !important;
+        height: 15px !important;
+        font-size: 16px !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        line-height: 1 !important;
+        text-align: left !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+    }
+
+    /* === 3. ЭКОЛОГИЧНОСТЬ: ОПИСАНИЕ === */
+    .eco-desc {
+        position: absolute !important;
+        top: 2995px !important;
+        left: 75px !important;
+        width: 244px !important;
+        height: 35px !important;
+        font-size: 14px !important;
+        color: #000000 !important;
+        font-weight: normal !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+    }
+
+    /* === 4. СБАЛАНСИРОВАННОСТЬ: ЗАГОЛОВОК === */
+    .balance-title {
+        position: absolute !important;
+        top: 3055px !important;
+        left: 75px !important;
+        width: 162px !important;
+        height: 19px !important;
+        font-size: 16px !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        line-height: 1 !important;
+        text-align: left !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+    }
+
+    /* === 5. СБАЛАНСИРОВАННОСТЬ: ОПИСАНИЕ === */
+    .balance-desc {
+        position: absolute !important;
+        top: 3055px !important;
+        left: 75px !important;
+        width: 200px !important;
+        height: 75px !important;
+        font-size: 14px !important;
+        color: #000000 !important;
+        font-weight: normal !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+    }
+
+
+    /* === 6. ИНДИВИДУАЛЬНОСТЬ: ЗАГОЛОВОК === */
+    .personal-title {
+        position: absolute !important;
+        top: 3150px !important;
+        left: 75px !important;
+        width: 144px !important;
+        height: 19px !important;
+        font-size: 16px !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        line-height: 1 !important;
+        text-align: left !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+    }
+
+    /* === 7. ИНДИВИДУАЛЬНОСТЬ: ОПИСАНИЕ === */
+    .personal-desc {
+        position: absolute !important;
+        top: 3152px !important;
+        left: 75px !important;
+        width: 244px !important;
+        height: 100px !important;
+        font-size: 14px !important;
+        color: #000000 !important;
+        font-weight: normal !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+    }
+
+    /* === 8. ПОЛЬЗА: ЗАГОЛОВОК === */
+    .benefit-title {
+        position: absolute !important;
+        top: 3245px !important;
+        left: 75px !important;
+        width: 58px !important;
+        height: 19px !important;
+        font-size: 16px !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        line-height: 1 !important;
+        text-align: left !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+    }
+
+    /* === 9. ПОЛЬЗА: ОПИСАНИЕ === */
+    .benefit-desc {
+        position: absolute !important;
+        top: 3247px !important;
+        left: 75px !important;
+        width: 240px !important;
+        height: 100px !important;
+        font-size: 14px !important;
+        color: #000000 !important;
+        font-weight: normal !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+    }
+     .floating-img-big {
+        position: absolute !important;
+        top: 2437px !important;
+        left: -177px !important;
+        width: 683px !important;
+        height: 586px !important;
+        z-index: 1000 !important;
+        object-fit: cover !important;
+        pointer-events: none !important;
+        display: block !important; /* На случай, если скрыто */
+    }
+        /* Убираем все <br> внутри описаний */
+    .eco-desc br,
+    .balance-desc br,
+    .personal-desc br,
+    .benefit-desc br {
+        display: none !important;
+    }
+
+    /* Включаем автоматический перенос текста */
+    .eco-desc,
+    .balance-desc,
+    .personal-desc,
+    .benefit-desc {
+        white-space: pre-line !important;
+        word-wrap: break-word !important;
+        overflow: hidden !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+    }
+       /* === 1. БЕЛЫЕ КРУГИ === */
+    .feature-circle {
+        position: absolute !important;
+        width: 50px !important;
+        height: 50px !important;
+        background-color: #FFFFFF !important;
+        border-radius: 50% !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+        z-index: 1000 !important;
+        pointer-events: none !important;
+    }
+
+    /* === КООРДИНАТЫ КРУГОВ (из ПК-версии, но сдвинуты влево) === */
+    .c1 {
+        top: 2979px !important;
+        left: 12px !important; /* Было 62px → сдвинуто влево на 50px */
+    }
+    .c2 {
+        top: 3063px !important;
+        left: 12px !important;
+    }
+    .c3 {
+        top: 3164px !important;
+        left: 12px !important;
+    }
+    .c4 {
+        top: 3264px !important;
+        left: 12px !important;
+    }
+
+    /* === 2. ИКОНКИ — ПОВЕРХ КРУГОВ === */
+    .feature-icon {
+        position: absolute !important;
+        z-index: 1002 !important;
+        pointer-events: none !important;
+        object-fit: contain !important;
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    /* === ПОЗИЦИОНИРОВАНИЕ ИКОНОК === */
+    .health-icon {
+        top: 2993px !important;
+        left: 26px !important;
+    }
+    .custom-icon {
+        top: 3075px !important;
+        left: 27px !important;
+    }
+    .signal-icon {
+        top: 3176px !important;
+        left: 26px !important;
+    }
+    .leaf-icon {
+        top: 3275px !important;
+        left: 26px !important;
+    }
+       /* === ОСНОВНОЙ ТЕКСТ С ОПИСАНИЕМ === */
+    .instagram-desc {
+        position: absolute !important;
+        top: 3470px !important;
+        left: 17px !important;
+        width: 285px !important;
+        height: 34px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 14px !important;
+        color: #000000 !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        z-index: 1000 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+    }
+
+    /* === ПОДЧЁРКИНУТАЯ ССЫЛКА "Подписывайтесь" === */
+    .instagram-link {
+        color: #000000 !important;
+        text-decoration: underline !important;
+        text-underline-offset: 2px !important;
+        pointer-events: auto !important;
+    }
+  /* === 1. ЗАГОЛОВОК: "Хотите получить персональное меню?" === */
+    .final-title {
+        position: absolute !important;
+        top: 3981px !important;
+        left: 41px !important;
+        width: 237px !important;
+        height: 52px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 18px !important;
+        color: #27AE60 !important;
+        font-weight: bold !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+    }
+
+    /* === 2. ОПИСАНИЕ: "Оставьте заявку..." === */
+    .final-desc {
+        position: absolute !important;
+        top: 4020px !important;
+        left: 9px !important;
+        width: 301px !important;
+        height: 34px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 14px !important;
+        color: #000000 !important;
+        font-weight: normal !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        z-index: 1005 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+    }
+        /* === 1. ПОЛЕ: "Ваше имя" === */
+    .input-field {
+        position: absolute !important;
+        top: 4120px !important;
+        left: 20px !important;
+        width: 279px !important;
+        height: 41px !important;
+        background-color: #E8F7EE !important;
+        border: 2px solid #E8F7EE !important;
+        border-radius: 25px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 16px !important;
+        color: #B2DAC2 !important;
+        padding: 0 20px !important;
+        z-index: 1006 !important;
+        pointer-events: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* === 2. ПОЛЕ: "Ваш телефон" === */
+    .phone-input-field {
+        position: absolute !important;
+        top: 4180px !important; /* 4120 + 60px отступ */
+        left: 20px !important;
+        width: 279px !important;
+        height: 41px !important;
+        background-color: #E8F7EE !important;
+        border: 2px solid #E8F7EE !important;
+        border-radius: 25px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 16px !important;
+        color: #B2DAC2 !important;
+        padding: 0 20px !important;
+        z-index: 1006 !important;
+        pointer-events: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* === 3. ФОКУС НА ПОЛЯХ === */
+    .input-field:focus,
+    .phone-input-field:focus {
+        border-color: #27AE60 !important;
+        box-shadow: 0 0 10px rgba(39, 174, 96, 0.2) !important;
+        outline: none !important;
+    }
+       /* === СТИЛИ ДЛЯ ПЛАСТХОЛДЕРА В ПОЛЯХ === */
+    .input-field::placeholder,
+    .phone-input-field::placeholder {
+        color: #B2DAC2!important;       /* Новый цвет (можно изменить) */
+        font-style: italic !important;   /* Курсив (наклон) */
+        opacity: 1 !important;           /* Гарантируем видимость */
+        font-family: 'Montserrat', sans-serif !important;
+    }
+        /* === ДОПОЛНИТЕЛЬНО: Можно добавить трансформацию (если нужен именно угол) === */
+    .input-field::placeholder {
+        transform: rotate(-2deg) !important;
+        display: inline-block !important;
+    }
+
+    .phone-input-field::placeholder {
+        transform: rotate(-2deg) !important;
+        display: inline-block !important;
+    }
+
+        /* === ОБЁРТКА ССЫЛКИ === */
+    .bottom-order-link {
+        position: absolute !important;
+        top: 4233px !important;
+        left: 37px !important;
+        width: 245px !important;
+        height: 67px !important;
+        z-index: 1006 !important;
+        text-decoration: none !important;
+        transition: transform 0.3s ease !important;
+        pointer-events: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* === ФОН (зелёный прямоугольник) === */
+    .bottom-order-link .top-rect-1 {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 1 !important;
+        pointer-events: none !important;
+    }
+
+    /* === БЕЛЫЙ ПРЯМОУГОЛЬНИК (внутри) === */
+    .bottom-order-link .top-rect-2 {
+        position: absolute !important;
+        top: 5px !important;
+        left: 6px !important;
+        width: 233px !important;
+        height: 57px !important;
+        border-radius: 65px !important;
+        z-index: 2 !important;
+        pointer-events: none !important;
+    }
+
+    /* === ТЕКСТ НА КНОПКЕ === */
+    .bottom-order-link .order-button-text {
+        position: absolute !important;
+        top: 22px !important;
+        left: 37px !important;
+        width: 148px !important;
+        height: 20px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 13px !important;
+        color: #FFFFFF !important;
+        font-weight: bold !important;
+        line-height: 20px !important;
+        text-align: center !important;
+        z-index: 4 !important;
+        pointer-events: none !important;
+        white-space: nowrap !important;
+    }
+
+    /* === ЗЕЛЁНЫЙ КРУГ === */
+    .bottom-order-link .top-ellipse {
+        position: absolute !important;
+        top: 12px !important;
+        left: 190px !important;
+        width: 43px !important;
+        height: 43px !important;
+        z-index: 3 !important;
+        pointer-events: none !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    /* === СТРЕЛОЧКА — ЗАМЕНА SVG НА Vector.png === */
+    .bottom-order-link .top-vector {
+        position: absolute !important;
+        top: 50% !important;
+        left: 213px !important;
+        transform: translate(-50%, -50%) !important;
+        width: 19px !important;
+        height: 12px !important;
+        background-image: url('images/Vector.png') !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        z-index: 5 !important;
+        pointer-events: none !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    /* === АНИМАЦИЯ ПРИ НАЖАТИИ (как в планшетной версии) === */
+    .bottom-order-link:active .top-ellipse,
+    .bottom-order-link:active .top-vector {
+        transform: translateX(6px) !important;
+    }
+    /* === МАСКА 1 === */
+    .mask-1 {
+        position: absolute !important;
+        top: 3500px !important;
+        left: -200px !important;
+        width: 400px !important;
+        height: 350px !important;
+        z-index: 10007 !important;
+        pointer-events: none !important;
+        border-radius: 60px !important; /* Округление */
+        overflow: hidden !important;
+    }
+
+    /* === МАСКА 2 === */
+    .mask-2 {
+        position: absolute !important;
+        top: 3548px !important;
+        left: 85px !important;
+        width: 350px !important;
+        height: 325px !important;
+        z-index: 10007 !important;
+        pointer-events: none !important;
+        border-radius: 60px !important; /* Округление */
+        overflow: hidden !important;
+    }
+
+    /* === МАСКА 3 === */
+    .mask-3 {
+        position: absolute !important;
+        top: 3740px !important;
+        left: -170px !important;
+        width: 400px !important;
+        height: 300px !important;
+        z-index: 10007 !important;
+        pointer-events: none !important;
+        border-radius: 60px !important; /* Округление */
+        overflow: hidden !important;
+    }
+
+    /* === МАСКА 6 === */
+    .mask-6 {
+        position: absolute !important;
+        top: 3653px !important;
+        left: -20px !important;
+        width: 260px !important;
+        height: 260px !important;
+        z-index: 10008 !important;
+        pointer-events: none !important;
+        border-radius: 60px !important; /* Более округлый прямоугольник */
+        overflow: hidden !important;
+    }
+
+    /* === МАСКА 7 === */
+    .mask-7 {
+        position: absolute !important;
+        top: 3666px !important;
+        left: 180px !important;
+        width: 300px !important;
+        height: 300px !important;
+        z-index: 10008 !important;
+        pointer-events: none !important;
+        border-radius: 60px !important; /* Более округлый прямоугольник */
+        overflow: hidden !important;
+    }
+
+    /* === МАСКА 9 === */
+    .mask-9 {
+        position: absolute !important;
+        top: 3770px !important;
+        left: 130px !important;
+        width: 260px !important;
+        height: 260px !important;
+        z-index: 10009 !important;
+        pointer-events: none !important;
+        border-radius: 60px !important; /* Более округлый прямоугольник */
+        overflow: hidden !important;
+    }
+
+  /* ========================================
+     8. ГАЛЕРЕЯ INSTAGRAM
+     ======================================== */
+/* === "Наш Instagram" === */
+.instagram-title {
+    position: absolute !important;
+    top: 3447px !important;
+    left: 87px!important;
+    width: 149px  !important;
+    height: 26px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 22px !important;
+    color: #27AE60 !important;
+    font-weight: bold !important;
+    line-height: 1.3 !important;
+    text-align: left !important;
+    z-index: 1000 !important;
+    pointer-events: none !important;
+    white-space: nowrap !important;
+}
+
+  /* ========================================
+     8. футтер
+     ======================================== */
+     /* === 1. ОПРЕДЕЛЯЕМ НИЖНЮЮ ГРАНИЦУ САЙТА === */
+    .footer-bg {
+        position: absolute !important;
+        top: 4376px !important;
+        left: -593px !important;
+        width: 1920px !important;
+        height: 329px !important;
+        z-index: 999 !important;
+        object-fit: cover !important;
+        pointer-events: none !important;
+        display: block !important;
+    }
+
+        /* === ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ ССЫЛОК === */
+    .footer-link {
+        position: absolute !important;
+        color: #FFFFFF !important;
+        font-family: 'Montserrat', sans-serif !important;
+        text-decoration: none !important;
+        z-index: 1008 !important;
+        pointer-events: auto !important;
+    }
+
+    /* === 1. "Здоровая мама" === */
+    .footer-title {
+        top: 4416px !important;
+        left: 20px !important;
+        width: 128px !important;
+        height: 25px !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        line-height: 1.2 !important;
+    }
+
+    /* === 2. "Важность правильного питания" === */
+    .nutrition-link {
+        top: 4471px !important;
+        left: 20px !important;
+        width: 207px !important;
+        height: 20px !important;
+        font-size: 14px !important;
+        font-weight: normal !important;
+        line-height: 1.2 !important;
+    }
+
+    /* === 3. "Почему мы?" === */
+    .why-us-link {
+        top: 4506px !important;
+        left: 20px !important;
+        width: 81px !important;
+        height: 20px !important;
+        font-size: 14px !important;
+        font-weight: normal !important;
+        line-height: 1.2 !important;
+    }
+
+    /* === 4. "Где заказать?" === */
+    .order-link {
+        top: 4540px !important;
+        left: 20px !important;
+        width: 100px !important;
+        height: 20px !important;
+        font-size: 14px !important;
+        font-weight: normal !important;
+        line-height: 1.2 !important;
+    }
+
+    /* === 5. "Политика конфиденциальности" === */
+    .privacy-link {
+        top: 4604px !important;
+        left: 20px !important;
+        width: 178px !important;
+        height: 14px !important;
+        font-size: 12px !important;
+        color: #f0f0f0ab !important; /* #FFFFFF, но чуть темнее */
+        font-weight: normal !important;
+        line-height: 1.2 !important;
+    }
+
+   /* === 6. "Условия онлайн-использования" === */
+    .terms-link {
+        top: 4641px !important;
+        left: 20px !important;
+        width: 200px !important;
+        height: 14px !important;
+        font-size: 12px !important;
+        color: #f0f0f0ab !important; /* как у политики */
+        font-weight: normal !important;
+    }
+} 

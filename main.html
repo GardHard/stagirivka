@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Здоровая мама — доставка здорового питания для беременных и кормящих</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <!-- ========================================
+  0. ЦЕНТРАЛЬНЫЙ КОНТЕЙНЕР ДЛЯ ВСЕГО КОНТЕНТА
+  ======================================== -->
+  <div class="design-container">
+    <!-- === МЕНЮ В ШАПКЕ === -->
+    <div class="menu-bar">
+      <div class="menu-item-wrapper menu-home">
+        <a href="https://example.com" target="_blank" class="menu-item large">Здоровая мама</a>
+      </div>
+      <div class="menu-item-wrapper menu-nutrition">
+        <a href="https://example.com/nutrition" target="_blank" class="menu-item green">Важность правильного питания</a>
+      </div>
+      <div class="menu-item-wrapper menu-why-us">
+        <a href="https://example.com/why-us" target="_blank" class="menu-item">Почему мы?</a>
+      </div>
+      <div class="menu-item-wrapper menu-order">
+        <a href="https://example.com/order" target="_blank" class="menu-item">Где заказать?</a>
+      </div>
+    </div>
+   
+    <!-- Основное фоновое изображение -->
+    <img src="images/image20.png" alt="Первая картинка" class="fixed-image" id="first-image">
+
+    <!-- КНОПКА МЕНЮ ТЕЛЕЦОН-->
+    <div class="menu-toggle-btn" id="menuToggle">
+      <div class="menu-line line-1"></div>
+      <div class="menu-line line-2"></div>
+      <div class="menu-line line-3"></div>
+    </div>
+
+    <!-- БОКОВАЯ ПАНЕЛЬ ТЕЛЕФОН-->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-content">
+          <!-- Здесь можно добавить навигацию, текст и т.д. -->
+      </div>
+    </div>
+    <!-- ЗАТЕМНЯЮЩИЙ СЛОЙ ТЕЛЕОФН-->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ========================================
+    1. ШАПКА С ФОНОМ И ГЛАВНЫМ ТЕКСТОМ
+    ======================================== -->
+    <div class="header-container" id="first-image-wrapper">
+      <!-- Главный заголовок -->
+      <div class="custom-text-main">
+        Доставка здорового <br>
+        питания для мам
+      </div>
+
+      <div class="custom-text-subtitle">
+      Правильный и вкусный рацион
+      для Вас и вашего ребенка
+      </div>
+      <!-- ОФОРМИТЬ ЗАКАЗ -->
+      <a href="#" class="order-button-link" id="top-order-btn" onclick="smoothScrollToForm(); return false;">
+        <img src="images/Rectangle 10.png" alt="Фон кнопки" class="top-rect-1">
+        <img src="images/Rectangle 10 (1).png" alt="Кнопка" class="top-rect-2">
+        <div class="order-button-text">Оформить заказ</div>
+        <img src="images/Ellipse 6.png" alt="Круг" class="top-ellipse bottem-ellipse">
+        <svg class="top-vector bottom-vector" viewBox="0 0 24 24" width="19" height="12">
+          <line x1="5" y1="12" x2="19" y2="12" stroke="#FFFFFF" stroke-width="2"/>
+          <polyline points="12 5, 19 12, 12 19" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+        </svg>
+      </a>
+
+      <!-- Декоративные элементы вокруг мамы -->
+      <img src="images/Ellipse 2 (2).png" alt="Эллипс 2 (2)" class="overlay-icon-extra-2">
+      <img src="images/Ellipse 2 (3).png" alt="Эллипс 2 (3)" class="overlay-icon-extra-3">
+      <img src="images/Ellipse 2 (4).png" alt="Эллипс 2 (4)" class="overlay-icon-extra-4">
+      <img src="images/Ellipse 2.png" alt="Эллипс 2" class="overlay-icon-2">
+      <img src="images/Ellipse 2 (1).png" alt="Эллипс 2 (1)" class="overlay-icon-extra">
+      
+      <!-- Изображения для тегов (только одно видимо в моменте) -->
+      <img src="images/1.png" alt="Для беременных" class="overlay-icon" id="icon-pregnant">
+      <img src="images/2.png" alt="Для кормящих" class="overlay-icon" id="icon-nursing">
+      <img src="images/3.png" alt="Безопасные лакомства" class="overlay-icon" id="icon-safe">
+
+      <!-- ТЕГИ (Для беременных, кормящих и т.д.) -->
+      <div class="tag-container">
+        <div class="tag" id="tag-pregnant" onclick="activateTag('pregnant')">
+        <img src="images/Ellipse 3 (1).png" alt="Кружок" class="tag-circle">
+        <img src="images/Ellipse 3.png" alt="Кружок" class="tag-circle-inner">
+        <div class="tag-text">Для беременных</div>
+      </div>
+
+      <div class="tag" id="tag-nursing" onclick="activateTag('nursing')">
+        <img src="images/Ellipse 3 (1).png" alt="Кружок" class="tag-circle">
+        <img src="images/Ellipse 3.png" alt="Кружок" class="tag-circle-inner">
+        <div class="tag-text">Для кормящих</div>
+      </div>
+      <div class="tag" id="tag-safe" onclick="activateTag('safe')">
+        <img src="images/Ellipse 3 (1).png" alt="Кружок" class="tag-circle">
+        <img src="images/Ellipse 3.png" alt="Кружок" class="tag-circle-inner">
+        <div class="tag-text">Безопасные лакомства</div>
+      </div>
+    </div>
+
+
+    <!-- ДУБЛИКАТ КНОПКИ "Оформить заказ" (ТОЛЬКО ДЛЯ ТЕЛЕФОНА) -->
+  <a href="#" class="bottom-order-link-mobile" onclick="smoothScrollToForm(); return false;">
+    <img src="images/Rectangle 10.png" alt="Фон кнопки" class="top-rect-1">
+    <img src="images/Rectangle 10 (1).png" alt="Кнопка" class="top-rect-2">
+    <div class="order-button-text">Оформить заказ</div>
+    <img src="images/Ellipse 6.png" alt="Круг" class="top-ellipse">
+    <img src="images/Vector.png" alt="Стрелка" class="top-vector">
+  </a>
+        <!-- ========================================
+      МОБИЛЬНАЯ КАРУСЕЛЬ: ДЛЯ БЕРЕМЕННЫХ, КОРМЯЩИХ И Т.Д.
+      ВИДИМА ТОЛЬКО НА ТЕЛЕФОНЕ
+      ======================================== -->
+  <div class="mobile-carousel-container phone-only">
+      <!-- КНОПКИ ПЕРЕКЛЮЧЕНИЯ -->
+      <button class="carousel-btn prev-btn-mobile" aria-label="Предыдущий слайд"><</button>
+      <button class="carousel-btn next-btn-mobile" aria-label="Следующий слайд">></button>
+
+      <!-- КОНТЕЙНЕР ДЛЯ ТЕКСТА -->
+      <div class="mobile-carousel-title"></div>
+
+      <!-- КОНТЕЙНЕР ИЗОБРАЖЕНИЙ -->
+      <div class="mobile-carousel-images">
+          <img src="images/1.png" alt="Для беременных" class="carousel-img pregnant" style="display: block;">
+          <img src="images/2.png" alt="Для кормящих" class="carousel-img nursing" style="display: none;">
+          <img src="images/3.png" alt="Безопасные лакомства" class="carousel-img safe" style="display: none;">
+      </div>
+  </div>
+      <!-- ========================================
+  
+
+      ======================================== -->
+
+
+        <!-- Зелёные размытые листья -->
+        <img src="images/GR-Mint.png" alt="GR-Mint" class="mint-blur mint-1">
+        <img src="images/GR-Mint (1).png" alt="GR-Mint (1)" class="mint-blur mint-2">
+        <img src="images/GR-Mint (2).png" alt="GR-Mint (2)" class="mint-blur mint-3">
+        <img src="images/GR-Mint (3).png" alt="GR-Mint (3)" class="mint-blur mint-4">
+        <img src="images/GR-Mint (4).png" alt="GR-Mint (4)" class="mint-blur mint-5">
+        <img src="images/GR-Mint(5).png" alt="GR-Mint (5)" class="mint-blur mint-6">
+        <img src="images/GR-Mint(6).png" alt="GR-Mint(6)" class="mint-img mint-img-6">
+        <img src="images/GR-Mint (7).png" alt="GR-Mint (7)" class="mint-img mint-img-7">
+      </div>
+
+      <!-- ВЫСОТА ПОД ФИКСИРОВАННОЕ ИЗОБРАЖЕНИЕ -->
+      <div class="placeholder"></div>
+
+      <!-- ========================================
+          2. БЛОК: "ПОЧЕМУ НУЖНО ПРАВИЛЬНО ПИТАТЬСЯ?"
+          ======================================== -->
+      <div class="custom-rect-27"></div>
+      <div class="custom-dashed-rect"></div>
+      <div class="custom-text-name">Иванова Надежда Александровна</div>
+      <div class="custom-text-role">Сертифицированный диетолог</div>
+
+      <div class="image-container" id="image-container">
+        <img src="images/Rectangle 12.png" alt="Фон" class="static-image" id="second-image">
+        <img src="images/image21.png" alt="Продукты" class="overlay-image" id="third-image">
+      </div>
+
+      <img src="images/Ellipse 5.png" alt="Эллипс 5" class="ellipse-top-left">
+      <img src="images/Ellipse 5 (1).png" alt="Эллипс 5 (1)" class="ellipse-top-right">
+      <img src="images/black_and_white3.png" alt="Ч/б изображение 3" class="bw-image bw-overlay">
+      <img src="images/Ellipse 5.png" alt="Эллипс 5 (нижний)" class="ellipse-bottom-left">
+      <img src="images/Ellipse 5 (1).png" alt="Эллипс 5 (1) (нижний)" class="ellipse-bottom-right">
+
+      <div class="why-title">Почему вам нужно правильно питаться?</div>
+
+      <!-- Галочки и текст -->
+      <img src="images/Vector 2.1.png" alt="Фон галочки" class="vector-img vector-bg-1">
+      <img src="images/Vector 2.png" alt="Галочка" class="vector-img vector-check-1">
+      <div class="check-text check-item-1">Здоровый ребенок</div>
+
+      <img src="images/Vector 2.1.png" alt="Фон галочки" class="vector-img vector-bg-2">
+      <img src="images/Vector 2.png" alt="Галочка" class="vector-img vector-check-2">
+      <div class="check-text check-item-2">Повышение иммунитета</div>
+
+      <img src="images/Vector 2.1.png" alt="Фон галочки" class="vector-img vector-bg-3">
+      <img src="images/Vector 2.png" alt="Галочка" class="vector-img vector-check-3">
+      <div class="check-text check-item-3">Поддержание фигуры</div>
+
+      <img src="images/Vector 2.1.png" alt="Фон галочки" class="vector-img vector-bg-4">
+      <img src="images/Vector 2.png" alt="Галочка" class="vector-img vector-check-4">
+      <div class="check-text check-item-4">Отсутствие вредных компонентов</div>
+
+      <img src="images/Vector 2.1.png" alt="Фон галочки" class="vector-img vector-bg-5">
+      <img src="images/Vector 2.png" alt="Галочка" class="vector-img vector-check-5">
+      <div class="check-text check-item-5">Снижение нагрузки на органы пищеварения</div>
+
+      <!-- ========================================
+          3. БЛОК С ИЗОБРАЖЕНИЯМИ И КАРУСЕЛЬЮ
+          ======================================== -->
+      <div class="highlighted-title">
+        Обязательные продукты<br>
+        для здорового питания:
+      </div>
+
+      <!-- КАРУСЕЛЬ -->
+      <div class="carousel-container">
+        <button class="carousel-btn prev-btn" aria-label="Предыдущий слайд">‹</button>
+        <button class="carousel-btn next-btn" aria-label="Следующий слайд">›</button>
+        <div class="card-wrapper">
+          <div class="product-card" data-position="left">
+            <img src="images/lenta 3.png" alt="Овощи" class="meat-image">
+            <div class="meat-title">Овощи</div>
+            <div class="meat-description">
+              Брокколи, тыква, цветная капуста, репка, огурцы. Готовьте блюда из тушеных<br>
+              смесей без добавления масла.
+            </div>
+          </div>
+          <div class="product-card" data-position="center">
+            <img src="images/lenta 1.png" alt="Мясо" class="meat-image">
+            <div class="meat-title">Мясо</div>
+            <div class="meat-description">
+              Крольчатина, телятина, индейка, курица без кожи. Мясные блюда ежедневно<br>
+              должны присутствовать в питании в тушеном, запеченном или вареном виде.
+            </div>
+          </div>
+          <div class="product-card" data-position="right">
+            <img src="images/lenta 2.png" alt="Продукты из молока" class="meat-image">
+            <div class="meat-title">Продукты из молока</div>
+            <div class="meat-description">
+              Сыр, ряженка, простокваша, творог, йогурт без добавок, кефир. Желательно<br>
+              кушать их кормящей маме ежедневно либо через день.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-title-split">
+        Почему мамы<br>
+        выбирают нашу доставку?
+      </div>
+
+      <!-- ИКОНКИ И КРУГИ -->
+      <img src="images/health-care.png" alt="Иконка заботы о здоровье" class="feature-icon health-icon">
+      <img src="images/icon.png" alt="Дополнительная иконка" class="feature-icon custom-icon">
+      <img src="images/approved-signal.png" alt="Подтверждённый сигнал" class="feature-icon signal-icon">
+      <img src="images/plant-leaf-with-white-details.png" alt="Лист растения" class="feature-icon leaf-icon">
+
+      <div class="feature-circle c1"></div>
+      <div class="feature-circle c2"></div>
+      <div class="feature-circle c3"></div>
+      <div class="feature-circle c4"></div>
+
+      <!-- ТЕКСТЫ РЯДОМ -->
+      <div class="text-title eco-title">Экологичность:</div>
+      <div class="text-desc eco-desc">продукты выращиваются без применения химии</div>
+
+      <div class="text-title balance-title">Сбалансированность:</div>
+      <div class="text-desc balance-desc">
+        наши блюда составляют ведущие диетологи<br>
+        по уникальной рецептуре
+      </div>
+
+      <div class="text-title personal-title">Индивидуальность:</div>
+      <div class="text-desc personal-desc">
+        для вашего выбора мы предоставляем большое<br>
+        кол-во вариантов блюд
+      </div>
+
+      <div class="text-title benefit-title">Польза:</div>
+      <div class="text-desc benefit-desc">
+        питаясь нашими продуктами, Вы можете быть уверены в своем<br>
+        здоровье и здоровье ребенка
+      </div>
+
+      <!-- ФОНЫ И ИЗОБРАЖЕНИЯ -->
+      <img src="images/image.png" alt="" class="floating-image bg-overlay">
+      <img src="images/выв 1.png" alt="Дополнительная иллюстрация" class="floating-img-big">
+      <img src="images/tree 1.png" alt="Перевёрнутое дерево" class="floating-tree">
+
+      <!-- ========================================
+          4. INSTAGRAM И ГАЛЕРЕЯ
+          ======================================== -->
+      <div class="instagram-title">Наш Instagram</div>
+      <div class="instagram-desc">
+        <a href="https://instagram.com" target="_blank" class="instagram-link">Подписывайтесь</a>, чтобы быть в курсе последних новостей
+      </div>
+
+      <!-- Группы изображений -->
+      <img src="images/Mask Group.png" alt="Маска 1" class="mask-img mask-1">
+      <img src="images/Mask Group (1).png" alt="Маска 2" class="mask-img mask-2">
+      <img src="images/Mask Group (2).png" alt="Маска 3" class="mask-img mask-3">
+      <img src="images/Mask Group (3).png" alt="Маска 4" class="mask-img mask-4">
+      <img src="images/Mask Group (4).png" alt="Маска 5" class="mask-img mask-5">
+      <img src="images/Mask Group (5).png" alt="Маска 6" class="mask-img mask-6">
+      <img src="images/Mask Group (6).png" alt="Маска 7" class="mask-img mask-7">
+      <img src="images/Mask Group (7).png" alt="Маска 8" class="mask-img mask-8">
+      <img src="images/Mask Group (8).png" alt="Маска 9" class="mask-img mask-9">
+      <img src="images/image 2(2).png" alt="" class="background-wide-image">
+
+      <!-- Ч/Б изображения -->
+      <img src="images/black_and_white2.png" alt="Ч/б изображение перевёрнутое" class="bw-image bw-flipped">
+      <img src="images/black_and_white2 (1).png" alt="Ч/б изображение под углом" class="bw-image bw-angled">
+
+      <!-- ========================================
+          5. ФОРМА: "ХОТИТЕ ПОЛУЧИТЬ МЕНЮ?"
+          ======================================== -->
+      <div class="final-title">Хотите получить персональное меню?</div>
+      <div class="final-desc">
+        Оставьте заявку и наш оператор свяжется с Вами для уточнения деталей
+      </div>
+  <!--нижняя кнопка оформить заказ-->
+    <a href="#" class="bottom-order-link" onclick="smoothScrollToForm(); return false;">
+      <img src="images/Rectangle 10.png" alt="Фон кнопки" class="top-rect-1">
+      <img src="images/Rectangle 10 (1).png" alt="Кнопка" class="top-rect-2">
+      <div class="order-button-text">Оформить заказ</div>
+      <img src="images/Ellipse 6.png" alt="Круг" class="top-ellipse">
+      <svg class="top-vector" viewBox="0 0 24 24" width="19" height="12">
+          <line x1="5" y1="12" x2="19" y2="12" stroke="#FFFFFF" stroke-width="2"/>
+      </svg>
+  </a>  
+
+      <input type="text" id="name-input" class="input-field" placeholder="Ваше имя">
+      <input type="tel" id="phone-input" class="phone-input-field" placeholder="Ваш телефон">
+</div>
+
+  <!-- ========================================
+       6. ФУТЕР
+       ======================================== -->
+  <img src="images/Rectangle 14.png" alt="Нижний фон" class="footer-bg">
+  <a href="https://example.com" target="_blank" class="footer-link footer-title">Здоровая мама</a>
+  <a href="https://example.com/nutrition" target="_blank" class="footer-link nutrition-link">Важность правильного питания</a>
+  <a href="https://example.com/why-us" target="_blank" class="footer-link why-us-link">Почему мы?</a>
+  <a href="https://example.com/order" target="_blank" class="footer-link order-link">Где заказать?</a>
+  <a href="https://example.com/privacy" target="_blank" class="footer-link privacy-link">Политика конфиденциальности</a>
+  <a href="https://example.com/terms" target="_blank" class="footer-link terms-link">Условия онлайн-использования</a>
+
+  <!-- ========================================
+       7. JAVASCRIPT
+       ======================================== -->
+<script>
+    // Функция переключения тегов: "Для беременных", "Для кормящих", "Безопасные лакомства"
+    function activateTag(tagName) {
+        // Скрыть все изображения
+        document.getElementById('icon-pregnant')?.style && (document.getElementById('icon-pregnant').style.opacity = '0');
+        document.getElementById('icon-nursing')?.style && (document.getElementById('icon-nursing').style.opacity = '0');
+        document.getElementById('icon-safe')?.style && (document.getElementById('icon-safe').style.opacity = '0');
+
+        // Показать нужное изображение
+        if (tagName === 'pregnant') {
+            const el = document.getElementById('icon-pregnant');
+            if (el) {
+                el.style.opacity = '1';
+                el.style.visibility = 'visible';
+                el.style.zIndex = '1004';
+            }
+        } else if (tagName === 'nursing') {
+            const el = document.getElementById('icon-nursing');
+            if (el) {
+                el.style.opacity = '1';
+                el.style.visibility = 'visible';
+                el.style.zIndex = '1004';
+            }
+        } else if (tagName === 'safe') {
+            const el = document.getElementById('icon-safe');
+            if (el) {
+                el.style.opacity = '1';
+                el.style.visibility = 'visible';
+                el.style.zIndex = '1004';
+            }
+        }
+
+        // Обновить активный тег (подсветить)
+        document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+        const activeTag = document.getElementById('tag-' + tagName);
+        if (activeTag) {
+            activeTag.classList.add('active');
+        } else {
+            console.warn('Тег с ID tag-' + tagName + ' не найден');
+        }
+    }
+
+    // Функция прокрутки карусели (переключение позиций: left → center → right)
+    function updatePositions(direction) {
+        const cards = document.querySelectorAll('.product-card');
+        const positions = ['left', 'center', 'right'];
+        cards.forEach(card => {
+            const currentIndex = positions.indexOf(card.dataset.position);
+            const newIndex = direction === 'next'
+                ? (currentIndex + 1) % 3
+                : (currentIndex - 1 + 3) % 3;
+            card.dataset.position = positions[newIndex];
+        });
+    }
+
+    // Функция инициализации боковой панели
+    function setupSidebar() {
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        // Проверка, что все элементы существуют
+        if (!menuToggle || !sidebar || !overlay) {
+            console.warn('Один или несколько элементов боковой панели не найдены');
+            return;
+        }
+
+        // Открытие/закрытие при клике на бургер
+        menuToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        });
+
+        // Закрытие при клике на затемнение
+        overlay.addEventListener('click', function () {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+
+        // Закрытие при клике вне панели
+        document.addEventListener('click', function (e) {
+            if (!sidebar.contains(e.target) &&
+                !menuToggle.contains(e.target) &&
+                !overlay.contains(e.target)) {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+            }
+        });
+    }
+
+    // === НОВАЯ МОБИЛЬНАЯ КАРУСЕЛЬ С ТЕКСТОМ И ИЗОБРАЖЕНИЯМИ ===
+    function setupCustomMobileCarousel() {
+        const titleElement = document.querySelector('.mobile-carousel-title');
+        const images = document.querySelectorAll('.carousel-img');
+        const prevBtn = document.querySelector('.prev-btn-mobile');
+        const nextBtn = document.querySelector('.next-btn-mobile');
+
+        // Проверка наличия элементов
+        if (!titleElement || !images.length || !prevBtn || !nextBtn) {
+            console.warn('Мобильная карусель: не все элементы найдены');
+            return;
+        }
+
+        // Тексты для каждого слайда
+        const titles = {
+            pregnant: 'Для беременных',
+            nursing: 'Для кормящих',
+            safe: 'Безопасные лакомства'
+        };
+
+        let currentIndex = 0;
+        const imageClasses = ['pregnant', 'nursing', 'safe'];
+
+        // Обновить отображение
+        function updateCarousel() {
+            // Скрыть все изображения
+            images.forEach(img => {
+                img.style.display = 'none';
+            });
+
+            // Показать текущее
+            const currentImage = document.querySelector(`.carousel-img.${imageClasses[currentIndex]}`);
+            if (currentImage) {
+                currentImage.style.display = 'block';
+            }
+
+            // Обновить текст
+            titleElement.textContent = titles[imageClasses[currentIndex]];
+        }
+
+        // Обработчики кнопок
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + imageClasses.length) % imageClasses.length;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % imageClasses.length;
+            updateCarousel();
+        });
+
+        // Инициализация
+        updateCarousel();
+    }
+
+    // Запуск всех функций после полной загрузки DOM
+    document.addEventListener('DOMContentLoaded', function () {
+        // 1. Активировать тег "Для беременных" при загрузке
+        activateTag('pregnant');
+
+        // 2. Привязать кнопки карусели
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => updatePositions('prev'));
+        } else {
+            console.warn('Кнопка .prev-btn не найдена');
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => updatePositions('next'));
+        } else {
+            console.warn('Кнопка .next-btn не найдена');
+        }
+
+        // 3. Инициализировать боковую панель
+        setupSidebar();
+
+        // 4. Инициализировать новую мобильную карусель
+        setupCustomMobileCarousel();
+    });
+</script>
+</body>
+</html>
