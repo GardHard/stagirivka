@@ -1,0 +1,2513 @@
+/* Обнуляем отступы */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  background: transparent;
+}
+
+/* ========================================
+   ОСНОВНОЙ КОНТЕЙНЕР .main
+   ======================================== */
+.main {
+  position: relative;
+  width: 100%;
+  min-height: 1218px;
+  overflow: hidden;
+  z-index: 1; /* 🔺 Явно задаём z-index */
+}
+
+
+/* ========================================
+   ФОН .main: bg-pc.png, bg-smart.png, bg-phone.png
+   ======================================== */
+.bg-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+  overflow: hidden;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+/* ========================================
+   КОНТЕНТ .main: .bg-text-top
+   ======================================== */
+.bg-text-top {
+  position: relative;
+  min-height: 100vh;
+  margin: 0 auto;
+  z-index: 2;
+  pointer-events: auto;
+}
+.bg-text-top * {
+  pointer-events: auto;
+}
+
+/* ========================================
+   ЗАГОЛОВОК И ПОДЗАГОЛОВОК
+   ======================================== */
+.title {
+  position: absolute;
+  z-index: 3;
+  color: #000000;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.title span {
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  display: inline-block;
+  pointer-events: auto;
+}
+
+.subtitle {
+  position: absolute;
+  z-index: 3;
+  color: #000000;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+.subtitle span {
+  display: inline-block;
+  pointer-events: auto;
+}
+
+/* ========================================
+   НАВИГАЦИЯ
+   ======================================== */
+.nav-link {
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.nav-link-main,
+.nav-link-importance,
+.nav-link-why,
+.nav-link-order {
+  font-weight: 600;
+  color: #000000;
+}
+
+/* ========================================
+   БЛОК .Blok — выше чем .main
+   ======================================== */
+.Blok {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  z-index: 2; /* ✅ На 1 выше, чем .main */
+  margin-top: 0;
+}
+/* ========================================
+   КОНТЕЙНЕР ФОНА: .gren-block
+   ======================================== */
+.gren-block {
+  position: relative;
+  margin: 0 auto;
+  overflow: visible; /* 🔥 ВАЖНО: разрешаем выход за пределы */
+  z-index: 1;
+}
+.gren-block::before {
+  content: '';
+  display: block;
+  padding-top: inherit;
+}
+/* ========================================
+   ФОН ВНУТРИ .gren-block
+   ======================================== */
+.info-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* 🔥 ВЫШЕ чем .bg-top (z-index: -1) */
+  overflow: visible;
+}
+
+.info-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+}
+
+/* ========================================
+   БЛОК .Bottom — контейнер кнопки
+   ======================================== */
+.Bottom {
+  position: absolute;
+  z-index: 3;
+}
+
+/* ========================================
+   КНОПКА: кликабельный контейнер
+   ======================================== */
+.btn-container {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+/* ========================================
+   ФОН: белый прямоугольник с обводкой
+   ======================================== */
+
+.btn-outline {
+  position: absolute;
+  top: 598px;
+  left: 390px;
+  width: 245px;
+  height: 67px;
+  background-color: #ffffff;
+  border: 1px solid #ede9e9;
+  border-radius: 65px;
+  z-index: 1;
+}
+
+/* ========================================
+   ЗЕЛЁНЫЙ ПРЯМОУГОЛЬНИК
+   ======================================== */
+.btn-green {
+  position: absolute;
+  width: 233px;
+  height: 57px;
+  background-color: #27AE60;
+  border-radius: 65px;
+  z-index: 1;
+  top: 603px;
+  left: 396px;
+  display: flex;
+  align-items: center; /* центрируем по вертикали */
+  padding-left: 20px;
+  padding-right: 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* ========================================
+   ТЕКСТ "Оформить заказ"
+   ======================================== */
+.bg-text-top {
+  position: relative;
+  min-height: 100vh;
+  margin: 0 auto; /* центрирует */
+  overflow: visible;
+  z-index: 2;
+}
+/* Можно настроить left через дополнительный контейнер, если нужно */
+.btn-text-custom {
+  position: relative;
+  left: 10px; /* пример настройки */
+}
+.btn-text {
+  color: white; /* Явно задаём белый цвет */
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+  z-index: 2;
+  position: relative;
+}
+/* ========================================
+   КРУГ СО СТРЕЛОЧКОЙ
+   ======================================== */
+.btn-circle {
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  background-color: #35B86C;
+  border-radius: 50%;
+  z-index: 2;
+  right: 8px; /* отступ от правого края btn-green */
+  top: 50%;
+  transform: translateY(-50%); /* центрирование по вертикали */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========================================
+   СТРЕЛОЧКА (Vector.svg)
+   ======================================== */
+.btn-arrow {
+  width: 18px;
+  height: 18px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ========================================
+   ТЕКСТ: "Почему Вам нужно правильно питаться?"
+   ======================================== */
+.info-title {
+  position: absolute;
+  z-index: 3; /* выше фона */
+  color: #FFFFFF;
+  font-family: 'Arial', sans-serif;
+}
+
+.info-title span {
+  display: inline;
+  font-weight: 700;
+  pointer-events: auto;
+}
+
+/*==============
+    КОНТЕЙНЕРЫ
+================*/
+.container {
+  position: relative;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* ========================================
+   ФРАЗЫ: "Здоровый ребенок", "Повышение иммунитета" и др.
+   ======================================== */
+
+.feature {
+  position: absolute;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Arial', sans-serif;
+  white-space: normal;
+  pointer-events: auto;
+}
+
+.feature .text {
+  display: block;
+}
+
+/*В ТЕЛЕФОНЕ КНОПКИ ПЕРЕКЛЮЧЕНИЯ*/
+  .carousel-controls {
+  position: absolute;
+  z-index: 10; /* 🔥 Самый высокий z-index */
+  pointer-events: auto;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.carousel-btn {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  background-color: #27AE60;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  overflow: hidden;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #1e844976;
+}
+
+.carousel-arrow {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/*END*/
+
+/* ========================================
+   КАРТОЧКА ДИЕТОЛОГА (только для телефона)
+   ======================================== */
+.dietist-card {
+  position: absolute;
+  top: 1702px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* выше фона */
+  pointer-events: auto;
+  width: 268px;
+  height: 71px;
+}
+
+.card-outer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 65px;
+  overflow: hidden;
+}
+
+.card-inner {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 262px;
+  height: 63px;
+  border: 2px dashed #27ae5f4f;
+  border-radius: 65px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-name,
+.card-title {
+  position: absolute;
+  color: #000000;
+  font-family: 'Arial', sans-serif;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.card-name {
+  top: 11px;
+  left: 19px;
+}
+
+.card-title {
+  color: #6C997F;
+  top: 30px;
+  left: 27px;
+}
+/*END*/
+
+/* ========================================
+   КНОПКА МЕНЮ (вместо .phone-buttons)
+   ======================================== */
+.menu-toggle {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  z-index: 13; /* выше всех: .carousel-controls (12), .pregnant-section (11) */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+
+.btn-dot {
+  width: 38px;
+  height: 6px;
+  background-color: #27AE60;
+  border-radius: 32px;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+/* Анимация при наведении */
+.menu-toggle:hover .btn-dot {
+  opacity: 1;
+}
+
+/* ========================================
+   БОКОВАЯ ПАНЕЛЬ
+   ======================================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* скрыта за экраном */
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  background-color: #27AE60;
+  color: white;
+  z-index: 15;
+  transition: right 0.4s ease;
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  right: 0; /* выезжает на 0 */
+}
+
+.sidebar-content {
+  padding: 60px 20px 20px;
+  position: relative;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.sidebar-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar-nav a:hover {
+  opacity: 0.8;
+}
+
+/* КНОПКА ЗАКРЫТИЯ */
+.sidebar-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* ========================================
+   ЗАТЕМНЕНИЕ ФОНА
+   ======================================== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 14;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*END*/
+
+/* ========================================
+   КОНТЕЙНЕРЫ: mid-carousel → wrapper → products-container → product-card
+   ======================================== */
+
+.mid-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.products-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 0 10px;
+  width: 100%;
+  margin-top: 150px;
+  transition: none; /* будем управлять вручную */
+}
+
+.product-card {
+  position: relative;
+  width: 225px;
+  height: 453px;
+  border-radius: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: none;  
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/*END*/
+
+/* ========================================
+   КНОПКИ УПРАВЛЕНИЯ КАРУСЕЛЬЮ (внутри mid-carousel)
+   ======================================== */
+
+.mid-carousel-controls {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* чтобы не мешало, пока не кликабельно */
+  z-index: 20; /* 🔥 САМЫЙ ВЫСОКИЙ — выше всех */
+}
+
+.mid-carousel-btn {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto; /* КНОПКИ КЛИКАБЕЛЬНЫ */
+  z-index: 21;
+  transition: transform 0.2s ease;
+}
+
+.mid-carousel-btn:hover {
+  transform: scale(1.1);
+}
+
+.mid-carousel-arrow {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Позиции кнопок (только для телефона) */
+.mid-carousel-prev {
+  top: 368px;
+  left: -5px;
+}
+
+.mid-carousel-next {
+  top: 368px;
+  left: 294px;
+}
+
+/*END*/
+
+
+
+/* ========================================
+   КОНТЕЙНЕР №4: .center-photobg
+   ======================================== */
+.center-photobg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  margin-top: 0;
+  padding: 0;
+}
+
+.center-photobg .center-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+}
+/*end*/
+ 
+/* ========================================
+   КОНТЕЙНЕР №5: .center-info
+   ======================================== */
+.center-info {
+  position: relative;
+  width: 100%;
+  min-height: 120px; /* можно подстроить позже */
+
+  z-index: 2;
+  margin-top: 0;
+  padding: 0;
+}
+/*end*/
+
+/* ========================================
+   КОНТЕЙНЕР №6: Instagram
+   ======================================== */
+.instagram-section {
+  position: relative;
+  width: 100%;
+  height: 630px;
+  background-color: #ffffff;
+  z-index: 2;
+  margin-top: 0;
+}
+
+.instagram-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 323px;
+  height: 200px;
+  background-color: #ffffff;
+  z-index: 3;
+}
+
+/*END*/
+
+/* ========================================
+   КОНТЕЙНЕР №7: Персональное меню
+   ======================================== */
+.personal-menu {
+  position: relative;
+  width: 100%;
+  height: 319px;
+  background-color: #ffffff;
+  z-index: 2;
+  margin-top: 0;
+  padding: 0;
+}
+/*END*/
+
+/* ========================================
+   КОНТЕЙНЕР №8: Футер
+   ======================================== */
+.footer {
+  position: relative;
+  width: 100%;
+  height: 329px;
+  background-color: #27AE60; /* при необходимости */
+  z-index: 2;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* ========================================
+   🖥️ МЕДИА-ЗАПРОС: ПК (1280px и выше)
+   ======================================== */
+@media (min-width: 1280px) {
+  
+  .footer,
+  .pregnant-section,
+  .personal-menu,
+  .menu-toggle,
+  .instagram-section,
+  .center-info,
+  .center-photobg,
+  .mid-carousel,
+  .Blok {
+    display: none;
+  }
+ /* КОНТЕЙНЕР №1: фиксированная ширина и центрирование */
+  .main {
+    position: relative;
+    width: 1920px;
+    height: 1075px;
+    margin: 0 auto; /* 🔥 Центрирует по ширине экрана */
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  /* ФОН: bg-pc.png — фиксированный размер, центрирован */
+  .bg-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1075px;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* 🔥 Центрирует фон по центру */
+    width: 1920px;
+    height: 1075px;
+    z-index: -1;
+  }
+
+   /* Остальные стили — как были */
+  .bg-text-top {
+    width: 1920px;
+  }
+  
+    .bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1075px;
+    object-fit: none; /* ❌ Отключаем растяжение/обрезку */
+    image-rendering: -webkit-optimize-contrast; /* Сохраняет чёткость */
+    pointer-events: none;
+  }
+
+  .title span {
+    font-size: 50px;
+  }
+
+  .title {
+    top: 350px;
+    left: 390px;
+    text-align: left;
+  }
+
+  .subtitle {
+    font-size: 23px;
+  }
+
+  .subtitle {
+    top: 485px;
+    left: 390px;
+    text-align: left;
+  }
+
+  .nav-pc {
+    position: absolute;
+    top: 41px;
+    left: 390px;
+    z-index: 3;
+    display: flex;
+  }
+
+  .nav-block-importance {
+    margin-left: 200px;
+  }
+
+  .nav-block-why {
+    margin-left: 100px;
+  }
+
+  .nav-block-order {
+    margin-left: 100px;
+  }
+
+  .nav-link-main {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .nav-link-importance {
+    font-size: 14px;
+    font-weight: 600;
+    color: #27AE60;
+  }
+
+  .nav-link-why,
+  .nav-link-order {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+  }
+
+   .gren-block {
+    width: 1920px;
+    height: 680px; /* высота контейнера */
+  }
+
+   .Blok {
+    margin-top: -350px; /* например */
+    position: relative;
+    background-color: #000000;
+    }
+
+  .info-title {
+  top: 230px;        /* 🔺 Изменено с 68px на 272px */
+  left: 815px;
+  position: absolute;
+  z-index: 3;
+  color: #FFFFFF;
+  font-family: 'Arial', sans-serif;
+  width: 782px;        /* 🔹 Ширина строки */
+  line-height: 48px;   /* ✅ Высота строки = 48px */
+  white-space: nowrap; /* 🔹 Одна строка */
+  overflow: hidden;    /* Обрезаем, если выходит */
+  text-overflow: ellipsis; /* На всякий случай, если не влезет */
+}
+
+  .info-title span {
+    font-size: 35px;
+  }
+  .info-bg {
+    width: 1920px;
+    height: 649px;
+  }
+
+  .info-bg img {
+    top: 0px; /* ✅ Возвращаем на top: 0 */
+    left: 0;
+    width: 1920px;
+    height: 730px;
+    object-fit: none;
+    /* object-position: top; — можно добавить, если нужно прижать */
+  }
+    /* Убедимся, что .info-features выше фона */
+  .info-features {
+    z-index: 3;
+    pointer-events: none;
+  }
+  
+  .feature[data-id="1"] {
+    top: 377px;
+    left: 845px;
+    width: 176px;
+    height: 28px;
+    line-height: 28px;
+    color: #ff0000;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+    /*КНОПКИ ДЛЯ ПЕРЕКЛЮЧЕНИЯ В TOP ПРЯЧЕМ*/
+    .carousel-controls {
+    display: none;
+  }
+  /*END*/
+
+  /* ========================================
+   КАРТОЧКА ДИЕТОЛОГА (только для телефона)
+   ======================================== */
+  .dietist-card {
+    display: none;
+  }
+  /*END*/
+
+/* Стили для всех кругов */
+.pc-circles {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 13;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.circle-outer {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #27AE60;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+   .circle-outer:hover {
+    transform: scale(1.1); /* лёгкое увеличение */
+  }
+
+.circle-inner {
+  width: 32px;
+  height: 32px;
+  background-color: #27AE60;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.pc-circles.inactive .circle-outer {
+  border-color: #27AE60;
+}
+
+.pc-circles.inactive .circle-inner {
+  background-color: #27AE60;
+  transform: scale(0.8);
+}
+
+/* Неактивные круги — уменьшаются и тускнеют */
+.pc-circles.inactive {
+  opacity: 0.6;
+  transform: scale(0.8);
+}
+
+
+  /* === НАСТРОЙКА ПОЗИЦЫЫ ТЕГОВ === */
+  .circle-1 { left: 1102px; top: 285px; }
+  .circle-2 { left: 1018px; top: 480px; }
+  .circle-3 { left: 1102px; top: 656px; }
+
+/* Контейнер для изображений — внутри .tegi */
+.tegi {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.tegi-images {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  z-index: 12; /* выше фона, ниже кругов */
+}
+
+.tegi-img {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.tegi-img.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Позиции и размеры изображений */
+.tegi-img.img1 {
+  top: 175px;
+  left: 1035px;
+  width: 480px;
+  height: 700px;
+  z-index: 12;
+}
+
+.tegi-img.img2 {
+  top: 155px;
+  left: 1102px;
+  width: 449px;
+  height: 724px;
+  z-index: 13;
+}
+
+.tegi-img.img3 {
+  top: 120px;
+  left: 1110px;
+  width: 470px;
+  height: 758px;
+  z-index: 14;
+}
+/* ========================================
+   ФРАЗЫ РЯДОМ С КРУГАМИ (только ПК)
+   ======================================== */
+.tegi-label {
+  position: absolute;
+  color: #2B2B2B;
+  font-size: 18px;
+  font-weight: 600; /* semibold */
+  font-family: 'Arial', sans-serif;
+  z-index: 15;
+  pointer-events: auto;
+  white-space: nowrap;
+  transition: all 0.3s ease; /* плавность: цвет, размер, прозрачность */
+}
+
+/* Неактивная фраза — уменьшается и тускнеет */
+.tegi-label.inactive {
+  transform: scale(0.85);
+  opacity: 0.6;
+}
+/* Активная фраза — нормальный вид */
+.tegi-label.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Позиция фразы по top — как у круга */
+.label-1 { top: 300px; left: 930px;}
+.label-2 { top: 495px; left: 870px;}
+.label-3 { top: 676px; left: 875px;}
+
+
+/*END*/
+
+
+
+}
+
+
+
+/* ========================================
+   📱➡️🪟 МЕДИА-ЗАПРОС: ПЛАНШЕТ (768px — 1279px)
+   ======================================== */
+@media (min-width: 768px) and (max-width: 1279px) {
+.footer,
+.pregnant-section,
+.personal-menu,
+.menu-toggle,
+.instagram-section,
+.center-info,
+.center-photobg,
+.mid-carousel,
+.Blok{
+  display: none;
+}
+
+  /* КОНТЕЙНЕР №1: .main — фиксированная ширина и центрирование */
+  .main {
+    position: relative;
+    width: 768px;
+    height: 1195px;
+    margin: 0 auto; /* 🔥 Центрирует по ширине экрана */
+    overflow: hidden;
+    z-index: 1;
+  }
+  .container {
+    width: 771px;
+  }
+ /* ФОН: восстанавливаем оригинальное поведение */
+  .bg-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1095px; /* или оставьте 1096px, если нужно */
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1195px;
+    z-index: -1;
+  }
+
+  .bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 🔁 Возвращаем: фон растягивается на весь блок */
+    object-position: center;
+    pointer-events: none;
+  }
+
+
+  .bg-text-top {
+    width: 771px;
+  }
+
+  /* ОСНОВНОЙ КОНТЕЙНЕР ТЕКСТА */
+  .bg-text-top {
+    width: 768px;
+    height: 1195px;
+    position: relative;
+    overflow: visible;
+  }
+
+  /* ЗАГОЛОВОК */
+  .title {
+    top: 116px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+  }
+  .title-line1,
+  .title-line2 {
+    font-size: 32px;
+  }
+
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+   .subtitle {
+    top: 292px;
+    left: 50%;
+    transform: translateX(-50%); /* 🔹 Центрируем по горизонтали */
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .nav-pc {
+    position: absolute;
+    top: 44px;
+    left: 111px;
+    z-index: 3;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 60px;
+    white-space: nowrap;
+  }
+
+  .nav-block-main,
+  .nav-block-importance,
+  .nav-block-why,
+  .nav-block-order {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-link-main {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .nav-link-importance {
+    font-size: 14px;
+    font-weight: 600;
+    color: #27AE60;
+  }
+
+  .nav-link-why,
+  .nav-link-order {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+  }
+
+  .nav-block-order {
+    position: relative;
+    top: 30px;
+    left: -147px;
+  }
+
+   .gren-block {
+    width: 100%;
+    height: 100%;
+  }
+
+     .Blok {
+    width: 771px;
+    height: 990px;
+    margin: 0 auto; /* 🔥 Центрирует по горизонтали */
+    overflow: visible;
+    position: relative;
+  }
+
+  .btn-green {
+    top: 399px;
+    left: 268px;
+  }
+
+  .btn-outline {
+    top: 394px;
+    left: 262px;
+  }
+  .info-title {
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1; /* убираем общий line-height — управляем через span */
+  }
+
+  .info-title span {
+    display: block;
+    font-size: 41px;
+    line-height: 52px; /* 🔺 Установлено 52px */
+  }
+.info-bg {
+    width: 771px;
+    height: 983px;
+  }
+
+  .info-bg img {
+    width: 771px;
+    height: 982.53px;
+    object-fit: none;
+  }
+
+    /*КНОПКИ ДЛЯ ПЕРЕКЛЮЧЕНИЯ В TOP ПРЯЧЕМ*/
+   .carousel-controls {
+    display: none;
+  }
+  /*END*/
+
+    /* ========================================
+   КАРТОЧКА ДИЕТОЛОГА (только для телефона)
+   ======================================== */
+  .dietist-card {
+    display: none;
+  }
+  /*END*/
+ /* ПОКАЗЫВАЕМ .tegi и его содержимое */
+  .tegi,
+  .tegi-images,
+  .tegi-label,
+  .pc-circles {
+    display: block !important;
+    pointer-events: auto;
+  }
+
+  /* СКРЫВАЕМ МОБИЛЬНЫЕ ЭЛЕМЕНТЫ */
+  .menu-toggle,
+  .carousel-controls,
+  .pregnant-section,
+  .personal-menu,
+  .instagram-section,
+  .center-info,
+  .center-photobg,
+  .mid-carousel,
+  .Blok,
+  .footer {
+    display: none;
+  }
+
+  /* ОСНОВНЫЕ КОНТЕЙНЕРЫ */
+  .main {
+    height: 1096px;
+    min-height: 1096px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bg-top,
+  .bg {
+    height: 1096px;
+  }
+
+  .bg img {
+    object-fit: cover;
+  }
+
+  .bg-text-top {
+    width: 771px;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+  }
+
+  /* ШРИФТЫ */
+  .title {
+    top: 116px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .title-line1,
+  .title-line2 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    top: 191px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 20px;
+  }
+
+  /* =============== ТЕГИ (КРУГИ) =============== */
+
+  /* КОНТЕЙНЕР ТЕГОВ */
+  .tegi {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 11;
+  }
+
+  /* КРУГИ */
+  .pc-circles {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 13;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  .circle-outer {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #27AE60;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .circle-inner {
+    width: 32px;
+    height: 32px;
+    background-color: #27AE60;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  /* КРУГИ: неактивные */
+  .pc-circles.inactive {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+
+  .pc-circles.inactive .circle-inner {
+    transform: scale(0.8);
+  }
+
+  /* ИЗОБРАЖЕНИЯ */
+  .tegi-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    z-index: 12;
+  }
+
+  .tegi-img {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .tegi-img.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ПОЗИЦИИ ИЗОБРАЖЕНИЙ (вы можете изменить) */
+  .tegi-img.img1 {
+    top: 530px;
+    left: 250px;
+    width: 480px;
+    height: 700px;
+    z-index: 12;
+  }
+
+  .tegi-img.img2 {
+    top: 530px;
+    left: 250px;
+    width: 449px;
+    height: 724px;
+    z-index: 13;
+  }
+
+  .tegi-img.img3 {
+    top: 480px;
+    left: 320px;
+    width: 470px;
+    height: 758px;
+    z-index: 14;
+  }
+
+  /* ФРАЗЫ */
+  .tegi-label {
+    position: absolute;
+    color: #2B2B2B;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    z-index: 15;
+    pointer-events: auto;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .tegi-label.inactive {
+    transform: scale(0.85);
+    opacity: 0.6;
+  }
+
+  .tegi-label.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* ПОЗИЦИИ ФРАЗ (вы можете изменить) */
+  .label-1 { top: 613px; left: 140px; }
+  .label-2 { top: 810px; left: 50px; }
+  .label-3 { top: 1035px; left: 85px; }
+
+    /* === НАСТРОЙКА ПОЗИЦЫЫ ТЕГОВ === */
+  .circle-1 { left: 310px; top: 600px; }
+  .circle-2 { left: 200px; top: 800px; }
+  .circle-3 { left: 310px; top: 1020px; }
+
+ /* АКТИВНЫЙ КРУГ — нормальный размер и яркость */
+  .pc-circles:not(.inactive) .circle-outer {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .pc-circles:not(.inactive) .circle-inner {
+    transform: scale(1);
+  }
+
+  /* НЕАКТИВНЫЙ КРУГ — уменьшается и тускнеет */
+  .pc-circles.inactive {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+
+  .pc-circles.inactive .circle-outer {
+    border-color: #27AE60;
+  }
+
+  .pc-circles.inactive .circle-inner {
+    background-color: #27AE60;
+    transform: scale(0.8);
+  }
+}
+/* ========================================
+   📱 МЕДИА-ЗАПРОС: ТЕЛЕФОН (0px — 767px)
+   ======================================== */
+@media (max-width: 767px) {
+  .tegi{
+    display: none;
+  }
+  .container {
+    width: 323px;
+  }
+
+  .bg img {
+    object-fit: none;
+  }
+
+  .bg-text-top {
+    width: 323px;
+    margin: 0 auto; /* центрируем контейнер */
+    position: relative; /* обязательно */
+    overflow: visible;
+  }
+
+    .main {
+    height: auto;
+    min-height: 950px; /* например, высота фона */
+  }
+
+  .bg-top,
+  .bg {
+    height: 755px;
+  }
+
+
+  .title span {
+    font-size: 25px;
+  }
+
+  .title {
+    top: 116px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .subtitle {
+    top: 191px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .nav-pc {
+    position: absolute;
+    top: 38px;
+    left: 14px;
+    z-index: 3;
+    display: flex;
+  }
+
+  .nav-block-main {
+    display: block;
+  }
+
+  .nav-block-importance,
+  .nav-block-why,
+  .nav-block-order {
+    display: none;
+  }
+
+  .nav-link-main {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+  }
+
+.btn-dot {
+  width: 38px;
+  height: 6px;
+  background-color: #27AE60;
+  border-radius: 32px;
+  opacity: 0.9;
+}
+
+ /* КНОПКА: "Оформить заказ" */
+  .Bottom {
+    position: absolute;
+    top: 271px;
+    left: 38px; /* как вы просили */
+    z-index: 10;
+  }
+
+
+  .btn-green {
+    position: absolute;
+    width: 233px; /* ✅ как в ПК */
+    height: 57px;
+    background-color: #27AE60;
+    border-radius: 65px;
+    z-index: 2;
+    top: 2.5px; /* центрируем по вертикали внутри .btn-outline */
+    left: 6px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 60px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+    /* 1. ФОН: gren-block и info-bg — самый низ */
+  .gren-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+
+  /* Основной контейнер */
+  .Blok {
+    position: relative;
+    width: 100%;
+    height: 837px;
+    overflow: visible;
+    z-index: 1; /* базовый контекст */
+  }
+
+  .btn-outline {
+    position: absolute;
+    width: 245px; /* ✅ как в ПК */
+    height: 67px;
+    background-color: #ffffff;
+    border: 1px solid #ede9e9;
+    border-radius: 65px;
+    z-index: 1;
+    top: -2px;
+    left: 0;
+  }
+
+  .bg-text-top {
+    width: 323px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .btn-text {
+    color: white; /* Гарантированно белый */
+    font-size: 15px; /* можно уменьшить, если текст не влезает */
+    white-space: nowrap;
+  }
+
+  .btn-circle {
+    width: 43px;
+    height: 43px;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* 2. Заголовок: "Почему Вам нужно..." — выше фона */
+  .info-title {
+    position: absolute;
+    z-index: 2;
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    top: 57px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1;
+  }
+
+  .info-title span {
+    display: block;
+    font-size: 22px;
+    line-height: 33px;
+  }
+
+   .info-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .info-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+  }
+  .card-outer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 65px;
+    overflow: hidden;
+  }
+  .card-inner {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    width: 262px;
+    height: 63px;
+    border: 2px dashed #27AE60;
+    border-radius: 65px;
+    background-color: transparent;
+    box-sizing: border-box;
+  }
+
+  .card-name,
+  .card-title {
+    position: absolute;
+    color: #000000;
+    font-family: 'Arial', sans-serif;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  .card-name {
+    top: 11px;
+    left: 19px;
+  }
+  .card-title {
+    color: #6C997F;
+    top: 30px;
+    left: 27px;
+  }
+
+  /*КНОПКИ ДЛЯ ПЕРЕКЛЮЧЕНИЯ В TOP*/
+    .carousel-controls {
+    position: absolute;
+    top: 664px; /* фиксированная позиция */
+    left: 0;
+    width: 100%;
+    z-index: 12; /* 🔥 Самый высокий z-index */
+    pointer-events: auto; /* гарантируем кликабельность */
+  }
+    .carousel-btn {
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    background-color: #27AE60;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .carousel-btn:hover {
+    background-color: #1e8449;
+  }
+  .carousel-arrow {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  /* Позиционирование стрелок */
+  .carousel-prev {
+    left: 14px;
+  }
+
+  .carousel-next {
+    left: 273px;
+  }
+  /*END*/
+
+ /* 3. Карточка диетолога — выше заголовка */
+  .dietist-card {
+    position: absolute;
+    top: 755px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 268px;
+    height: 71px;
+    z-index: 3; /* выше .info-title */
+    pointer-events: auto;
+  }
+  /*END*/
+
+   /* КОНТЕЙНЕР С ФРАЗАМИ ЗДОРОВЫЙ РЕБЕНОК И ТД */
+   .info-features {
+    position: relative;
+    width: 323px;
+    height: 837px;
+    margin: 0 auto;
+    z-index: 4; /* ✅ Самый высокий — поверх всех */
+    pointer-events: none;
+  }
+
+    /* Все фразы — абсолютные, но внутри .info-features */
+   .feature {
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Arial', sans-serif;
+    pointer-events: auto;
+  }
+
+  .feature[data-id="1"] { top: 148px; left: 60px; width: 176px; height: 28px; line-height: 28px; white-space: nowrap; overflow: hidden; }
+  .feature[data-id="2"] { top: 195px; left: 58px; width: 230px; height: 28px; line-height: 28px; white-space: nowrap; overflow: hidden; }
+  .feature[data-id="3"] { top: 242px; left: 60px; width: 230px; height: 28px; line-height: 28px; white-space: nowrap; overflow: hidden; }
+  .feature[data-id="4"] { top: 292px; left: 60px; width: 230px; height: 56px; line-height: 28px; white-space: normal; overflow: hidden; }
+  .feature[data-id="5"] { top: 370px; left: 60px; width: 224px; height: 56px; line-height: 28px; white-space: normal; overflow: hidden; word-spacing: -1px; }
+
+  .feature .text {
+    display: block;
+  }
+
+  /* КОНТЕЙНЕР: "Для беременных" и "Для кормящих" */
+   .pregnant-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 11; /* Высокий, но ниже .carousel-controls */
+  }
+
+  /* ОБЩИЙ СТИЛЬ ДЛЯ ФРАЗ */
+  .pregnant-text {
+    position: absolute;
+    width: 260px;
+    height: 19px;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 700; /* bold */
+    font-family: 'Arial', sans-serif;
+    line-height: 19px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: auto;
+    z-index: 1;
+  }
+
+  /* Фраза: "Для беременных" — по центру */
+  .pregnant-text.type1 {
+    top: 437px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Фраза: "Для кормящих" — по центру */
+  .pregnant-text.type2 {
+    top: 437px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Фраза: "Безопасные лакомства" — по центру */
+  .pregnant-text.type3 {
+    top: 437px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* ОБЩИЙ СТИЛЬ ДЛЯ ИЗОБРАЖЕНИЙ */
+  .pregnant-img {
+    position: absolute;
+    pointer-events: auto;
+    z-index: 0;
+  }
+
+  /* Изображение: 1.png — для беременных */
+  .pregnant-img.img1 {
+    top: 467px;
+  }
+
+  /* Изображение: 2.png — для кормящих */
+  .pregnant-img.img2 {
+    top: 475px;
+    left: 30px;
+  }
+
+  /* Изображение: 3.png — безопасные лакомства */
+  .pregnant-img.img3 {
+    top: 450px;
+    left: 55px;
+  }
+
+  /* Плавное появление/исчезновение */
+.pregnant-text,
+.pregnant-img {
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+
+  /* ГАЛОЧКА  */
+ .feature-icon {
+    position: absolute;
+    width: 11px;
+    height: 8px;
+    left: 30px; /* общий left */
+    z-index: 4;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+
+   /* Можно добавить transition, если нужно анимировать появление */
+  .feature-icon {
+    transition: transform 0.2s ease;
+  }
+
+  .feature-icon:hover {
+    transform: scale(1.1);
+}
+.feature-icon[data-for="1"] { top: 158px; }
+.feature-icon[data-for="2"] { top: 204px; }
+.feature-icon[data-for="3"] { top: 251px; }
+.feature-icon[data-for="4"] { top: 301px; }
+.feature-icon[data-for="5"] { top: 375px; }
+
+/* ========================================
+  БЛОК: mid-carousel (только для телефона)
+======================================== */
+.mid-carousel {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-color: #ffffff; /* при необходимости */
+  overflow: hidden;
+  z-index: 2;
+  margin-top: 0;
+}
+
+.mid-carousel-title {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  color: #27AE60;
+  font-size: 22px;
+  font-weight: 700; /* bold */
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  line-height: 1.4;
+  white-space: normal;
+  z-index: 3;
+}
+.mid-carousel {
+  width: 323px;
+  height: 640px;
+  margin: 0 auto;
+}
+
+.mid-carousel-wrapper,
+.products-container {
+  height: 100%;
+}
+
+.products-container {
+  margin-top: 150px; /* top: 150px от верха .mid-carousel */
+}
+
+.product-card {
+  position: relative;
+  width: 250px;
+  height: 453px;
+  border-radius: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+  /*END*/
+
+
+
+  /* ========================================
+   ВНУТРЕННИЕ БЛОКИ В product-card
+   ======================================== */
+.card-top {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 30px 30px 0 0;
+  overflow: hidden; /* обрезаем, если изображение выходит */
+  z-index: 1;
+}
+/* Нижний блок — жёлтый, прижат к низу */
+.card-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 203px;
+  border-radius: 0 0 30px 30px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+ }
+/*END*/
+
+.card-top img {
+  position: absolute;
+  z-index: 2;
+}
+
+/* КАРТИНКИ КАРУСЕЛЬ --- ПОЗИЦИИ*/
+.img-center {
+  width: 430px;   
+  height: 500px;  
+  top: -150px;
+  left: -90px;
+}
+
+.img-right {
+  width: 510px;
+  height: 500px;
+  top: -125px;
+  left: -130px;
+}
+
+.img-left {
+  width: 510px;
+  height: 500px;
+  top: -125px;
+  left: -130px;
+}
+
+.img-center{
+  transform: scale(0.6); /* уменьшаем до 80% — как будто дальше */
+  transform-origin: center; /* масштабируем из центра */
+}
+.img-right,
+.img-left{
+  transform: scale(0.5); /* уменьшаем до 80% — как будто дальше */
+  transform-origin: center; /* масштабируем из центра */
+}
+/*END*/
+/* ========================================
+   ТЕКСТ ВНИЗУ КАРТОЧКИ 2 (и других, если нужно)
+   ======================================== */
+
+.product-title {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
+  white-space: nowrap;
+  z-index: 2;
+  width: 200px;
+  text-align: center;
+}
+
+.product-desc {
+  position: absolute;
+  top: 49px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 230px;
+  color: #6C997F;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.4;
+  text-align: center;
+  white-space: normal;
+  z-index: 2;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.mid-carousel-controls,
+.mid-carousel-btn,
+.mid-carousel-arrow {
+  display: block;
+}
+
+  /* ========================================
+  КОНТЕЙНЕР №4: .center-photobg
+  ======================================== */
+.center-photobg {
+  width: 323px;
+  height: 410px; /* можно подогнать под размер center.png */
+  margin: auto;
+}
+
+.center-photobg .center-img {
+  top: -20px;
+  left: -181px;
+  width: 683px;
+  height: 586px;
+}
+  /* ========================================
+  КОНТЕЙНЕР №5: .center-photobg
+  ======================================== */
+.center-info {
+  width: 292px;
+  height: 465px;
+  margin: auto; 
+
+}
+
+.center-info-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 52px;
+  color: #27AE60;
+  font-size: 20px;
+  font-weight: 700; /* Bold */
+  font-family: 'Arial', sans-serif;
+  line-height: 1.3;
+  white-space: normal;
+  z-index: 3;
+}
+
+  /* БЛОК С ЭМОДЗИ */
+  .emoj {
+    position: absolute;
+    top: 52px; /* чуть ниже .center-info-title (52px + отступ) */
+    left: 0;
+    width: 62px;
+    height: 451px;
+    background-color: transparent;
+    z-index: 2;
+  }
+
+  /* БЛОК С ТЕКСТОМ (справа от .emoj) */
+  .more-text {
+    position: absolute;
+    top: 52px; 
+    left: 62px; /* сразу после .emoj */
+    right: 0; 
+    height: 451px;
+    min-height: 40px;
+    color: #000000;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.4;
+    z-index: 2;
+  }
+  /* ========================================
+   ТЕКСТ В .more-text
+   ======================================== */
+
+.more-text {
+  position: absolute;
+  top: 60px;
+  left: 62px;
+  right: 0;
+  height: auto;
+  z-index: 2;
+}
+
+.more-text-title {
+  position: absolute;
+  top: 39px;
+  left: 0;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700; /* bold */
+  font-family: 'Arial', sans-serif;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.more-text-desc {
+  position: absolute;
+  top: 68px; /* после заголовка */
+  left: 0;
+  width: 225px;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400; /* regular */
+  font-family: 'Arial', sans-serif;
+  line-height: 1.4;
+  white-space: normal;
+  z-index: 3;
+}
+/*END*/
+
+.emoji-circle {
+  position: absolute;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+/*END*/
+
+/* Изображение внутри круга — центрировано */
+.emoji-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 1;
+}
+  /* ========================================
+   КОНТЕЙНЕР 6
+   ======================================== */
+
+.instagram-section {
+    width: 323px;
+    height: 600px; /* или min-height */
+    margin: 0px auto 0; /* отступ сверху от .center-info */
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .instagram-content {
+    width: 323px;
+    height: 0px;
+  }
+
+  .instagram-title {
+    position: absolute;
+    top: 108px;
+    left: 25px;
+    width: 285px;
+    color: #27AE60;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    z-index: 4;
+  }
+
+  .instagram-desc {
+    position: absolute;
+    top: 142px;
+    left: 20px;
+    width: 285px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    z-index: 4;
+    text-decoration: none;
+  }
+
+  .instagram-desc:hover {
+    text-decoration: underline;
+  }
+   .instagram-img {
+  position: absolute;
+  top: 100px; /* сразу после .instagram-content (высота 200px) */
+  left: 0;
+  width: 323px;
+  height: auto;
+  max-width: 100%;
+  z-index: 3;
+}
+.personal-menu {
+    width: 323px;
+    height:420px;
+    margin: 0 auto; /* центрируем */
+    padding: 0;
+    position: relative;
+  }
+
+  .menu-title {
+    position: absolute;
+    top: 0;
+    left: 41px;
+    width: 241px; 
+    color: #27AE60;
+    font-size: 22px;
+    font-weight: 700; /* bold */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 3;
+  }
+
+  .menu-desc {
+    position: absolute;
+    top: 67px;
+    left: 9px;
+    width: 305px; 
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400; /* regular */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    line-height: 1.2;
+    white-space: normal;
+    z-index: 3;
+  }
+  /* ========================================
+   КНОПКА "Оформить заказ" в контейнере №7
+   ======================================== */
+
+.personal-menu .btn-container {
+  position: absolute;
+  top: 280px;
+  left: 38px;
+  z-index: 5; /* выше всех */
+  pointer-events: auto; /* разрешаем клики */
+  display: block;
+  text-decoration: none;
+  width: 245px;
+  height: 67px;
+}
+
+
+.personal-menu .btn-outline {
+  position: absolute;
+  width: 245px;
+  height: 67px;
+  background-color: #ffffff;
+  border: 1px solid #ede9e9;
+  border-radius: 65px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.personal-menu .btn-green {
+  position: absolute;
+  width: 233px;
+  height: 60px;
+  background-color: #27AE60;
+  border-radius: 65px;
+  z-index: 2;
+  top: 2.5px;
+  left: 6px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.personal-menu .btn-text {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+  z-index: 2;
+  position: relative;
+}
+
+.personal-menu .btn-circle {
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  background-color: #35B86C;
+  border-radius: 50%;
+  z-index: 2;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.personal-menu .btn-arrow {
+  width: 18px;
+  height: 18px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ========================================
+   ПОЛЯ ВВОДА В .personal-menu
+   ======================================== */
+
+.input-field {
+  position: absolute;
+  width: 283px;  /* 323 - 20 - 20 = 283px */
+  height: 50px;
+  background-color: #E8F7EE;
+  border-radius: 65px;
+  border: none;
+  padding: 0 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #B2DAC2; /* Цвет вводимого текста */
+  z-index: 4;
+  outline: none; /* убираем стандартную обводку */
+  box-sizing: border-box;
+}
+
+/* 1-е поле: Имя */
+.input-name {
+  top: 139px;
+  left: 20px;
+}
+
+/* 2-е поле: Телефон */
+.input-phone {
+  top: 200px;
+  left: 20px;
+}
+
+/* Плейсхолдер — цвет */
+.input-field::placeholder {
+  color: #B2DAC2;
+  opacity: 0.7;
+}
+
+/* ========================================
+   футер
+  ======================================== */
+
+.footer {
+  width: 100%;
+  height: 329px;
+  margin-top: 0;
+  padding: 0;
+  background-color: #35B86C; /* фон под белый текст */
+  overflow: hidden;
+}
+  
+
+.footer-content {
+  position: relative;
+  width: 323px;
+  height: 329px;
+  margin: 0 auto; /* 🔥 Авто-центрирование по горизонтали */
+  padding: 0;
+}
+
+.footer-link {
+  position: absolute;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* "Здоровая мама" — жирная, 18px */
+.footer-main {
+  top: 40px;
+  left: 20px;
+  font-size: 18px;
+  font-weight: 700; /* bold */
+}
+
+/* "Важность правильного питания" */
+.footer-importance {
+  top: 90px;
+  left: 20px;
+  font-size: 14px;
+  font-weight: 600; /* semibold */
+}
+
+/* "Почему мы?" */
+.footer-why {
+  top: 130px;
+  left: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* "Где заказать?" */
+.footer-order {
+  top: 164px;
+  left: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* "Политика конфиденциальности" — чуть прозрачнее */
+.footer-privacy {
+  top: 228px;
+  left: 20px;
+  font-size: 12px;
+  font-weight: 400; /* regular */
+  opacity: 0.8; /* чуть прозрачнее */
+}
+
+/* "Условия онлайн-использования" — ещё чуть прозрачнее */
+.footer-terms {
+  top: 265px;
+  left: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.8; /* чуть больше прозрачности */
+}
+
+/* При наведении (если нужно) */
+.footer-link:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/*END*/
+
+
+}

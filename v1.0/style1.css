@@ -21,7 +21,6 @@ body {
   min-height: 100vh;
   background-color: transparent;
   z-index: 1;
-  /* Ширина будет задана в медиа-запросах */
 }
 
 /* ========================================
