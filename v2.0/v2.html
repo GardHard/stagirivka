@@ -162,65 +162,80 @@
 </div>
 <!-- КОНТЕЙНЕР №2 -->
 <div class="Blok">
-  <div class="gren-block">
-    <picture class="info-bg">
-      <!-- ПК: pc-inf.png -->
-      <source media="(min-width: 1280px)" srcset="image.v2/pc-inf.png">
-      <!-- Планшет: smart-info.png -->
-      <source media="(min-width: 768px) and (max-width: 1279px)" srcset="image.v2/samrt-info.png">
-      <!-- Телефон: phone-info.png -->
-      <source media="(max-width: 767px)" srcset="image.v2/phone-info.png">
-      <!-- Фолбэк -->
-      <img src="image.v2/phone-info.png" alt="Инфо фон" class="info-img">
-    </picture>
-  </div>
+    <div class="struktur">
 
-  <!-- НОВЫЙ ТЕКСТ: "Почему Вам нужно правильно питаться?" -->
-  <div class="info-title">
-    <span class="line1">Почему Вам нужно</span>
-    <span class="line2">правильно питаться?</span>
-  </div>
-
-  <!-- ИНФОРМАЦИЯ В ЗЕЛЕНОЙ КАРТОЧКЕ-->
-  <div class="info-features">
-    <!-- Фраза: "Здоровый ребенок" (только для ПК) -->
-    <div class="feature" data-id="1">
-      <span class="text">Здоровый ребенок</span>
-    </div>
-      <!-- Фраза 2: Повышение иммунитета -->
-    <div class="feature" data-id="2">
-      <span class="text">Повышение иммунитета</span>
-    </div>     
-    <div class="feature" data-id="3">
-      <span class="text">Поддержание фигуры</span>
-    </div>
-    <div class="feature" data-id="4">
-      <span class="text">Отсутствие вредных компонентов&nbsp;</span>
-    </div>
-    <div class="feature" data-id="5">
-      <span class="text">Снижение нагрузки на&nbsp;органы пищеворения</span>
-    </div>
-    <!-- ГАЛОЧКИ -->
-    <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon" data-for="1" >
-    <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon" data-for="2" >
-    <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon" data-for="3" >
-    <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon" data-for="4" >
-    <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon" data-for="5" >
-  </div>
-
-  <!-- ✅ БЛОК: Карточка диетолога (только для телефона) -->
-  <div class="dietist-card">
-    <div class="card-outer">
-      <div class="card-inner">
-        <div class="card-name">Иванова Надежда Александровна</div>
-        <div class="card-title">Сертифицированный диетолог</div>
+        <img src="image.v2/gren-foto.png" alt="Фон зелёного блока" class="gren-img">
+      <!-- НОВЫЙ ТЕКСТ: "Почему Вам нужно правильно питаться?" -->
+      <div class="info-title">
+        <span class="line1">Почему Вам нужно</span>
+        <span class="line2">правильно питаться?</span>
       </div>
-    </div>
-  </div>
+  <!-- =============== НОВАЯ ОБЁРТКА ДЛЯ ФРАЗ (ТОЛЬКО ДЛЯ ПК) =============== -->
+      <div class="features-wrapper">
+        <!-- ЛЕВЫЙ БЛОК ФРАЗ -->
+        <div class="features-left">
+          <div class="feature-pc" data-id="1">
+            <span class="text">Здоровый ребенок</span>
+            <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon-pc">
+          </div>
+          <div class="feature-pc" data-id="2">
+            <span class="text">Повышение иммунитета</span>
+            <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon-pc">
+          </div>
+          <div class="feature-pc" data-id="3">
+            <span class="text">Поддержание фигуры</span>
+            <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon-pc">
+          </div>
+        </div>
 
+        <!-- ПРАВЫЙ БЛОК ФРАЗ -->
+        <div class="features-right">
+          <div class="feature-pc" data-id="4">
+            <span class="text">Отсутствие вредных компонентов</span>
+            <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon-pc">
+          </div>
+          <div class="feature-pc" data-id="5">
+            <span class="text">Снижение нагрузки на органы пищеворения&nbsp;</span>
+            <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon-pc">
+          </div>
+        </div>
+      </div>
+
+      <!-- ИНФОРМАЦИЯ В ЗЕЛЕНОЙ КАРТОЧКЕ-->
+      <div class="info-features">
+        <!-- Фраза: "Здоровый ребенок" (только для Телефона) -->
+        <div class="feature" data-id="1">
+          <span class="text">Здоровый ребенок</span>
+        </div>
+        <div class="feature" data-id="2">
+          <span class="text">Повышение иммунитета</span>
+        </div>     
+        <div class="feature" data-id="3">
+          <span class="text">Поддержание фигуры</span>
+        </div>
+        <div class="feature" data-id="4">
+          <span class="text">Отсутствие вредных компонентов&nbsp;</span>
+        </div>
+        <div class="feature" data-id="5">
+          <span class="text">Снижение нагрузки на&nbsp;органы пищеворения</span>
+        </div>
+        <!-- Фраза 2: Для планшета -->
+        <div class="feature" data-id="6">Отсутствие вредных компонентов</div>
+        <div class="feature" data-id="7">Снижение нагрузки на органы пищеворения&nbsp;</div>
+        <!-- ГАЛОЧКИ -->
+        <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon" data-for="1" >
+        <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon" data-for="2" >
+        <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon" data-for="3" >
+        <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon" data-for="4" >
+        <img src="image.v2/galka.svg" alt="Галочка" class="feature-icon" data-for="5" >
+      </div>
+
+    
+    </div>
+ 
 </div>
 
-<!-- КОНТЕЙНЕР №3 -->
+<!-- КОНТЕЙНЕР №3 телефон -->
 <div class="mid-carousel">
   <div class="mid-carousel-title">
     Обязательные продукты для&nbsp;здорового питания:
@@ -290,6 +305,85 @@
   </button>
   <button class="mid-carousel-btn mid-carousel-next" aria-label="Следующая карточка">
     <img src="image.v2/Group 54.svg" alt="Вперёд" class="mid-carousel-arrow">
+  </button>
+</div>
+
+
+</div>
+
+<!-- КОНТЕЙНЕР №3.1 планшет -->
+<div class="midel-carousel">
+  <div class="mid-carousel-title">
+    Обязательные продукты для&nbsp;здорового питания:
+  </div>
+
+  <!-- КАРУСЕЛЬ -->
+  <div class="products-container">
+    
+    <!-- Карточка 1 -->
+    <div class="product-card">
+      <!-- Верхний блок -->
+      <div class="card-top">
+        <img src="image.v2/mid-left.png" alt="Карточка слева" class="img-left">
+      </div>
+        <!-- Нижний блок -->
+      <div class="card-bottom">
+        <!-- Заголовок: Овощи -->
+        <div class="product-title">Овощи</div>
+
+          <!-- Описание -->
+        <div class="product-desc">
+          Брокколи,тыква,цветная капуста&nbsp;,репка огурцы.Готовые блюда&nbsp;из тушеных смесей без&nbsp;добовления масла.
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 2 -->
+    <div class="product-card">
+      <!-- Верхний блок -->
+      <div class="card-top">
+        <img src="image.v2/mid-center.png" alt="Карточка центр" class="img-center">
+      </div>
+       <!-- Нижний блок -->
+      <div class="card-bottom">
+        <!-- Заголовок: Продукты из молока  -->
+        <div class="product-title">Мясо</div>
+        <!-- Описание -->
+        <div class="product-desc">
+          Крольчатина,телятина, индейка&nbsp;,курица без кожи. Мясные&nbsp;блюда ежедневно должны&nbsp;присутсвовать в питании&nbsp;в тушоном, запеченном&nbsp;или вареном виде.
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 3 -->
+    <div class="product-card">
+      <div class="card-top">
+        <img src="image.v2/mid-right.png" alt="Карточка справа" class="img-right">
+      </div>
+      <div class="card-bottom">
+           <!-- Заголовок: Овощи -->
+        <div class="product-title">Продукты из молока</div>
+
+          <!-- Описание -->
+        <div class="product-desc">
+          Сыр,ряженка, простокваща, творог&nbsp;,йогурт без добавок, кефир. Желательно&nbsp;кушать их кормящей маме&nbsp;ежедневно либо через день.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- КНОПКИ УПРАВЛЕНИЯ КАРУСЕЛЬЮ -->
+<div class="mid-carousel-controls">
+  <!-- Кнопка "Назад" -->
+  <button class="mid-carousel-btn mid-carousel-prev" aria-label="Предыдущая карточка">
+    <img src="image.v2/Group 53.svg" alt="Назад" class="carousel-icon">
+  </button>
+
+  <!-- Кнопка "Вперёд" -->
+  <button class="mid-carousel-btn mid-carousel-next" aria-label="Следующая карточка">
+    <img src="image.v2/Group 54.svg" alt="Вперёд" class="carousel-icon">
   </button>
 </div>
 
@@ -428,5 +522,6 @@
 <script src="js/slider.js" defer></script>
 <script src="js/carousel.js" defer></script>
 <script src="js/menu.js" defer></script>
+<script src="js/tablet-carousel.js" defer></script>
 <script src="js/tegi-slider.js" defer></script>
 </body>
