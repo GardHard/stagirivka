@@ -310,7 +310,7 @@
 
 </div>
 
-<!-- КОНТЕЙНЕР №3.1 планшет -->
+<!-- КОНТЕЙНЕР №3.1 планшет/пк -->
 <div class="midel-carousel">
   <div class="mid-carousel-title">
     Обязательные продукты для&nbsp;здорового питания:
@@ -391,7 +391,14 @@
 
 <!-- КОНТЕЙНЕР №4 -->
 <div class="center-photobg">
-  <img src="image.v2/center.png" alt="Центральное изображение" class="center-img">
+  <picture>
+    <!-- ПК: centar.png -->
+    <source media="(min-width: 1280px)" srcset="image.v2/centar.png">
+    <!-- Планшет: center.png -->
+    <source media="(min-width: 768px)" srcset="image.v2/center.png">
+    <!-- Телефон: center.png -->
+    <img src="image.v2/center.png" alt="Центральное изображение" class="center-img">
+  </picture>
 </div>
 
 <!-- КОНТЕЙНЕР №5 -->
