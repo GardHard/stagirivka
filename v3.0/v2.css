@@ -394,22 +394,6 @@ html, body {
 
 
 
-
-
-
-
-.insaid{
-  z-index: 1;
-  position: relative;
-}
-.insaid {
-  position: absolute;
-  
-  width: 600px;
-  height: 650px;
-}
-
-
 /* Заголовок @ Почему мамы выбирают нашу доставку? @ */
 .center-info-title {
   position: relative;
@@ -436,27 +420,29 @@ html, body {
   z-index: 2;
   position: relative;
   width: 600px;
-  height: 60px;
+  height: auto;
+  margin-bottom: 60px;
+
 }
 
 /* БЛОК С ТЕКСТОМ — рядом с .emoj */
 .next-blok-text {
-  position: absolute; /* Важно: absolute, чтобы можно было точно позиционировать */
+  position: relative; /* Важно: absolute, чтобы можно было точно позиционировать */
   left: calc(100px); /* = ширина .emoj → прижимаем к правому краю */
   top: 0; /* = top .emoj (0) → выравниваем по верхнему краю */
-  width: 500px;
-  height: 80px;
+  width: auto;
+  height: auto;
   z-index: 3;
   /* Можно добавить margin-left, если нужен отступ */
 }
 
 /* Заголовок: "Экологичность:" */
 .more-text-title {
-  position: absolute;
-  top: 0; /* Прижат к верхнему краю */
+  position: relative;
+  top: -70px; /* Прижат к верхнему краю */
   left: 0;
   width: 240px; /* Требуемая длина строки */
-  height: 20px; /* Высота строки */
+  height: auto; /* Высота строки */
   color: #000000;
   font-size: 20px;
   font-weight: 700; /* bold */
@@ -469,11 +455,12 @@ html, body {
 }
 /* Описание: "продукты выращиваются без применения химии" */
 .more-text-desc {
-  position: absolute;
+  position: relative;
+  top: -50px;
   bottom: 0; /* Прижато к нижнему краю контейнера .more-text */
   left: 0;
   width: 420px; /* Требуемая длина строки */
-  height: 40px; /* Высота строки */
+  height: auto; /* Высота строки */
   color: #000000;
   font-size: 18px;
   font-weight: 400; /* regular */
@@ -486,34 +473,33 @@ html, body {
 }
 
 .next-first{
-  top: 110px;
   z-index: 2;
   position: relative;
   width: 600px;
-  height: 80px;
+  height: auto;
 }
 
 .next-next-first{
-  top: 150px;
   z-index: 2;
   position: relative;
   width: 600px;
-  height: 80px;
+  height: auto;
 }
 
 .next-next-next-first{
-  top: 190px;
   z-index: 2;
   position: relative;
   width: 600px;
-  height: 80px;
+  height: auto;
+ 
 }
 
 /* БЛОК С ЭМОДЗИ */
 .emoj {
+  top: 10px;
   position: relative;
   width: 100px; /* или любая подходящая ширина контейнера */
-  height: 80px; /* как у вас в макете */
+  height: auto; /* как у вас в макете */
   z-index: 3;
 
 }
@@ -546,9 +532,10 @@ html, body {
   position: absolute;
   top: 0px;
   width: 600px;
-  height: 650px;
+  height: auto;
   z-index: 1;
 }
+
 
 
 
@@ -1345,7 +1332,7 @@ html, body {
   position: relative;
   top: 1050px;
   width: 600px;
-  height: 650px;
+  height: auto;
   z-index: 1;
   margin: 0 auto;
 }
@@ -1742,113 +1729,95 @@ html, body {
   z-index: -1;
 }
 
-  .insaid {
-    position: relative;
-    top: 400px;
-    width: 300px;
-    height: auto;
-    margin: 0 auto;
-    box-sizing: border-box;
-    z-index: 1;
-  }
 
-  .center-info-title {
-    font-size: 23px;
-    line-height: 1.3;
-    text-align: left;
-    width: 323px;
-  }
-  .next-insaid {
-    width: 323px;
-  }
+/* ОБЩИЙ КОНТЕЙНЕР .insaid */
+.insaid {
+  position: relative;
+  top: 400px;
+  width: 323px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  z-index: 1;
+}
 
-  .next-blok-text {
-    position: relative;
-    width: calc(100% - 120px);
-    height: auto;
-    padding-left: 60px;
-  }
+/* Заголовок @ Почему мамы выбирают нашу доставку? @ */
+.center-info-title {
+  font-size: 22px;        
+  font-weight: 700;         
+  text-align: left;
+  z-index: 1;
+  margin-left: 15px;
+}
 
-  .emoj {
-    width: 60px;
-    height: 60px;
-    left: 0;
-  }
+.next-insaid{
+  height: auto;
+}
 
-  .emoji-circle {
-    width: 35px;
-    height: 35px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+/* БЛОК С ЭМОДЗИ */
+.emoj {
+  left: 0;
+  top: 0;
+  position: relative;
+  width: 50px; /* или любая подходящая ширина контейнера */
+  height: auto; /* как у вас в макете */
+  z-index: 3;
+}
 
-  .emoji-img {
-    width: 15px;
-    height: 15px;
-  }
- 
+/* КРУГ С ЭМОДЗИ — центрирован по центру .emoj */
+.emoji-circle {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 🔥 Центрирует по горизонтали и вертикали */
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+/* ИЗОБРАЖЕНИЕ ВНУТРИ КРУГА */
+.emoji-img {
+  width: 17px;
+  height: 14px;
+  object-fit: contain;
+  opacity: 1;
+}
+
+.next-blok-text{
+  height: auto;
+  left: 50px;
+}
+
+/* Заголовок: "Экологичность:" */
+.more-text-title {
+  top: -50px; /* Прижат к верхнему краю */
+  left: 0;
+  width: auto; /* Требуемая длина строки */
+  height: auto; /* Высота строки */
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700; /* bold */
+  line-height: 20px; /* высота строки */
+}
+
+/* Описание: "продукты выращиваются без применения химии" */
+.more-text-desc {
+  position: relative;
+  top: -40px;
+  bottom: 0; /* Прижато к нижнему краю контейнера .more-text */
+  left: 0;
+  width: 270px; /* Требуемая длина строки */
+  height: auto; /* Высота строки */
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400; /* regular */
+}
 
 
-   /* Блок с текстом — рядом с .emoj */
-  .next-blok-text {
-    position: absolute; /* Важно: absolute, чтобы можно было позиционировать */
-    left: 60px; /* = ширина .emoj → прижимаем к правому краю */
-    top: 0; /* = top .emoj (0) → выравниваем по верхнему краю */
-    width: calc(100% - 120px); /* Оставшееся место */
-    height: 60px;
-    z-index: 3;
-    padding-left: 10px;
-    box-sizing: border-box;
-  }
 
-  /* Контейнеры текста — адаптивные */
-  .more-text {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 4px 0;
-    box-sizing: border-box;
-  }
-
-  .more-text-title,
-  .more-text-desc {
-    position: static;
-    white-space: normal;
-    margin: 0;
-    width: 100%;
-  }
-
-  .more-text-title {
-    font-size: 16px;
-    font-weight: 700;
-    color: #000;
-  }
-
-  .more-text-desc {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.4;
-    color: #000;
-    overflow: visible;
-  
-  }
-
-  /* Под-блоки (first, next-first и т.д.) */
-  .first,
-  .next-first,
-  .next-next-first,
-  .next-next-next-first {
-    position: relative;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
 }
