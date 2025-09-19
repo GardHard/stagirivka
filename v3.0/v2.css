@@ -566,7 +566,7 @@ html, body {
 /* === КОНТЕЙНЕР С ИНФОЙ — ПОВЕРХ ФОНА === */
 .why-info {
   position: relative;
-  top: -1000px;
+  top: -1100px;
   left: 900px;
   width: 100%;
   padding: 20px; /* Отступы от краёв */
