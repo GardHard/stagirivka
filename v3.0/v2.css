@@ -396,179 +396,54 @@ html, body {
 
 
 
-/* Заголовок @ Почему мамы выбирают нашу доставку? @ */
-.center-info-title {
+
+
+
+
+
+
+
+
+
+
+
+
+
+.why-picture__img{
   position: relative;
-  width: auto;       
-  color: #27AE60;
-  font-size: 41px;        
-  font-weight: 700;         
-  font-family: 'Arial', sans-serif;
-  text-align: left;
-  line-height: 1.4;         /* Увеличенная высота строки для лучшей читаемости */
-  z-index: 1;
-  white-space: normal;
+  top: -100px;
+  left: -300px;
 }
 
-.next-insaid{
-  position: relative;
-  z-index: 1;
-  height: 500px;
-  width: auto;
-}
-
-.first {
-  top: 60px;
-  z-index: 2;
-  position: relative;
-  width: 600px;
-  height: auto;
-  margin-bottom: 60px;
-
-}
-
-/* БЛОК С ТЕКСТОМ — рядом с .emoj */
-.next-blok-text {
-  position: relative; /* Важно: absolute, чтобы можно было точно позиционировать */
-  left: calc(100px); /* = ширина .emoj → прижимаем к правому краю */
-  top: 0; /* = top .emoj (0) → выравниваем по верхнему краю */
-  width: auto;
-  height: auto;
-  z-index: 3;
-  /* Можно добавить margin-left, если нужен отступ */
-}
-
-/* Заголовок: "Экологичность:" */
-.more-text-title {
-  position: relative;
-  top: -70px; /* Прижат к верхнему краю */
-  left: 0;
-  width: 240px; /* Требуемая длина строки */
-  height: auto; /* Высота строки */
-  color: #000000;
-  font-size: 20px;
-  font-weight: 700; /* bold */
-  line-height: 20px; /* высота строки */
-  font-family: 'Arial', sans-serif;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  z-index: 4;
-}
-/* Описание: "продукты выращиваются без применения химии" */
-.more-text-desc {
-  position: relative;
-  top: -50px;
-  bottom: 0; /* Прижато к нижнему краю контейнера .more-text */
-  left: 0;
-  width: 420px; /* Требуемая длина строки */
-  height: auto; /* Высота строки */
-  color: #000000;
-  font-size: 18px;
-  font-weight: 400; /* regular */
-  line-height: 21px;
-  font-family: 'Arial', sans-serif;
-  white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  z-index: 4;
-}
-
-.next-first{
-  z-index: 2;
-  position: relative;
-  width: 600px;
-  height: auto;
-}
-
-.next-next-first{
-  z-index: 2;
-  position: relative;
-  width: 600px;
-  height: auto;
-}
-
-.next-next-next-first{
-  z-index: 2;
-  position: relative;
-  width: 600px;
-  height: auto;
- 
-}
-
-/* БЛОК С ЭМОДЗИ */
-.emoj {
-  top: 10px;
-  position: relative;
-  width: 100px; /* или любая подходящая ширина контейнера */
-  height: auto; /* как у вас в макете */
-  z-index: 3;
-
-}
-
-/* КРУГ С ЭМОДЗИ — центрирован по центру .emoj */
-.emoji-circle {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* 🔥 Центрирует по горизонтали и вертикали */
-  width: 60px;
-  height: 60px;
-  background-color: white;
-  border-radius: 50%;
-  z-index: 4;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.why-info-image{
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-/* ИЗОБРАЖЕНИЕ ВНУТРИ КРУГА */
-.emoji-img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  opacity: 1;
-}
-.insaid {
-  position: absolute;
-  top: 0px;
-  width: 600px;
+  justify-content: end;
+  position: relative;
   height: auto;
-  z-index: 1;
+  width: auto;
+  top: -1100px;
+  padding: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.why-picture{
+ position: relative;
+ width: 800px;
+ height: auto;
+}
 
 .why {
   position: relative;
   z-index: 0;
   margin: 88px 0 108px;
+
 }
 
 /* === КОНТЕЙНЕР С ИНФОЙ — ПОВЕРХ ФОНА === */
 .why-info {
   position: relative;
-  top: -1100px;
-  left: 900px;
-  width: 100%;
+  right: 0px;
+  width: 700px;
   padding: 20px; /* Отступы от краёв */
   box-sizing: border-box;
   z-index: 1; /* Выше изображения */
@@ -682,6 +557,8 @@ html, body {
   .info-features {
     display: none;
   }
+
+
     body {
     height: auto;
     margin: 0 auto;
@@ -984,33 +861,10 @@ html, body {
   .label-2 { top: 495px; left: 870px;}
   .label-3 { top: 676px; left: 875px;}
 
-/* ========================================
-   КОНТЕЙНЕР №4: .four — центрированный блок
-   ======================================== */
-.four {
-  position: relative;
-  width: 1920px;
-  height: 1300px; /* значение по умолчанию для телефона */
-  margin: 0 auto; /* 🔥 Центрирование по ширине */
-  overflow: hidden;
-  z-index: 2;
-}
 
-/* Изображение фона */
-.four .center-img {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 1920px;
-  height: 1300px;
-  object-fit: cover;
-  z-index: -1;
-}
 
-  .insaid {
-    margin-top: 250px;
-    right: 300px;
-  }
+
+
 
 
 
@@ -1026,9 +880,6 @@ html, body {
   .feature[data-id="5"],
   .pregnant-section,
   .menu-toggle,
-
-
-
   .features-wrapper{
     display: none;
   }
@@ -1443,17 +1294,9 @@ html, body {
   .feature-icon[data-for="5"] { top: 385px; left: 213px; }
 
   
-.four {
-  width: 771px;
-  height: auto;
-  top: 0; /* или нужное вам значение отступа сверху */
-  right: 0; /* или задайте нужное позиционирование */
-  position: relative;
-  z-index: 1;
-  margin: 0 auto;
-}
+
 /* Изображение фона */
-.four .center-img {
+.center-img {
   position: relative;
   top: -700px;
   left: 0;
@@ -1462,14 +1305,10 @@ html, body {
   object-fit: cover;
   z-index: -1;
 }
-.insaid {
-  position: relative;
-  top: 1050px;
-  width: 600px;
-  height: auto;
-  z-index: 1;
-  margin: 0 auto;
-}
+
+
+
+
 
 
 
@@ -1502,9 +1341,6 @@ html, body {
   z-index: 1; /* Выше изображения */
 }
 
-
-
-
 .why__title {
   font-style: normal;
   font-weight: 700;
@@ -1513,7 +1349,6 @@ html, body {
   color: #27AE60;
   margin-bottom: 38px;
 }
-
 
 .why-list-item-icon__img{
   width:30px;
@@ -1531,8 +1366,6 @@ html, body {
   margin: 0px;
 }
 
-
-
 .why-list-item__title {
   font-size: 20px;
   line-height: 118%;
@@ -1544,6 +1377,36 @@ html, body {
   font-size: 18px;
   line-height: 118%;
 }
+.why-info-image {
+    flex-direction: column; /* элементы будут идти сверху вниз */
+  }
+
+.why-picture__img{
+  margin: 0 auto;
+  width: auto;
+  height: 1500px;
+  left: auto;
+  top: auto;
+}
+
+.why-info-image{
+  top: 0px;
+}
+  .why-picture {
+    width: 100%; /* или конкретная ширина */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ .why-image__picture {
+    display: none;
+  }
+
+.why-info-image{
+  margin: 0;
+}
+
+
 
 
 
@@ -1936,17 +1799,9 @@ html, body {
     align-items: center;
   }
 
-  .four {
-  width: 323px;
-  height: auto;
-  top: 0; /* или нужное вам значение отступа сверху */
-  right: 0; /* или задайте нужное позиционирование */
-  position: relative;
-  z-index: 1;
-  margin: 0 auto;
-}
+
 /* Изображение фона */
-.four .center-img {
+.center-img {
   position: relative;
   top: -600px;
   left: 0;
@@ -1956,94 +1811,6 @@ html, body {
   z-index: -1;
 }
 
-
-/* ОБЩИЙ КОНТЕЙНЕР .insaid */
-.insaid {
-  position: relative;
-  top: 400px;
-  width: 323px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  z-index: 1;
-}
-
-/* Заголовок @ Почему мамы выбирают нашу доставку? @ */
-.center-info-title {
-  font-size: 22px;        
-  font-weight: 700;         
-  text-align: left;
-  z-index: 1;
-  margin-left: 15px;
-}
-
-.next-insaid{
-  height: auto;
-}
-
-/* БЛОК С ЭМОДЗИ */
-.emoj {
-  left: 0;
-  top: 0;
-  position: relative;
-  width: 50px; /* или любая подходящая ширина контейнера */
-  height: auto; /* как у вас в макете */
-  z-index: 3;
-}
-
-/* КРУГ С ЭМОДЗИ — центрирован по центру .emoj */
-.emoji-circle {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* 🔥 Центрирует по горизонтали и вертикали */
-  width: 35px;
-  height: 35px;
-  background-color: white;
-  border-radius: 50%;
-  z-index: 4;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-/* ИЗОБРАЖЕНИЕ ВНУТРИ КРУГА */
-.emoji-img {
-  width: 17px;
-  height: 14px;
-  object-fit: contain;
-  opacity: 1;
-}
-
-.next-blok-text{
-  height: auto;
-  left: 50px;
-}
-
-/* Заголовок: "Экологичность:" */
-.more-text-title {
-  top: -50px; /* Прижат к верхнему краю */
-  left: 0;
-  width: auto; /* Требуемая длина строки */
-  height: auto; /* Высота строки */
-  color: #000000;
-  font-size: 16px;
-  font-weight: 700; /* bold */
-  line-height: 20px; /* высота строки */
-}
-
-/* Описание: "продукты выращиваются без применения химии" */
-.more-text-desc {
-  position: relative;
-  top: -40px;
-  bottom: 0; /* Прижато к нижнему краю контейнера .more-text */
-  left: 0;
-  width: 270px; /* Требуемая длина строки */
-  height: auto; /* Высота строки */
-  color: #000000;
-  font-size: 14px;
-  font-weight: 400; /* regular */
-}
 
 
 
@@ -2103,5 +1870,34 @@ html, body {
   font-size: 14px;
   line-height: 118%;
 }
+.why-info-image {
+    flex-direction: column; /* элементы будут идти сверху вниз */
+  }
+
+.why-picture__img{
+  margin: 0 auto;
+  width: auto;
+  height: 800px;
+  left: auto;
+  top: auto;
+}
+
+.why-info-image{
+  top: 0px;
+}
+  .why-picture {
+    width: 100%; /* или конкретная ширина */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ .why-image__picture {
+    display: none;
+  }
+
+.why-info-image{
+  margin: 0;
+}
+
 
 }
