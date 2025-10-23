@@ -1,4 +1,3 @@
-@import "why.css";
 
 /* Обнуляем отступы */
 * {
@@ -137,40 +136,274 @@ html, body {
 
 
 
-/* ========================================
-   БЛОК .Blok — выше чем .main
-   ======================================== */
-.Blok {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*================================================================
+==================================================================
+==================================================================
+
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+
+=================================================================
+=================================================================
+=================================================================*/
+
+
+
+
+
+
+
+
+
+.corusel{
   position: relative;
   width: 100%;
-  overflow: visible;
-  z-index: 2;
-  margin-top: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center; /* Выравнивание по вертикали (по центру) */
+  justify-content: center
 }
-/* грин бек */
-.gren-img {
+
+
+/*==============================================================
+                          КРУГЛЫЕ КНОПКИ
+================================================================*/
+
+.corusel-button-left {
+  position: relative;
+  top: -230px;
+  left: -440px;
+  width: 53px;
+  height: 53px;
+  background-color: #27AE60; /* Цвет кнопки */
+  border-radius: 50%; /* Скругление для круглой кнопки */
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center;     /* Центрирование по вертикали */
+  cursor: pointer; /* Курсор в виде руки при наведении */
+
+}
+
+.corusel-btn-icon-left{
+  position: relative;
+  width: 18px; /* Пример размера иконки */
+  height: 18px;
+  pointer-events: none; /* Иконка не мешает клику по кнопке */
+  
+}
+
+
+.corusel-button-right{
+  position: relative;
+  top: -290px;
+  left: 440px;
+  width: 53px;
+  height: 53px;
+  background-color: #27AE60; /* Цвет кнопки */
+  border-radius: 50%; /* Скругление для круглой кнопки */
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center;     /* Центрирование по вертикали */
+  cursor: pointer; /* Курсор в виде руки при наведении */
+ 
+}
+
+
+.corusel-btn-icon-right{
+  position: relative;
+  width: 18px; /* Пример размера иконки */
+  height: 18px;
+  pointer-events: none; /* Иконка не мешает клику по кнопке */
+}
+
+
+
+
+
+.carousel-up{
+  position: relative;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: row ;
+  flex-wrap: nowrap;
+  align-items: center; /* Выравнивание по вертикали (по центру) */
+  justify-content: center;
+  margin: 10px;
+}
+
+.carusel-up-text {
+  width: 600px;
+  position: relative;
+  font-size: 41px;
+  font-weight: 700; /* 'Bold' соответствует значению 700 */
+  font-family: 'Lato', sans-serif;
+  color: #27AE60;
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.carousel-bottom{
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row ;
+  flex-wrap: nowrap;
+  align-items: center; 
+  justify-content: center;
+}
+
+.carousel-one,
+.carousel-two,
+.carousel-three{
+  margin: 40px;
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  width: 664px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center; /* Выравнивание по вертикали (по центру) */
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-one-up{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: relative;
+  height: 250px;
+  width: 100%;
+}
+
+.carousel-one-bottom{
+  border-bottom-left-radius:20px;
+  border-bottom-right-radius: 20px;
+  height: 200px;
+  width: 100%;
+  position: relative;
+}
+
+
+.carousel-photo-left{
+  position: relative;
+  top: 0;
+  height: 250px;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.carousel-photo-centr{
+  position: relative;
+  top: 0;
+  height: 250px;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.carousel-photo-right{
+  position: relative;
+  top: 0;
+  height: 250px;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.carousel-text-bottom{
+  position: relative;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  font-weight: 600; 
+  font-family: 'Lato', sans-serif;
+  color: #6C997F;
+  text-align: center; /* выравнивание текста по центру */
+  display: flex;
+  align-items: center;
+  
+}
+
+
+.carusel-text-up{
+  
+  position: relative;
+  height: auto;
+  width: auto;
+  font-size: 20px;
+  font-weight: 700; 
+  font-family: 'Lato', sans-serif;
+  color: #000000;
+  text-align: center; /* выравнивание текста по центру */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+
+/* --- Создание белого полупрозрачного слоя поверх ВСЕХ карточек --- */
+.carousel-one::after,
+.carousel-two::after,
+.carousel-three::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  opacity: 0.6; /* Прозрачность засвета для всех карточек по умолчанию */
+  pointer-events: none;
   z-index: 1;
 }
-/* ========================================
-   ТЕКСТ: "Почему Вам нужно правильно питаться?"
-   ======================================== */
-.info-title {
-  position: absolute;
-  z-index: 3;
-  color: #FFFFFF;
-  font-family: 'Arial', sans-serif;
+
+/* --- УБРАТЬ засвет с карточки, КОТОРАЯ помечена как центральная --- */
+.carousel-one.carousel-centered::after,
+.carousel-two.carousel-centered::after,
+.carousel-three.carousel-centered::after {
+  opacity: 0;
 }
-.info-title span {
-  display: inline;
-  font-weight: 700;
-  pointer-events: auto;
-}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -280,21 +513,7 @@ html, body {
 
 
 
-/* ========================================
-   ФРАЗЫ: "Здоровый ребенок", "Повышение иммунитета" и др.
-   ======================================== */
-.feature {
-  position: absolute;
-  color: #FFFFFF;
-  font-size: 20px;
-  font-weight: 500;
-  font-family: 'Arial', sans-serif;
-  white-space: normal;
-  pointer-events: auto;
-}
-.feature .text {
-  display: block;
-}
+
 
 /* В ТЕЛЕФОНЕ КНОПКИ ПЕРЕКЛЮЧЕНИЯ */
 .carousel-controls {
@@ -468,6 +687,7 @@ html, body {
 .why-block{
   height: auto;
   width: auto;
+  
 }
 
 .why-picture__img{
@@ -496,7 +716,7 @@ html, body {
 .why {
   padding-top: 100px;
   position: relative;
-
+  
 }
 
 /* === КОНТЕЙНЕР С ИНФОЙ — ПОВЕРХ ФОНА === */
@@ -602,7 +822,6 @@ html, body {
 
 
 
-
 /*=================================================================
 ===================================================================
 ==================================================================
@@ -679,12 +898,6 @@ html, body {
 
 
 
-/* Для демонстрации блоков */
-.futter div {
-  outline: 1px solid red;
-}
-
-
 
 
 
@@ -745,8 +958,7 @@ html, body {
    ======================================== */
 @media (min-width: 1280px) {
   .pregnant-section,
-  .menu-toggle,
-  .info-features {
+  .menu-toggle{
     display: none;
   }
 
@@ -846,100 +1058,9 @@ html, body {
 
 
   
-  .Blok {
-    position: relative;
-    width: auto;
-    height: 378px;
-    overflow: visible;
-    z-index: 2;
-    background-color: #27AE60;
-  }
-  .struktur {
-    position: relative;
-    width: 1000px;
-    height: 378px;
-    margin: 0 auto;
-    overflow: visible;
-    z-index: 2;
-  }
-  .gren-img {
-    position: absolute;
-    top: 200px;
-    left: 0;
-    transform: translate(-50%, -50%);
-    width: 530px;
-    height: 600px;
-    object-fit: cover;
-    z-index: 2;
-  }
-  .info-title {
-    position: absolute;
-    top: 50px;
-    left: 300px;
-    z-index: 3;
-    color: #FFFFFF;
-    font-family: 'Arial', sans-serif;
-    width: 782px;
-    line-height: 48px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .info-title span {
-    display: inline;
-    font-size: 35px;
-    font-weight: 700;
-    color: #FFFFFF;
-  }
-  .info-title .line1::after {
-    content: " ";
-  }
-  .features-wrapper {
-    position: absolute;
-    top: 130px;
-    left: 300px;
-    width: 800px;
-    height: 200px;
-    z-index: 5;
-    display: flex;
-    gap: 30px;
-    pointer-events: none;
-  }
-  .features-left,
-  .features-right {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    pointer-events: auto;
-  }
-  .feature-pc {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 500;
-    font-family: 'Arial', sans-serif;
-    width: 400px;
-    line-height: 1.4;
-    white-space: normal;
-    overflow: hidden;
-    pointer-events: auto;
-  }
-  .feature-icon-pc {
-    width: 11px;
-    height: 8px;
-    flex-shrink: 0;
-    margin-top: 4px;
-    order: 0;
-  }
-  .feature-pc .text {
-    order: 1;
-    display: block;
-    word-break: break-word;
-    hyphens: auto;
-  }
+
+
+
   .carousel-controls {
     display: none;
   }
@@ -1055,6 +1176,262 @@ html, body {
   .label-1 { top: 300px; left: 930px;}
   .label-2 { top: 495px; left: 870px;}
   .label-3 { top: 676px; left: 875px;}
+
+
+
+
+
+
+/*================================================================
+==================================================================
+==================================================================
+
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+
+=================================================================
+=================================================================
+=================================================================*/
+
+
+
+
+.baner{
+  position: relative;
+  height: auto;
+  width: auto;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.baner-block{
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-color: #27AE60;
+  display: flex;
+  flex-direction: row ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.baner-graffity{
+ position: absolute;
+ top: -235px;
+ height: auto;
+ width: auto;
+ filter: brightness(0.6);
+ z-index: 0;
+}
+
+.baner-sotrudnik{
+  position: relative;
+  height: auto;
+  width: auto;
+}
+
+.baner-text{
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;  
+  margin-left: 50px;
+}
+
+.baner-intro{
+  position: relative;
+  width: auto;
+  height: auto;
+  font-size: 41px;
+  font-weight: 700; 
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
+  text-align: left; /* выравнивание текста по центру */
+}
+
+.baner-text-bottom-intro{
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: row ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;  
+}
+
+.baner-text-one{
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: row ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center; 
+}
+
+
+.baner-text-two{
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: row ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center; 
+}
+
+.baner-galki{
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column ; 
+  flex-wrap: nowrap;
+  margin-right: 10px;
+}
+
+.baner-galka{
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.galka{
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.baner-content{
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.baner-info-text{
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 45px;
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
+  text-align: left; /* выравнивание текста по центру */
+
+}
+
+
+
+
+
+
+
+
+
+/*================================================================
+==================================================================
+==================================================================
+
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+
+=================================================================
+=================================================================
+=================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=================================================================
+===================================================================
+==================================================================
+
+.............O.......O.............O
+.............O........O...........O
+.............O.........O.........O
+.............O..........O.......O
+.............O...........O.....O
+.............O............O...O
+.............O.............O.O
+.............O..............O
+
+=================================================================
+=================================================================
+=================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*=================================================================
@@ -1507,12 +1884,9 @@ html, body {
    📱➡️🪟 МЕДИА-ЗАПРОС: ПЛАНШЕТ (768px — 1279px)
    ======================================== */
 @media (min-width: 768px) and (max-width: 1279px) {
-  .feature[data-id="4"],
-  .feature[data-id="5"],
   .pregnant-section,
   .menu-toggle,
-  .why-image,
-  .features-wrapper{
+  .why-image{
     display: none;
   }
 
@@ -1565,10 +1939,7 @@ html, body {
     text-align: center;
     width: 100%;
   }
-  .title-line1,
-  .title-line2 {
-    font-size: 32px;
-  }
+
   .subtitle {
     font-size: 18px;
   }
@@ -1661,10 +2032,7 @@ html, body {
     transform: translateX(-50%);
     text-align: center;
   }
-  .title-line1,
-  .title-line2 {
-    font-size: 32px;
-  }
+
   .subtitle {
     top: 290px;
     left: 50%;
@@ -1797,141 +2165,6 @@ html, body {
     transform: scale(0.8);
   }
 
-
-
-
-
-  .Blok {
-    display: block;
-    position: relative;
-    width: auto;
-    height: 853px;
-    margin: 0 auto;
-    overflow: visible;
-    z-index: 1;
-    background-color: #27AE60;
-    margin-bottom: 150px;
-    margin-top: 50px ;
-  }
-  .gren-img {
-    position: absolute;
-    top: 750px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 538px;
-    height: 600px;
-    object-fit: cover;
-    z-index: 2;
-  }
-  .struktur {
-    position: relative;
-    width: 771px;
-    height: 853px;
-    margin: 0 auto;
-    overflow: visible;
-    z-index: 2;
-  }
- 
-  .info-title {
-    position: absolute;
-    top: 50px;
-    left: 180px;
-    z-index: 3;
-    color: #FFFFFF;
-    font-family: 'Arial', sans-serif;
-    width: 450px;
-    white-space: normal;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    line-height: 1;
-  }
-  .info-title span {
-    display: block;
-    font-size: 41px;
-    line-height: 52px;
-    font-weight: 700;
-    color: #FFFFFF;
-  }
-  .info-features {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 4;
-    pointer-events: none;
-  }
-  .feature {
-    position: absolute;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 400;
-    font-family: 'Arial', sans-serif;
-    pointer-events: auto;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-  .feature[data-id="1"]{
-    top: 186px;
-    left: 233px;
-    width: 220px;
-    height: 28px;
-    line-height: 28px;
-  }
-  .feature[data-id="2"] {
-    top: 233px;
-    left: 233px;
-    width: 230px;
-    height: 28px;
-    line-height: 28px;
-  }
-  .feature[data-id="3"] {
-    top: 280px;
-    left: 233px;
-    width: 205px;
-    height: 28px;
-    line-height: 28px;
-  }
-  .feature[data-id="6"] {
-    top: 330px;
-    left: 233px;
-    width: 325px;
-    height: 28px;
-    line-height: 28px;
-    font-weight: 500;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .feature[data-id="7"] {
-    top: 377px;
-    left: 233px;
-    width: 300px;
-    height: 55px;
-    line-height: 28px;
-    font-weight: 500;
-    text-align: left;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .feature-icon {
-    position: absolute;
-    width: 14px;
-    height: 12px;
-    z-index: 5;
-    pointer-events: none;
-    opacity: 1;
-  }
-  .feature-icon[data-for="1"] { top: 193px; left: 213px; }
-  .feature-icon[data-for="2"] { top: 241px; left: 213px; }
-  .feature-icon[data-for="3"] { top: 287px; left: 213px; }
-  .feature-icon[data-for="4"] { top: 337px; left: 213px; }
-  .feature-icon[data-for="5"] { top: 385px; left: 213px; }
-
-  
-
 /* Изображение фона */
 .center-img {
   position: relative;
@@ -1946,6 +2179,271 @@ html, body {
 
 
 
+
+
+
+/*================================================================
+==================================================================
+==================================================================
+
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+
+=================================================================
+=================================================================
+=================================================================*/
+
+
+
+.baner{
+  position: relative;
+  height: auto;
+  width: auto;
+  margin-top: 100px;
+  margin-bottom: 300px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.baner-block{
+  position: relative;
+  width: 100%;
+  height: 950px;
+  background-color: #27AE60;
+  display: flex;
+  flex-direction: column; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.baner-graffity{
+display: none;
+}
+
+.baner-sotrudnik{
+  position: relative;
+  height: auto;
+  width: auto;
+  top: 675px;
+}
+
+.baner-text{
+  top: -525px;
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  
+}
+
+.baner-intro{
+  position: relative;
+  width: 500px;
+  height: auto;
+  font-size: 41px;
+  font-weight: 700; 
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.baner-text-bottom-intro{
+  position: relative;
+  width: auto;
+  height: auto;
+  
+  display: flex;
+  flex-direction: column ; /* <-- Вот здесь */
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+}
+
+.baner-text-one{
+  position: relative;
+  width: auto;
+  height: auto;
+  
+  display: flex;
+  flex-direction: row ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  
+}
+
+
+.baner-text-two{
+  position: relative;
+  height: auto;
+  width: auto;
+  
+  display: flex;
+  flex-direction: row ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+ 
+}
+
+.baner-galki{
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column ; 
+  flex-wrap: nowrap;
+
+}
+
+.baner-galka{
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 5px;
+  
+}
+
+.galka{
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.baner-content{
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.baner-info-text{
+  position: relative;
+  width: auto;
+  height: auto;
+  
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 45px;
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
+  text-align: left; /* выравнивание текста по центру */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*================================================================
+==================================================================
+==================================================================
+
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+
+=================================================================
+=================================================================
+=================================================================*/
+
+
+
+
+
+
+/*==============================================================
+                          КРУГЛЫЕ КНОПКИ
+================================================================*/
+
+.corusel-button-left {
+  position: relative;
+  top: -250px;
+  left: -330px;
+  width: 53px;
+  height: 53px;
+  background-color: #27AE60; /* Цвет кнопки */
+  border-radius: 50%; /* Скругление для круглой кнопки */
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center;     /* Центрирование по вертикали */
+  cursor: pointer; /* Курсор в виде руки при наведении */
+
+}
+
+
+.corusel-button-right{
+  position: relative;
+  top: -310px;
+  left: 330px;
+  width: 53px;
+  height: 53px;
+  background-color: #27AE60; /* Цвет кнопки */
+  border-radius: 50%; /* Скругление для круглой кнопки */
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center;     /* Центрирование по вертикали */
+  cursor: pointer; /* Курсор в виде руки при наведении */
+ 
+}
+
+
+.carousel-one,
+.carousel-two,
+.carousel-three{
+  margin-top: 40px;
+  margin-left: 18px;
+  margin-right: 18px;
+  position: relative;
+  height: 400px;
+  width: 664px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center; /* Выравнивание по вертикали (по центру) */
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 
 
 
@@ -2556,11 +3054,8 @@ html, body {
    📱 МЕДИА-ЗАПРОС: ТЕЛЕФОН (0px — 767px)
    ======================================== */
 @media (max-width: 767px) {
-  .feature[data-id="7"],
-  .feature[data-id="6"],
   .why-image,
-  .tegi,
-  .features-wrapper{
+  .tegi{
     display: none;
   }
 
@@ -2651,34 +3146,8 @@ html, body {
     box-sizing: border-box;
     overflow: hidden;
   }
-  .Blok {
-    position: relative;
-    width: auto;
-    height: 753px;
-    margin: 0 auto;
-    overflow: visible;
-    z-index: 2;
-    background-color: #27AE60;
-    margin-bottom: 60px
-  }
-  .gren-img {
-    position: absolute;
-    top: 650px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 334px;
-    height: 420px;
-    object-fit: cover;
-    z-index: 2;
-  }
-  .struktur {
-    position: relative;
-    width: 323px;
-    height: 753px;
-    margin: 0 auto;
-    overflow: visible;
-    z-index: 2;
-  }
+
+
   .btn-outline {
     position: absolute;
     width: 245px;
@@ -2707,26 +3176,7 @@ html, body {
     top: 50%;
     transform: translateY(-50%);
   }
-  .info-title {
-    position: absolute;
-    z-index: 2;
-    color: #FFFFFF;
-    font-family: 'Arial', sans-serif;
-    top: 57px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 250px;
-    white-space: normal;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    line-height: 1;
-  }
-  .info-title span {
-    display: block;
-    font-size: 22px;
-    line-height: 33px;
-  }
+
   .carousel-controls {
     position: absolute;
     top: 664px;
@@ -2764,30 +3214,8 @@ html, body {
   .carousel-next {
     left: 273px;
   }
-  .info-features {
-    position: relative;
-    width: 323px;
-    height: 837px;
-    margin: 0 auto;
-    z-index: 4;
-    pointer-events: none;
-  }
-  .feature {
-    position: absolute;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 400;
-    font-family: 'Arial', sans-serif;
-    pointer-events: auto;
-  }
-  .feature[data-id="1"] { top: 148px; left: 60px; width: 176px; height: 28px; line-height: 28px; white-space: nowrap; overflow: hidden; }
-  .feature[data-id="2"] { top: 195px; left: 58px; width: 230px; height: 28px; line-height: 28px; white-space: nowrap; overflow: hidden; }
-  .feature[data-id="3"] { top: 242px; left: 60px; width: 230px; height: 28px; line-height: 28px; white-space: nowrap; overflow: hidden; }
-  .feature[data-id="4"] { top: 292px; left: 60px; width: 230px; height: 56px; line-height: 28px; white-space: normal; overflow: hidden; }
-  .feature[data-id="5"] { top: 370px; left: 60px; width: 224px; height: 56px; line-height: 28px; white-space: normal; overflow: hidden; word-spacing: -1px; }
-  .feature .text {
-    display: block;
-  }
+
+
   .pregnant-section {
     position: absolute;
     top: 0;
@@ -2847,26 +3275,7 @@ html, body {
   .pregnant-img {
     transition: opacity 0.4s ease, visibility 0.4s;
   }
-  .feature-icon {
-    position: absolute;
-    width: 11px;
-    height: 8px;
-    left: 30px;
-    z-index: 4;
-    pointer-events: none;
-    opacity: 1;
-  }
-  .feature-icon {
-    transition: transform 0.2s ease;
-  }
-  .feature-icon:hover {
-    transform: scale(1.1);
-  }
-  .feature-icon[data-for="1"] { top: 158px; }
-  .feature-icon[data-for="2"] { top: 204px; }
-  .feature-icon[data-for="3"] { top: 251px; }
-  .feature-icon[data-for="4"] { top: 301px; }
-  .feature-icon[data-for="5"] { top: 375px; }
+
 
 
 
@@ -2936,6 +3345,282 @@ html, body {
 
 
 
+
+/*================================================================
+==================================================================
+==================================================================
+
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+............................0...0...........................
+
+=================================================================
+=================================================================
+=================================================================*/
+
+
+
+.baner{
+  position: relative;
+  height: auto;
+  width: auto;
+  margin-top: 100px;
+  margin-bottom: 300px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.baner-block{
+  position: relative;
+  width: 100%;
+  height: 1000px;
+  background-color: #27AE60;
+  display: flex;
+  flex-direction: column; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.baner-graffity{
+display: none;
+}
+
+.baner-sotrudnik{
+  position: relative;
+  height: auto;
+  width: auto;
+  top: 675px;
+}
+
+.baner-text{
+  top: -525px;
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  
+}
+
+.baner-intro{
+  position: relative;
+  width: auto;
+  height: auto;
+  font-size: 22px;
+  font-weight: 700; 
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
+  margin-bottom: 50px;
+  text-align: left;
+  
+}
+
+.baner-text-bottom-intro{
+  position: relative;
+  width: auto;
+  height: auto;
+  
+  display: flex;
+  flex-direction: column ; /* <-- Вот здесь */
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+}
+
+.baner-text-one{
+  position: relative;
+  width: auto;
+  height: auto;
+  
+  display: flex;
+  flex-direction: row ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+  
+}
+
+
+.baner-text-two{
+  position: relative;
+  height: auto;
+  width: auto;
+  
+  display: flex;
+  flex-direction: row ; /* <-- Вот здесь */
+  flex-wrap: nowrap;
+ 
+}
+
+.baner-galki{
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column ; 
+  flex-wrap: nowrap;
+
+}
+
+.baner-galka{
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  
+}
+
+.galka{
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.baner-content{
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.baner-info-text{
+  position: relative;
+  width: 250px;
+  height: auto;
+  
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500; 
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
+  text-align: left; /* выравнивание текста по центру */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*================================================================
+==================================================================
+==================================================================
+
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+............................0...0...0........................
+
+=================================================================
+=================================================================
+=================================================================*/
+
+
+
+/*==============================================================
+                          КРУГЛЫЕ КНОПКИ
+================================================================*/
+
+.corusel-button-left {
+  top: -300px;
+  left: -125px;
+}
+.corusel-button-right{
+  top: -355px;
+  left: 125px;
+}
+
+
+.carusel-up-text {
+  font-size: 22px;
+  width: 300px;
+}
+
+.carousel-one,
+.carousel-two,
+.carousel-three{
+  height: 453px;
+  width: 225px;
+
+}
+
+.carousel-photo-left{
+  height: 261px;
+    top: -5px;
+}
+
+.carousel-photo-centr{
+  top: -5px;
+  left: -60px;
+  height: 261px;
+  width: 330px;
+}
+
+.carousel-photo-right{
+  height: 261px;
+    top: -5px;
+}
+
+.carousel-text-bottom{
+  font-size: 14;
+}
+
+
+.carusel-text-up{
+  font-size: 16;
+  margin-top: 20px;
+}
+
+.corusel-button-left,
+.corusel-button-right {
+  position: relative;
+  width: 53px;
+  height: 53px;
+  background: transparent; /* Делаем фон прозрачным */
+  border-radius: 50%; /* Скругление для круглой кнопки */
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center;     /* Центрирование по вертикали */
+  cursor: pointer; /* Курсор в виде руки при наведении */
+  border: none; /* Убираем границу, если есть */
+  outline: none; /* Убираем обводку при фокусе, если не нужна */
+
+}
+
+.corusel-btn-icon-left,
+.corusel-btn-icon-right {
+  width: 18px; /* Пример размера иконки */
+  height: 18px;
+  pointer-events: none; 
+  filter: invert(26%) sepia(49%) saturate(2478%) hue-rotate(108deg) brightness(101%) contrast(101%);
+}
 
 
 
