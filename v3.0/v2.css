@@ -1664,42 +1664,32 @@ html, body {
   width: auto;
 }
 
-.info-rounded-rectangle {
+.info-input-rounded {
   width: 403px;
-  height: 57px;
-  border-radius: 30px;
-  background-color: #E8F7EE;
-  box-sizing: border-box;
-  padding: 10px;
-  border: 1px solid #ccc;
-  outline: none;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  color: #000;
-  resize: none;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  height: 57px; /* Высота может быть скорректирована под шрифт и внутренний отступ */
+  padding: 10px; /* Внутренний отступ */
+  border-radius: 30px; /* Скругление */
+  background-color: #E8F7EE; /* Фон */
+  border: 1px solid #ccc; /* Граница по умолчанию */
+  outline: none; /* Убираем стандартную обводку при фокусе */
+  font-family: Arial, sans-serif; /* Шрифт */
+  font-size: 16px; /* Размер шрифта */
+  color: #000; /* Цвет текста */
+  box-sizing: border-box; /* Включаем padding и border в расчёт размеров */
+  text-overflow: ellipsis; /* Добавляем многоточие, если текст не помещается */
+  white-space: nowrap; /* Запрещаем перенос строк */
+  overflow: hidden; /* Скрываем переполнение */
 }
 
-/* Плейсхолдер по умолчанию */
-.info-rounded-rectangle:empty:before {
-  content: attr(data-placeholder);
-  color: #aaa; /* цвет плейсхолдера */
-  pointer-events: none;
+/* Стили для плейсхолдера */
+.info-input-rounded::placeholder {
+  color: #aaa; /* Цвет плейсхолдера */
 }
 
-/* Скрываем плейсхолдер при фокусе */
-.info-rounded-rectangle:focus:before {
-  display: none;
+/* Стили при фокусе */
+.info-input-rounded:focus {
+  border: 1px solid #1982BD; /* Изменение цвета границы при фокусе */
 }
-
-.info-rounded-rectangle:focus {
-  border: 1px solid #1982BD;
-}
-
 
 
 
@@ -1709,42 +1699,32 @@ html, body {
   margin: 10px;
 }
 
-.info-phone-rectangle {
+.info-input-phone {
   width: 403px;
   height: 57px;
+  padding: 10px;
   border-radius: 30px;
   background-color: #E8F7EE;
-  box-sizing: border-box;
-  padding: 10px;
   border: 1px solid #ccc;
   outline: none;
   font-family: Arial, sans-serif;
   font-size: 16px;
   color: #000;
-  resize: none;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
+  box-sizing: border-box;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-/* Плейсхолдер по умолчанию */
-.info-phone-rectangle:empty:before {
-  content: attr(data-placeholder);
+/* Стили для плейсхолдера */
+.info-input-phone::placeholder {
   color: #aaa;
-  pointer-events: none;
 }
 
-/* Скрываем плейсхолдер при фокусе */
-.info-phone-rectangle:focus:before {
-  display: none;
-}
-
-.info-phone-rectangle:focus {
+/* Стили при фокусе */
+.info-input-phone:focus {
   border: 1px solid #1982BD;
 }
-
 
 
 
@@ -2713,6 +2693,81 @@ display: none;
   align-items: center; /* выравнивание по центру по вертикали */
 
 }
+
+
+/*================================================================
+
+                            строка с водом имени
+
+=================================================================*/
+
+.info-name {
+  height: auto;
+  width: auto;
+}
+
+.info-input-rounded {
+  width: 403px;
+  height: 57px; /* Высота может быть скорректирована под шрифт и внутренний отступ */
+  padding: 10px; /* Внутренний отступ */
+  border-radius: 30px; /* Скругление */
+  background-color: #E8F7EE; /* Фон */
+  border: 1px solid #ccc; /* Граница по умолчанию */
+  outline: none; /* Убираем стандартную обводку при фокусе */
+  font-family: Arial, sans-serif; /* Шрифт */
+  font-size: 16px; /* Размер шрифта */
+  color: #000; /* Цвет текста */
+  box-sizing: border-box; /* Включаем padding и border в расчёт размеров */
+  text-overflow: ellipsis; /* Добавляем многоточие, если текст не помещается */
+  white-space: nowrap; /* Запрещаем перенос строк */
+  overflow: hidden; /* Скрываем переполнение */
+}
+
+/* Стили для плейсхолдера */
+.info-input-rounded::placeholder {
+  color: #aaa; /* Цвет плейсхолдера */
+}
+
+/* Стили при фокусе */
+.info-input-rounded:focus {
+  border: 1px solid #1982BD; /* Изменение цвета границы при фокусе */
+}
+
+
+
+.info-phone {
+  height: auto;
+  width: auto;
+  margin: 10px;
+}
+
+.info-input-phone {
+  width: 403px;
+  height: 57px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #E8F7EE;
+  border: 1px solid #ccc;
+  outline: none;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #000;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Стили для плейсхолдера */
+.info-input-phone::placeholder {
+  color: #aaa;
+}
+
+/* Стили при фокусе */
+.info-input-phone:focus {
+  border: 1px solid #1982BD;
+}
+
 
 /*=========================================
 ===========================================
@@ -3889,6 +3944,81 @@ display: none;
   align-items: center; /* выравнивание по центру по вертикали */
 
 }
+
+
+/*================================================================
+
+                            строка с водом имени
+
+=================================================================*/
+
+.info-name {
+  height: auto;
+  width: auto;
+}
+
+.info-input-rounded {
+  width: 290px;
+  height: 57px; /* Высота может быть скорректирована под шрифт и внутренний отступ */
+  padding: 10px; /* Внутренний отступ */
+  border-radius: 30px; /* Скругление */
+  background-color: #E8F7EE; /* Фон */
+  border: 1px solid #ccc; /* Граница по умолчанию */
+  outline: none; /* Убираем стандартную обводку при фокусе */
+  font-family: Arial, sans-serif; /* Шрифт */
+  font-size: 16px; /* Размер шрифта */
+  color: #000; /* Цвет текста */
+  box-sizing: border-box; /* Включаем padding и border в расчёт размеров */
+  text-overflow: ellipsis; /* Добавляем многоточие, если текст не помещается */
+  white-space: nowrap; /* Запрещаем перенос строк */
+  overflow: hidden; /* Скрываем переполнение */
+}
+
+/* Стили для плейсхолдера */
+.info-input-rounded::placeholder {
+  color: #aaa; /* Цвет плейсхолдера */
+}
+
+/* Стили при фокусе */
+.info-input-rounded:focus {
+  border: 1px solid #1982BD; /* Изменение цвета границы при фокусе */
+}
+
+
+
+.info-phone {
+  height: auto;
+  width: auto;
+  margin: 10px;
+}
+
+.info-input-phone {
+  width: 290px;
+  height: 57px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #E8F7EE;
+  border: 1px solid #ccc;
+  outline: none;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #000;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Стили для плейсхолдера */
+.info-input-phone::placeholder {
+  color: #aaa;
+}
+
+/* Стили при фокусе */
+.info-input-phone:focus {
+  border: 1px solid #1982BD;
+}
+
 
 /*=========================================
 ===========================================
